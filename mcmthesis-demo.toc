@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Problem Background}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Restatement of the Problem}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Our work}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Preparation for Models}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Assumptions and Justiﬁcations}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Notations}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Data Processing}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}TAN and SHAP Models for Fan Vote Estimation}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}TAN Model}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}SHAP Model}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Model Evaluation}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Consistency Test of Two Models}{11}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Validity Test and Robustness Analysis}{13}{subsubsection.3.3.2}%
+\contentsline {section}{\numberline {4}Building Preservation Model}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Building Value Quantification}{14}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Indicators Determination}{14}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Weight Calculation}{15}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Quantitative Results of Building Values}{17}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Determination of protection measures}{18}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Measure Score}{18}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Score of Protection Measures}{18}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Mentoring for Community Leaders}{18}{subsubsection.4.2.3}%
+\contentsline {section}{\numberline {5}Landmark Case Analysis}{19}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Insurance Pricing for Tokyo Tower}{19}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Architectural Value of Tokyo Tower}{19}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Sensitivity and Robustness Analysis}{20}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Sensitivity}{20}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Robustness}{20}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Model Evaluation}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Strengths}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Weaknesses}{21}{subsection.7.2}%
+\contentsline {section}{Appendices}{23}{section*.20}%
+\contentsline {section}{Appendix \numberline {A}First Appendix}{23}{appendix.1.A}%
