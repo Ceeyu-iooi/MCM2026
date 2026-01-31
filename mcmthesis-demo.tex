@@ -51,8 +51,10 @@
 
 \usepackage{xcolor}       % 颜色支持
 \usepackage{tabularray}   % 增强表格功能
+\usepackage{lastpage}     % 获取最后一页页码
 
-\usepackage[style=numeric,backend=biber]{biblatex}  % APA风格: style=apa
+\usepackage[style=numeric,backend=biber]{biblatex}
+%\usepackage[style=apa,backend=biber]{biblatex}  % APA风格: style=apa
 \ExecuteBibliographyOptions{sorting=none}           % 按引用顺序
 \addbibresource{references.bib}                     % bib参考文献可用kimi生成
 
@@ -60,7 +62,7 @@
 \setlength{\headheight}{14pt}
 \addtolength{\topmargin}{-1.6pt}  % 可选：保持总版心不变
 
-\setcounter{tocdepth}{2}  % 设置目录到二级标题, 将目录控制在1页
+% \setcounter{tocdepth}{2}  % 设置目录到二级标题, 将目录控制在1页
                           % 若可接受目录2页, 注释掉该句, 将到三级标题
                           
 \title{Veils of Uncertainty: Weaving Risk into the Tapestry of Preservation
@@ -134,24 +136,10 @@ Building Preservation Model
 
 \section{Introduction}
 \subsection{Problem Background}
+“Dancing with the Stars (DWTS)” is a globally influential entertainment competition program originating from the UK's “Strictly Come Dancing.” Having successfully run for 34 seasons, its spin-off versions now span multiple regions worldwide. The core format pairs celebrities with professional dancers, combining professional judges' scores with audience votes to determine eliminations and final rankings.
 
-Extreme weather events are becoming more frequent due to climate change. As the economic
-costs of disasters rise, how should the insurance industry respond to losses? Extreme
-weather events cause untold human suffering but and ever-growing economic costs.
+However, during its long-term operation, a core dilemma has gradually emerged: Despite consistently receiving low scores from professional judges for their dance performances and lacking recognition for their technical proficiency, some celebrity contestants advance through the competition—and even win—by leveraging high audience support. This stark divergence between the judges' professional assessments and the public's preferences has not only sparked widespread controversy but also directly exposed the inherent flaws in the existing voting system. \cite{toupiao}Consequently, optimizing the voting and elimination mechanisms has become an urgent issue requiring resolution for the show.
 
-Catastrophic risks consequently cause a variety of problems for insurers. First, because
-the losses arise from a small number of lumpy events, the insurer may not have sufficient resources
-to cover the losses. Less dramatically, the firm may suffer losses well in excess of the
-value of the premiums that it charged for the coverage. In the absence of adequate reinsurance,
-the firm may go bankrupt or may choose to exit a state in which there is a substantial exposure
-to such catastrophic risks. The unexpected catastrophes or blockbuster events maybe raise the
-rate that firms charge for insurance. Thus, for any given number of policies written, the total
-premiums will rise \cite{born2006}.
-
-The impact of natural disasters is equivalent to a $\$520$ billion loss in annual consumption,
-and forces some $26$ million people into poverty each year. Given the gradual increase in the
-number of extreme-weather events in the world, how to realize the sustainability of property
-insurance is a great challenge we need to address.
 
 \subsection{Restatement of the Problem}
 
@@ -159,15 +147,13 @@ Considering the background information and restricted conditions identified in t
 statement, we need to solve the following problems:
 
 \begin{itemize}
-\item {\bf Problem 1:} The property insurance industry faces a crisis from increased extreme
-weather events caused by climate change, leading to higher claims and premiums.
-\item {\bf roblem 2:} Insurance companies must decide on underwriting policies in weather-affected
-regions, balancing risk and long-term viability.
-\item {\bf Problem 3:} Participants are tasked with creating a model to assist in underwriting decisions
-and a preservation model for community leaders to protect significant buildings.
-\item {\bf Problem4:} The models should be applied to specific areas and a historic landmark, with
-recommendations for future insurance and preservation strategies.
+\item {\bf Problem 1:} Develop a model to estimate hidden audience voting data and quantify its uncertainty.
+\item {\bf Problem 2:} Compare the rationality of two voting synthesis mechanisms (Ranking and Percentage) in DWTS, and quantify the impact of the judges' “bottom two elimination” mechanism.
+\item {\bf Problem 3:}  Quantify the influence of contestant characteristics, judge scores, and other factors on elimination outcomes and voting results, identifying core influencing factors.
+\item {\bf Problem4:} Design an optimal voting mechanism that balances multiple objectives including program fairness and entertainment value.
 \end{itemize}
+
+
 
 \subsection{Our work}
 
@@ -180,11 +166,14 @@ In order to clearly illustrate our work, we draw the flowchart Figure \ref{fig1}
 \caption{Our work} \label{fig1}
 \end{figure}
 
-\section{Assumptions and Justifications}
+\section{Preparation for Models}  
 
 Considering those practical problems always contain many complex factors, first of all,
 we need to make reasonable assumptions to simplify the model, and each hypothesis is closely
 followed by its corresponding explanation:
+
+
+\subsection{Assumptions and Justiﬁcations}
 
 \begin{itemize}
 \item {\bf Assumption:} The data we use are accurate and valid.
@@ -203,7 +192,7 @@ complexity inherent in regional studies by focusing on aggregate data, thereby p
 a generalized view of each area's performance or condition.
 \end{itemize}
 
-\section{Notations}
+\subsection{Notations}
 
 The key mathematical notations used in this paper are listed in Table \ref{tbl1}. 
 
@@ -217,7 +206,7 @@ The key mathematical notations used in this paper are listed in Table \ref{tbl1}
 \toprule             % 画顶端横线
 {\bf Symbol}    &  {\bf Definition}     \\
 \midrule             % 画中间横线
-$EAL$  & Expected Annual Loss  \\
+$V$     & Fans Vote Score  \\
 $SV$   & Social Vulnerability  \\
 $CR$   & Community Resilience  \\
 $CRF$  & Community Risk Factor \\
@@ -231,28 +220,260 @@ section.
 \end{flushleft}
 \end{table}
 
-\section{Insurance Pricing and Decision Model}
+\subsection{Data Processing}
 
-\subsection{Data Collection}
+Preliminary exploratory analysis of the dataset reveals three core issues: imputed missing values, numerical anomalies, and inconsistent feature formats. Systematic preprocessing is required to eliminate data quality risks and provide reliable support for subsequent modeling and analysis. Accordingly, following the MS08 data processing specifications and solution workflow, comprehensive preprocessing is conducted focusing on missing value and outlier handling, as well as data transformation.
 
-%% 三线表
+\begin{figure}[H]    % H表示强制固定在当前位置
+\small
+\centering
+\includegraphics[width=1.0\textwidth]{fig2.png}
+\caption{Data Processing Workflow} \label{fig_dp}
+\end{figure}
+
+Differentiated strategies were applied to three scenarios of hidden missing values: missing scores from the fourth judge were imputed using the average scores from other judges in the same week; missing entries for unbroadcasted weeks were marked as invalid data and excluded from the training sample; other missing fields were filled with the median values from celebrity metrics within the same industry during the same season. Anomaly detection was performed using the 3$\sigma$ rule combined with competition scoring domain rules, identifying 27 judge score anomalies. These were replaced with the contestant's average score from valid weeks within the same season. Zero scores after elimination were retained with a status feature added to clearly distinguish between “valid competition weeks” and “post-elimination weeks,” preventing interference from invalid data.
+
+Feature Transformation Phase Standardized processing was applied to different feature types: Continuous numerical features like age underwent Z-score normalization, resulting in transformed feature means $\approx$ 0 and standard deviations $\approx$ 1, effectively eliminating unit differences and enhancing cross-season comparability. Qualitative categorical features such as star industry were quantified via dummy variable encoding. Time-series derived features were constructed based on tournament progression logic to capture dynamic evolutionary patterns. Feature importance calibration was performed using SHAP values, identifying elimination risk coefficient, cumulative ranking, and relative performance as core influencing features. Their SHAP values were 0.32, 0.28, and 0.21 respectively, aligning closely with the actual impact mechanisms of the tournament. This provides a high-quality data foundation and parameter support for subsequent modeling analysis.
+
+
+
+
+
+
+\section{TAN and SHAP Models for Fan Vote Estimation}
+In the show Dancing with the Stars, a common scenario occurs: some celebrities receive low scores from professional judges yet advance smoothly or even win the championship thanks to high audience support rates. To understand this discrepancy between judge scores and audience support, we must first establish a model to reverse-engineer these undisclosed audience voting data while quantifying the uncertainty of such estimates.\cite{inverse}
+
+\subsection{TAN Model}
+In real-world data, features often exhibit dependencies. For example:$week\_rank$ is highly correlated with $cumulative\_rank$ (partial correlation coefficient = 0.553);$remaining\_weeks$ is strongly negatively correlated with $weeks\_participated$ (partial correlation coefficient = -0.665)
+Ignoring these dependencies degrades the performance of traditional Bayesian models.As shown in the {\bf Figure \ref{fig1-1}}, 
+{\bf TAN (Tree Augmented Naive Bayes)} is an extension of Naive Bayes \cite{beiyesi} that allows for tree-like dependency structures between features:
+
+\begin{equation}
+P(Y \mid X) \propto P(Y)\cdot P(X_{root} \mid Y)\cdot \prod_{j\ne root} P(X_j \mid Pa(X_j), Y)
+\end{equation}
+
+\begin{itemize}
+\item$ Y \in \{0, 1\}:$Elimination Flag (0=Not Eliminated, 1=Eliminated)
+
+\item $X = (X_1, X_2, ..., X_n):$feature vetor
+\end{itemize}
+
+To determine the optimal feature dependency structure, we first compute the conditional mutual information between all feature pairs:
+\begin{equation}
+\begin{aligned}
+I(X_i; X_j | Y) = \sum_y \sum_{x_i} \sum_{x_j} P(x_i, x_j, y) \cdot \log\left[ \frac{P(x_i, x_j | y)\cdot P(x_j | y)} {P(x_i | y)} \right]
+\end{aligned}
+\end{equation}
+As shown in the {\bf Figure \ref{fig_1-2}}, conditional mutual information measures the statistical dependence between features $X_i$ and $X_j$ given the category $Y$. A higher value indicates that both features must be considered together when predicting $Y$.
+Using conditional mutual information as edge weights, construct a maximum spanning tree using {\bf Prim's algorithm}.
+
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\caption{Maximum Spanning Tree of Feature Dependency} \label{fig_model1}
+
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=1.0\textwidth]{fig1-1.png}
+\caption{TAN Network Structure} \label{fig1-1}
+ \end{subfigure}\begin{subfigure}{0.4\textwidth}
+\includegraphics[width=1.0\textwidth]{fig1-2.png}
+\caption{Conditional Mutual Information Matrix} \label{fig_1-2}
+\end{subfigure}\\
+
+
+
+
+\end{figure}
+
+
+For a new sample $X = (X_1, X_2, ..., X_n)$, compute the posterior probability via Softmax normalization:
+\begin{equation}
+\begin{aligned}
+P(Y = 1 \mid X) &= \frac{\exp(\ell_1)}{\exp(\ell_0) + \exp(\ell_1)}, \\
+\ell_j &= \log \tilde{P}_j \quad (j=0,1)
+\end{aligned}
+\end{equation}
+
+Convert elimination probability to audience vote score (0--100 points):
+
+\begin{equation}
+\begin{aligned}
+V &= (1 - P( (Y=1) \mid X)) \times 100
+\end{aligned}
+\end{equation}
+
+As shown in the {\bf Figure \ref{fig_1-5}}, this represents the distribution of audience votes.A lower elimination probability indicates higher audience support.
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=1.0\textwidth]{fig1-5.png}
+\caption{Fan Vote Score Distribution} \label{fig_1-5}
+\end{figure}
+After solving the TAN model,as shown in the {\bf Figure \ref{fig_TAN_result}}, the model achieved an {\bf Accuracy Rate} of { $\bf 82.48\%$}  and a {\bf ROC-AUC Value} of {\bf 0.8102}, indicating that the TAN model can effectively distinguish eliminated contestants from those who advanced. The recall for the elimination category was $56.14\%$, indicating the model identified over half of actual eliminations; precision was $46.72\%$, with an F1 score of $51.00\%$. Collectively, these metrics reflect the model's classification capability on the imbalanced dataset (where eliminations constituted only $16.24\%$ of events).
+
+By modeling conditional dependencies between features, the TAN model learned nine significant feature dependency edges in the {\bf Figure \ref{fig_1-4}} (e.g., $week\_rank\rightarrow cumulative\_rank$, 
+$weeks\_participated\rightarrow remaining\_weeks$). These dependencies align with the actual logic of dance competitions—cumulative rankings are highly correlated with weekly rankings, while the number of weeks participated naturally correlates negatively with the number of weeks remaining.
+
+
+\begin{figure}[H] 
+\caption{Confusion Matrix and ROC Curve} 
+\centering
+\label{fig_TAN_result}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{fig1-3.png}
+\caption{Confusion Matrix(TAN Model)} \label{fig_1-3}
+\end{subfigure}\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.8\textwidth]{fig1-4.png}
+\caption{ROC Curve(Area Visualization)} \label{fig_1-4}
+\end{subfigure}\\
+\end{figure}
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.43\textwidth]{fig1-6.png}
+\caption{Feature Importance}\label{fig_1-6}
+\end{figure}
+
+
+
+
+\subsection{SHAP Model}
+The Random Forest classifier, combined with SHAP (SHapley Additive exPlanations) interpretability analysis, infers audience voting scores from elimination results. The Random Forest prediction formula is:
+\begin{equation}
+\begin{aligned}
+\hat{y} = \text{mode} \{h_{1} (x), h_{2} (x), \ldots, h_{k} (x)\}
+\end{aligned}
+\end{equation}
+Here, $h_{k}(x)$ denotes the prediction result of the $k$th decision tree, and $\text{mode}$ represents majority voting.
+For binary classification problems, the elimination probability is calculated as:
+\begin{equation}
+\begin{aligned}
+P\left( (Y=1) \mid x\right) = (1/K) \times \sum_{k} I\left(h_{k}\left(x\right) = 1\right)
+\end{aligned}
+\end{equation}
+
+
+where $K$ is the number of decision trees, and $I(\cdot)$ denotes the indicator function. Based on the elimination probability, the audience voting distribution can be derived using the formula.
+
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \begin{subfigure}[H]    % H表示强制固定在当前位置
+
+% \includegraphics[width=0.4\textwidth]{fig3_rf_confusion_matrix.png}
+
+% \caption{Confusion Matrix(Random Forest Model)} \label{fig3_rf_confusion_matrix}
+% \end{subfigure}\begin{subfigure}[H]    % H表示强制固定在当前位置
+
+% \includegraphics[width=0.4\textwidth]{fig4_rf_roc_curve.png}
+
+% \caption{ROC Curve(Random Forest Model)} \label{fig4_rf_roc_curve}
+% \end{subfigure}\\
+
+% % \includegraphics[width=0.4\textwidth]{fig4_rf_roc_curve.png}
+
+% % \caption{ROC Curve(Random Forest Model)} \label{fig4_rf_roc_curve}
+% \end{figure}
+
+
+
+\begin{figure}[H] 
+\caption{RF Model Confusion Matrix and ROC Curve} 
+\centering
+\label{fig_rf_result}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{fig3_rf_confusion_matrix.png}
+\caption{Confusion Matrix} \label{fig3_rf_confusion_matrix}
+\end{subfigure}\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{fig4_rf_roc_curve.png}
+\caption{ROC Curve} \label{fig4_rf_roc_curve}
+\end{subfigure}\\
+\end{figure}
+
+
+
+
+
+
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.7\textwidth]{fig5_rf_fan_vote_distribution.png}
+
+\caption{Fan Vote Score Distribution(Random Forest Model)} \label{fig5_rf_fan_vote_distribution}
+\end{figure}
+
+
+As shown in the {\bf figure \ref{fig_rf_result}}, the model achieves an {\bf accuracy rate} of $\bf 84.90\%$ and a {\bf ROC-AUC value} of {\bf 0.8860}, outperforming the TAN model across all evaluation metrics. Notably, the recall rate for the elimination category has increased to $76.32\%$, with an F1 score reaching $61.27\%$, indicating that the Random Forest model demonstrates significantly stronger capability in identifying elimination events.
+
+SHAP assigns a “contribution score” to each feature based on the Shapley value from game theory, indicating the feature's impact on the model's prediction.
+The Shapley value is calculated using the following formula:
+\begin{equation}
+ \begin{aligned}
+\phi_{i} &= \sum_{S\subseteq N\backslash\{i\}} [\frac{|S|!(|N|-|S|-1)!}{|N|!}] \times [f(S\cup\{i\}) - f(S)]
+\end{aligned} 
+\end{equation}
+Here, $N$ denotes the feature set, $S$ represents the subset excluding feature $i$, and $f$ is the model's prediction function. Global feature importance is defined as the average of the absolute values of SHAP values across all samples.{\bf Figure \ref{fig2_rf_shap_summary}}  presents a feature importance summary chart, which explains the impact of each feature on the prediction results within the “elimination prediction” model.
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.7\textwidth]{fig2_rf_shap_summary.png}
+
+\caption{SHAP Summary Plot(Random Forest Model)} \label{fig2_rf_shap_summary}
+\end{figure}
+
+\subsection{Model Evaluation}
+\subsubsection{Consistency Test of Two Models}
+By ranking the importance of feature quantities for the two models and conducting consistency analysis, as shown in {\bf Table \ref{tbl2}}, we obtain the following results:
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \centering
+% \includegraphics[width=0.9\textwidth]{fig1_rf_feature_importance.png}
+
+% \caption{Feature Importance Ranking(Random Forest Model)} \label{fig1_rf_feature_importance}
+% \end{figure}
+
+
+
+
+% 三线表
 \begin{table}[H]     % H表示强制固定在当前位置
 \small
 \centering           % 设置居中
-\caption{Notations}  % 表标题
+\caption{Consistency Metrics for the Two Models}  % 表标题
 \label{tbl2}         % 设置表的引用标签
-\begin{tabular}{ll}  % 2列, c表示居中对齐, l和r表示左右对齐
+\begin{tabular}{llp{0.4\textwidth}}  % 2列, c表示居中对齐, l和r表示左右对齐
 \toprule             % 画顶端横线
-{\bf Database Names}     &  {\bf Database Websites}     \\
+\textbf{Consistency Metrics}          & \textbf{Value} & \textbf{Statistical Interpretation} \\  
 \midrule             % 画中间横线
-Los Angeles              & \url{https://geohub.lacity.org/}  \\
-National Risk Index      & \url{https://www.fema.gov/}  \\
-Bureau of the Census     & \url{https://data.census.gov/}  \\
-South Carolina           & \url{https://www.sc.edu/}  \\
-World Bank               & \url{https://data.worldbank.org/}  \\
+Spearman Correlation Coefficient      & 0.8029         & High positive correlation between two models' predictions (p\textless{}0.001) \\
+Pearson Correlation Coefficient       & 0.8359         & Extremely strong linear correlation                                           \\
+Prediction Direction Consistency Rate & 88.76\%        & Nearly 90\% of samples show consistent prediction directions                  \\
+Mean Absolute Error (MAE)             & 13.35         & Prediction differences fall within an acceptable range                        \\
+Feature Ranking Correlation           & 0.9650         & Feature importance rankings are nearly identical \\
 \bottomrule         % 画底部横线
 \end{tabular}
 \end{table}
+
+
+The two models exhibit a highly positive correlation in predicting audience vote scores (Spearman $\rho$ ={\bf 0.8029}, p<0.001,as showed in {\bf Figure \ref{fig6_rf_tan_comparison}}), with an $\bf 88.76\%$ agreement rate in prediction direction. This indicates that despite employing fundamentally different methodologies—TAN using generative probabilistic modeling and RF using discriminative ensemble learning—both models yield highly consistent predictions on identical data.
+
+Furthermore, as shown in {\bf Figure \ref{fig5_rf_fan_vote_distribution} }, both models predicted audience voting scores exhibiting a reasonable bimodal distribution: advancing contestants averaged around 80 points (TAN: 79.42, RF: 81.31), while eliminated contestants averaged approximately 25--30 points. The approximately 55-point difference between the two groups perfectly aligns with the competition's elimination logic (low-scoring contestants are eliminated). The statistical characteristics of the prediction results align with the elimination patterns in the original data, validating the models' validity.
+
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.5\textwidth]{fig6_rf_tan_comparison.png}
+
+\caption{Model Agreement: Random Forest vs TAN} \label{fig6_rf_tan_comparison}
+\end{figure}
+
+
+
+
+
 
 %% 定理类环境
 % \begin{Theorem} \label{thm1}
@@ -266,442 +487,354 @@ World Bank               & \url{https://data.worldbank.org/}  \\
 % \begin{proof}
 % The proof of theorem.
 % \end{proof}
+\subsubsection{Validity Test and Robustness Analysis}
+Stratified 10-fold cross-validation was employed to assess the model's generalization capability. Stratified sampling ensured that the proportion of positive and negative samples in each fold matched the original dataset, thereby mitigating evaluation bias caused by class imbalance.
 
-\subsection{Risk Analysis}
-
-\subsubsection{Expected Annual Loss (EAL)}
-
-The $EAL$ value are in units of dollars, representing the community’s average economic
-loss from natural hazards each year. $EAL$ is calculated using a multiplicative equation that
-considers the consequence risk factors of natural hazard exposure, $HLR$ (Historic Loss Ratio),
-and the likelihood risk factor of natural hazard annualized frequency. The $EAL$ value for each
-consequence type is calculated by multiplying the exposure value of an area by the estimated
-annualized frequency and the $HLR$.
-
-\begin{equation}
-EAL = Exposure \times Annualized~Frequency \times HLR
-\end{equation}
-
-The total $EAL$ value for each hazard type is the sum of three different types of consequences:
-population (P), building (B), and agriculture (A).
-
-\begin{equation}
-EAL_{hazard type} = EAL_{hazard type(P)} + EAL_{hazard type(B)}
- + EAL_{hazard type(A)}
-\end{equation}
-
-We add up the $EAL$ values for $18$ types of hazards to obtain the composite $EAL$ value.
-
-\begin{equation}
-EAL_{composite} = \sum_{i=1}^{18} EAL_{hazard type}
-\end{equation}
-
-In order to describe our process of calculating the value of EAL more clearly. We draw
-the flowchart Figure \ref{fig2} below.
 
 \begin{figure}[H]    % H表示强制固定在当前位置
-\small
 \centering
-\includegraphics[width=0.75\textwidth]{fig2.jpg}
-\caption{Calculation procedure for EAL} \label{fig2}
+\includegraphics[width=1.0\textwidth]{fig_cv_boxplot.png}
+
+\caption{Cross-validation Boxplot} \label{fig_cv_boxplot}
 \end{figure}
 
-A national ranking is computed for the composite $EAL$ value of each community. The
-resulting values are then converted into national percentiles to produce an $EAL$ score for each
-community. The $EAL$ scores are very helpful for the risk calculation in the following text.
 
-\begin{equation}
-EAL_{rank} = \mathrm{rank}(EAL_{composite})
-\end{equation}
+As shown in {\bf Figure \ref{fig_cv_boxplot}}, the average accuracy of the random forest model with 10-fold cross-validation is 0.8524, with a standard deviation of only 0.0213. This indicates the model exhibits stable performance across different data partitions and possesses strong generalization capabilities. The ROC-AUC reaches 0.8906, demonstrating the model's excellent ability to distinguish classification boundaries. Recall (0.6766) exceeds precision (0.5898), indicating the model tends to identify more rejected cases—aligning with the early warning system's design objectives.
 
-\begin{equation}
-EAL_{score} = \frac{EAL_{composite} - \min(EAL_{composite})}{\max(EAL_{composite}) 
-- \min(EAL_{composite})} \times 100\%
-\end{equation}
+% Learning curve analysis is used to assess whether a model is overfitting or underfitting. By observing the trend of training set and validation set accuracy across different training sample sizes, we evaluate the model's learning capability and generalization ability. As shown in {\bf Figure \ref{fig_learning_curve}},the gap between training set accuracy (0.9253) and validation set accuracy (0.8570) is 0.0682, indicating mild overfitting within an acceptable range. As the training sample size increases, the test set accuracy steadily improves, indicating that the model can effectively learn patterns within the data.
 
-\subsubsection{Community Risk Factor (CRF)}
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \centering
+% \includegraphics[width=0.6\textwidth]{fig_learning_curve.png}
 
-To generate a Community Risk Factor CRF (CRF) value for a community, its Social Vulnerability
-(SV) value is divided by its Community Resilience (CR) value.
+% \caption{Learning Curve} \label{fig_learning_curve}
+% \end{figure}
 
-\begin{equation}
-CRF = f\Big( \frac{SV}{CR} \Big)
-\end{equation}
+% A statistical analysis of the residuals between the model's predicted probabilities and the actual labels reveals,as shown in {\bf Figure \ref{fig_residual_analysis}},the mean residual of the predicted probabilities is -0.0959, close to zero, indicating no systematic overestimation or underestimation by the model. The skewness (-0.0851), also near zero, suggests the residual distribution is essentially symmetric. The positive kurtosis (1.5978) indicates that prediction errors are concentrated within a narrow range. Overall, the model's predictions are reliable, and the error distribution is reasonable.
 
-\noindent where $f\Big( \frac{SV}{CR} \Big)$ is a triangular distribution with minimum $0.5$, maximum $2$, and mode $1$.
-The selection process for the CRF involved evaluating various shapes, ranges, and modes.
 
-Considering its ability to highlight communities at both ends of the distribution without attributing
-extreme values to a select few, we use the triangular distribution. It also takes into account
-the $EAL$ as the primary driver of risk, thereby making a mode of 1 the most appropriate choice
-for the $CRF$.
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \centering
+% \includegraphics[width=0.8\textwidth]{fig_residual_analysis.png}
 
-The $SV$ values correspond to SOVI values, while the $CR$ values represent HVRI BRIC
-index for the community, as provided by the source data sets.
+% \caption{Residual Analysis} \label{fig_residual_analysis}
+% \end{figure}
 
-\subsubsection{Risk Calculation}
+Next, robustness testing is conducted by adding Gaussian noise at varying levels (1\%–-20\%) to the input features to assess the model's stability when data contains minor errors. Noise is added proportionally to each feature's standard deviation to simulate measurement errors encountered during actual data acquisition.
 
-In the most general terms, natural hazard risk is often defined as the likelihood (or probability)
-of a natural hazard event happening multiplied by the expected consequence if a natural
-hazard event occurs.
 
-\begin{equation}
-Risk = Likelihood \times consequence
-\end{equation}
 
-To make the level of risk more concrete and exemplified, we estimate risk from two aspects:
-risk value and risk score.
-
-\begin{equation} 
-R_{value} = EAL_{value} \times CRF  \label{eq8}
-\end{equation} 
-
-\begin{equation} 
-R_{score} = EAL_{score} \times CRF  \label{eq9}
-\end{equation} 
-
-\noindent where $R$ represents $Risk$.
-
-This risk equation of $R$ includes three components: a natural hazards risk component, a
-consequence enhancing component, and a consequence reduction component. $EAL$ is the natural
-hazards risk component, measuring the expected loss of building value, population, and/or
-agriculture value each year due to natural hazards. $CRF$ incorporates both the consequence
-enhancing component, denoted as $SV$, and the consequence reduction component, represented
-by $CR$.
-
-For Equation \eqref{eq8}, values for Risk and $EAL$ are in units of dollars, representing the community’s
-average economic loss from natural hazards each year. For $SV$ and $CR$, values are the
-index values for the community provided by the source data sets.
-
-For Equation \eqref{eq9}, each component is represented by a score that represents a community’s
-percentile ranking relative to all other communities at the same level. The composite risk score
-is calculated to measure a community’s risk to all $18$ hazard types. And it is also a community’s
-percentile ranking in risk compared to all other communities at the same level. The risk score
-and $EAL$ score are provided as both composite scores from the summation of all $18$ hazard
-types.
-
-We used the K-algorithm to categorize the disaster levels into five classes, as shown in
-Figure \ref{fig3}.
-
-%% 并排子图
-\begin{figure}[H]    % H表示强制固定在当前位置
-\small
-\centering
-\begin{subfigure}{0.53\textwidth}
-\centering
-\includegraphics[height=5.5cm]{fig3a.png}
-\caption{Risk levels in different regions in U.S.} 
-%\label{fig3a}
-\end{subfigure}
-\begin{subfigure}{0.4\textwidth}
-\centering
-\includegraphics[height=5.5cm]{fig3b.png}
-\caption{Risk level} 
-%\label{fig3b}
-\end{subfigure}
-\caption{Risk rating and map presentation} \label{fig3}
-\end{figure}
-
-\subsection{Insurance Premium}
-
-Generally, the companies adopt the principle of Level Premium to determine the price of
-insurance. The company calculate the pure premium by using a pre-determined claim rate and
-a desired return on investment. The total premium is then obtained by adding surcharges at a
-certain expense ratio. Then, the total premium is obtained by adding surcharges at a certain
-expense ratio. Insurance companies increase their profitability by increasing expense ratios and
-reducing expected returns on investment. In addition, they utilize the ‘Law of Large Numbers’
-to set the overall payout ratio of the product so that it basically matches the statistical data, thus
-reducing the company's exposure to the risk of fluctuating payout ratios. For catastrophe insurance
-pricing, a natural disaster can cause huge property damage when it occurs. The insurance
-company may have a risk of becoming insolvent.
-
-In finance, the capital asset pricing model (CAPM) is a model used to determine a theoretically
-appropriate required rate of return of an asset, to make decisions about adding assets
-to a well-diversified portfolio \cite{li2002}.
-
-The reward-to-risk ratio for any individual security in the market is equal to the market
-reward-to-risk ratio, thus
-
-\begin{equation}
-\frac{E(r_i)-r_f}{\beta_i} = E(r_m)-r_f
-\end{equation}
-
-\begin{equation}
-\beta_i = \frac{\mathrm{Cov}(R_i,R_m)}{\mathrm{Var}(R_m)} = \rho(i,m) \frac{\sigma_i}{\sigma_m}
-\end{equation}
-
-\noindent where
-
-\begin{itemize}
-\item $E(r_{i})$ is the expected return on the capital asset,
-\item $E(r_{m})$ is the expected return of the market,
-\item $r_{f}$ is the risk-free rate of interest such as interest arising from government bonds,
-\item $\beta_{i}$ is the sensitivity of the expected excess asset returns to the expected excess market returns,
-\item $\rho(i,m)$ denotes the correlation coefficient between the investment $i$ and the market $m$,
-\item $\sigma_{i}$ is the standard deviation for the investment $i$,
-\item $\sigma_m$ is the standard deviation for the investment $m$.
-\end{itemize}
-
-Expected return on investment (ROI):
-
-\begin{equation}
-ROI = \int \frac{-A \times l(p)+(1+x)A \times R_{Value}-I}{I}f(p) \mathrm{d}p
-\end{equation}
-
-Variance of ROI:
-
-\begin{equation}
-\mathrm{Var}(ROI) = \int \bigg[\frac{-A \times l(p)+A(1+x) \times R_{value}-l-(Ax \times 
-R_{value}-l)}{I}\bigg]^2 f(p) \mathrm{d}p
-\end{equation}
-
-\noindent where
-
-\begin{itemize}
-\item $A$ is the sum insured,
-\item $I$ is the invested capital,
-\item $l(p)$ is the loss function,
-\item $x$ is the surcharge rate.
-\end{itemize}
-
-The surcharge rate $x$ is a multiple of the average value of the loss:
-
-\begin{equation}
-x = \frac{\Big(1+r_f+\rho \times \frac{(A/I) \times \sigma}{\sigma_M} \times 
-(r_M-r_f) \Big) \times I}{A \times R_{value}} \label{eq14}
-\end{equation}
-
-where $\sigma$ is the Standard deviation of $R_{value}$, $y$ is Pure premium per $\$10,000$:
-
-\begin{equation}
-y = 10000(1+x) \times P
-\end{equation}
-
-\noindent where $P$ is the probability of a disaster causing damage.
-
-Typically, it is more reasonable to spend $3-10$ percent of each person's annual income on
-insurance.We assume that each person is willing to spend $5\%$ of his or her annual income each
-year to purchase catastrophe insurance with a one-year term. Insurance companies can make
-decisions from two perspectives based on the above formula:
-
-\begin{itemize}
-\item Introducing bankruptcy theory, after calculating the lowest order price, y, in the case
-where the probability of the firm's future bankruptcy is less than $10\%$, and then comparing
-it to the local per capita annual disposable income (GNI), it is expected that
-people in the locality will not be able to afford to consume catastrophe insurance and
-will not invest in it if the ratio of premiums per $10,000$ to GNI is greater than $5\%$.
-
-\item We use $5\%$ of the local national GNI per capita as the subscription price per $\$10,000$
-of premium. If this price makes the likelihood of future insolvency of the company
-higher than $10\%$, no investment is made in that location.
-\end{itemize}
-
-The price of insurance also affects people's desire to buy to some extent, and an increase
-in the price of insurance may lead to a decrease in their desire to buy.
-
-\begin{equation}
-N = (1-\omega y) N_A
-\end{equation}
-
-\begin{equation}
-Total~Revenue = y \times N
-\end{equation}
-
-\noindent where
-
-\begin{itemize}
-\item $N_A$ is the total local population,
-\item $N$ is the number of local people with a strong desire to buy,
-\item $\omega$ is the factor that influences the price of insurance on the willingness of locals to buy, and is related to the average disposable income of locals as well as the gap between the rich and the poor,
-\item $Total~Revenue$ is the projected total local insurance revenue.
-\end{itemize}
-
-The company first determines the area in which it wants to invest money to build the
-insurance and then determines the price of local insurance. We would like to maximize the
-company's total revenue:
-
-\begin{equation}
-\begin{aligned}
-& \max ~~ Total~Revenue \\
-& \text{s.t.} ~~ 
-\begin{cases}                % cases环境生成左大括号
-0 < \omega y < 1 \\
-y \geqslant y_{10} \\
-y < 0.05 \times GNI
-\end{cases}
-\end{aligned}
-\end{equation}
-
-where $y_{10}$ is the price of insurance when the firm's insolvency rate is $10$ percent.
-
-Our model is implemented in Gorontalo, Indonesia and Los Angeles, California. This is
-because both locations have similar and high risk indices, with Los Angeles having the highest
-disaster risk index in the United States.
-
-%% 并排放两个子图
-\begin{figure}[H]      % H表示强制固定在当前位置
-\small
-\centering
-\begin{subfigure}{0.5\textwidth}
-\centering
-\includegraphics[height=5.5cm]{fig4a.jpg}
-\caption{Gorontalo}    % \label{fig4a}
-\end{subfigure}
-\begin{subfigure}{0.45\textwidth}
-\centering
-\includegraphics[height=5.5cm]{fig4b.jpg}
-\caption{Los Angeles}   % \label{fig4b}
-\end{subfigure}
-\caption{Location of the two areas on the map} \label{fig4}
-\end{figure}
-
-After searching for relevant data, we calculated that in order to ensure that the probability
-of the company's bankruptcy after investing in catastrophe insurance in Gorontalo is less than
-$10\%$, we need to charge a premium of $\$342.745$ for every $\$10,000$ of coverage, which is calculated
-in equation \eqref{eq14}, of which $\$283.465$ is the pure premium and $\$59.28$ is the additional
-premium. Searching for relevant information we find that $5\%$ of the per capita disposable income (GNI) of 
-Gorontalo is only $\$137.25$, so the likelihood of residents being willing to purchase
-catastrophe insurance is low and the company should not invest in catastrophe insurance
-in the area.
-
-In order to ensure that the probability of insolvency of the company after investing in
-catastrophe insurance in Los Angeles is less than $10\%$, through the formula \eqref{eq14} 
-calculated that for every $\$10,000$ of coverage need to charge a premium of $\$295.09$ of 
-which the pure premium is $\$200$ and the additional premium is $\$95.09$ (because of the higher 
-return on investment in the market in the U.S.). The per capita disposable income in 
-Los Angeles ($5\%$ of GNI is $\$3,162.65$), which is much higher than the cost of catastrophe 
-insurance. In order to determine the most appropriate cost of insurance to earn a greater benefit, 
-we plotted the trend of total premium income as a function of premiums.
 
 \begin{figure}[H]    % H表示强制固定在当前位置
-\small
 \centering
-\includegraphics[width=0.5\textwidth]{fig5.jpg}
-\caption{Relationship between company revenue and insurance price in Los Angeles} \label{fig5}
+\includegraphics[width=0.8\textwidth]{fig_robustness_noise.png}
+
+\caption{Robustness Analysis: Noise Injection} \label{fig_robustness_noise}
 \end{figure}
+After adding 5\% noise to the data, the model's accuracy changed by only 0.43\%, and the ROC-AUC changed by 0.0060. After adding 10\% noise, the accuracy changed by +1.00\%. This indicates that the model possesses strong robustness against interference and can still reliably output stable results even when actual data contains minor measurement errors.
 
-From the Figure \ref{fig5}, it can be seen that with the increase of premiums, the total income of
-insurance companies tends to increase first and then decrease. This is because when the premium
-is too low, although the number of insured people is high, the amount of single transaction
-is small and the number of guarantees is too high, which leads to a higher risk of bankruptcy
-of the insurance company; whereas too high a premium will reduce the consumer's expectations
-of catastrophe insurance, and the volume of insurance orders will be small.
+% %% 并排子图
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \small
+% \centering
+% \begin{subfigure}{0.53\textwidth}
+% \centering
+% \includegraphics[height=5.5cm]{fig3a.png}
+% \caption{Risk levels in different regions in U.S.} 
+% %\label{fig3a}
+% \end{subfigure}
+% \begin{subfigure}{0.4\textwidth}
+% \centering
+% \includegraphics[height=5.5cm]{fig3b.png}
+% \caption{Risk level} 
+% %\label{fig3b}
+% \end{subfigure}
+% \caption{Risk rating and map presentation} \label{fig3}
+% \end{figure}
 
-In summary, for Los Angeles, a premium of about $2,500$ per $\$10,000$ of coverage can be
-used, and $1.92$ million people are expected to purchase the company's catastrophe insurance
-(the total population of Los Angeles is about $3.79$ million). At this point, the insurance company's
-theoretical revenue would be around $\$4.5$ billion. Although Los Angeles has a high risk
-index, the profits are equally attractive, so the insurance company could take the risk of launching
-its catastrophe insurance business here.
 
-\subsection{Measures}
 
-\subsubsection{Insurance Securitization}
 
-Catastrophe bonds are risk-linked securities that transfer a specified set of risks from a
-sponsor to investors. Catastrophe bonds emerged from a need by insurance companies to alleviate
-some of the risks they would face if a major catastrophe occurred, which would incur
-damages that they could not cover by the invested premiums \cite{jaffee1997, froot1999}. An insurance company issues
-bonds through an investment bank, which are then sold to investors. These bonds are inherently
-risky, and usually have maturities less than 3 years. If no catastrophe occurred, the insurance
-company would pay a coupon to the investors. But if a catastrophe did occur, then the principal
-would be forgiven and the insurance company would use this money to pay their claim-holders.
 
-\begin{figure}[H]    % H表示强制固定在当前位置
-\small
-\centering
-\includegraphics[width=0.65\textwidth]{fig6.jpg}
-\caption{Insurance securitization schema} \label{fig6}
-\end{figure}
+% \begin{equation}
+% \frac{E(r_i)-r_f}{\beta_i} = E(r_m)-r_f
+% \end{equation}
 
-From an economic perspective, the securitization of insurance, particularly through instruments
-like catastrophe bonds, represents a significant innovation in the capital markets.
-This innovation not only diversifies investment opportunities but also plays a crucial role in
-enhancing the resilience of the insurance industry against catastrophic events. Catastrophe
-bonds allow insurance companies to transfer the risk of extreme events, such as natural disasters,
-to the capital markets, thereby reducing their potential liability and improving their solvency.
-This mechanism enables insurance firms to manage their risk exposure more effectively
-and to maintain stability in the face of potentially ruinous events. By doing so, it also ensures
-that insurance companies can continue to offer coverage for risks that might otherwise be uninsurable
-due to their catastrophic potential.
+% \begin{equation}
+% \beta_i = \frac{\mathrm{Cov}(R_i,R_m)}{\mathrm{Var}(R_m)} = \rho(i,m) \frac{\sigma_i}{\sigma_m}
+% \end{equation}
 
-\subsubsection{Co-operation with the Government}
+% \noindent where
 
-The government plays an important role in the country. The government can make some
-appealing policies to stimulate people to buy insurance and cooperate with insurance companies
-to undertake part of the risk. When people buy insurance, individuals are only required to bear part of the premium. The remainder is subsidized by the various levels of government. If
-necessary, special groups of people may be fully covered by government finances \cite{michel2011}. When a
-catastrophe occurs, the government can act as a reinsurer and bear part of the amount of compensation.
-If the amount of compensation is small, the insurance company will pay directly.
-Otherwise, it can be covered or partially paid by the government. In this way, a multi-layered
-diversification of risk is constructed. It not only brings benefit protection to the people, but also
-drives the development of the insurance industry \cite{aase1992}.
+% % \begin{itemize}
+% % \item $E(r_{i})$ is the expected return on the capital asset,
+% % \item $E(r_{m})$ is the expected return of the market,
+% % \item $r_{f}$ is the risk-free rate of interest such as interest arising from government bonds,
+% % \item $\beta_{i}$ is the sensitivity of the expected excess asset returns to the expected excess market returns,
+% % \item $\rho(i,m)$ denotes the correlation coefficient between the investment $i$ and the market $m$,
+% % \item $\sigma_{i}$ is the standard deviation for the investment $i$,
+% % \item $\sigma_m$ is the standard deviation for the investment $m$.
+% % \end{itemize}
 
-\subsubsection{The Implementation of Measures}
+% Expected return on investment (ROI):
 
-Through the two scenarios described above, the insurance company's market return on
-investment in the Gorontalo region $r_m$ increased. When a natural disaster occurs, the amount
-of compensation paid by the insurance company is shared by the insurance company, the investors
-in the insurance securities, and the local government. In addition, the government subsidizes
-residents for catastrophe insurance, which increases the willingness of residents to purchase
-catastrophe insurance and reduces the actual cost paid by individuals. The insurance
-company can set premiums at the lowest premium ($\$295.09$) that can be assumed under the
-risk of insolvency. We plot the trend of total premium income as a function of premium at this
-point in time.
+% \begin{equation}
+% ROI = \int \frac{-A \times l(p)+(1+x)A \times R_{Value}-I}{I}f(p) \mathrm{d}p
+% \end{equation}
 
-\begin{figure}[H]    % H表示强制固定在当前位置
-\small
-\centering
-\includegraphics[width=0.5\textwidth]{fig7.jpg}
-\caption{The Analog trend of total premium income in Gorontalo} \label{fig7}
-\end{figure}
+% Variance of ROI:
 
-As we can see from the picture. Under the company's affordable insolvency risk, the insurer
-expects maximum revenues of $\$245$ million. The company expects maximum revenue is
-$\$245$ million. At this time ,each $\$10,000$ of insurance amount charges $\$295.09$ of insurance
-premiums. We expect $830,255$ people (about $73.26\%$ of the total population) to have catastrophic
-insurance. Gorontalo residents pay only $\$137.25$ individually, and the remainder is
-subsidized by the Gorontalo government. The government guarantees the legal rights of Gorontalo
-residents as well as their social welfare.
+% \begin{equation}
+% \mathrm{Var}(ROI) = \int \bigg[\frac{-A \times l(p)+A(1+x) \times R_{value}-l-(Ax \times 
+% R_{value}-l)}{I}\bigg]^2 f(p) \mathrm{d}p
+% \end{equation}
 
-\subsection{Real Estate Decision Making}
+% \noindent where
 
-Our insurance model has a significant impact on the development decisions of real estate developers. Based on the above model derivation, it can be learned that for areas with high
-natural disasters and low per capita income, if the insurance company is willing to underwrite
-policies, it will result in the high bankruptcy rate of the company not being able to realize
-profitability \cite{blanchard1994}. Similarly, real estate developers will not choose the area for investment and development
-due to high risk and lack of demand. That is, any area with high R value and income
-(GNI) below a certain value is not recommended for real estate developers to invest in. In
-addition to this, such areas have the following risk factors: 
+% \begin{itemize}
+% \item $A$ is the sum insured,
+% \item $I$ is the invested capital,
+% \item $l(p)$ is the loss function,
+% \item $x$ is the surcharge rate.
+% \end{itemize}
 
-\begin{figure}[H]    % H表示强制固定在当前位置
-\small
-\centering
-\includegraphics[width=0.5\textwidth]{fig8.jpg}
-\caption{Risk factors} \label{fig8}
-\end{figure}
+% The surcharge rate $x$ is a multiple of the average value of the loss:
 
-Further applying our model, we can calculate the insurance rate, which is the insurance
-premium divided by insurance amount. If the area has a high insurance rate by calculating,
-the property developer would have to bear a higher insurance cost during the construction of
-the building as well as during the unsold period. Therefore, property developers need to carefully
-consider and weigh the future profit and loss before making decisions.
+% \begin{equation}
+% x = \frac{\Big(1+r_f+\rho \times \frac{(A/I) \times \sigma}{\sigma_M} \times 
+% (r_M-r_f) \Big) \times I}{A \times R_{value}} \label{eq14}
+% \end{equation}
 
-Similarly, in other areas, we can calculate local insurance rates based on our model. According
-to this indicator, property developer can further determine the cost of developing land
-in local area and buying insurance. In this way we provide a reference for the property developer’s
-decision making.
+% where $\sigma$ is the Standard deviation of $R_{value}$, $y$ is Pure premium per $\$10,000$:
 
-Additionally, our model can also provide guidance about how property developers build
-construction. For each of the $18$ hazard types, we can calculate the value of EAL and Rvalue (in
-dollars) for each hazard type. We find a positive correlation between EAL and Rvalue to some
-extent. Thus, property developers can determine the different major hazrard type for each area
-based on Rvalue and thus build different types of homes. For example, in the city of New Orleans,
-USA, flooding ranks high on the list of $18$ natural disasters in terms of Rvalue. Accordingly,
-many property companies, such as American Restorators LLC, are building houses with high
-foundations locally to minimize damage and achieve business profitability. Our model solves
-the problem about how to build on certain site. This approach not only maintains the interests
-of real property developers, but also protects the lives of people in the community.
+% \begin{equation}
+% y = 10000(1+x) \times P
+% \end{equation}
+
+% \noindent where $P$ is the probability of a disaster causing damage.
+
+% Typically, it is more reasonable to spend $3-10$ percent of each person's annual income on
+% insurance.We assume that each person is willing to spend $5\%$ of his or her annual income each
+% year to purchase catastrophe insurance with a one-year term. Insurance companies can make
+% decisions from two perspectives based on the above formula:
+
+% \begin{itemize}
+% \item Introducing bankruptcy theory, after calculating the lowest order price, y, in the case
+% where the probability of the firm's future bankruptcy is less than $10\%$, and then comparing
+% it to the local per capita annual disposable income (GNI), it is expected that
+% people in the locality will not be able to afford to consume catastrophe insurance and
+% will not invest in it if the ratio of premiums per $10,000$ to GNI is greater than $5\%$.
+
+% \item We use $5\%$ of the local national GNI per capita as the subscription price per $\$10,000$
+% of premium. If this price makes the likelihood of future insolvency of the company
+% higher than $10\%$, no investment is made in that location.
+% \end{itemize}
+
+% The price of insurance also affects people's desire to buy to some extent, and an increase
+% in the price of insurance may lead to a decrease in their desire to buy.
+
+% \begin{equation}
+% N = (1-\omega y) N_A
+% \end{equation}
+
+% \begin{equation}
+% Total~Revenue = y \times N
+% \end{equation}
+
+% \noindent where
+
+% \begin{itemize}
+% \item $N_A$ is the total local population,
+% \item $N$ is the number of local people with a strong desire to buy,
+% \item $\omega$ is the factor that influences the price of insurance on the willingness of locals to buy, and is related to the average disposable income of locals as well as the gap between the rich and the poor,
+% \item $Total~Revenue$ is the projected total local insurance revenue.
+% \end{itemize}
+
+% The company first determines the area in which it wants to invest money to build the
+% insurance and then determines the price of local insurance. We would like to maximize the
+% company's total revenue:
+
+% \begin{equation}
+% \begin{aligned}
+% & \max ~~ Total~Revenue \\
+% & \text{s.t.} ~~ 
+% \begin{cases}                % cases环境生成左大括号
+% 0 < \omega y < 1 \\
+% y \geqslant y_{10} \\
+% y < 0.05 \times GNI
+% \end{cases}
+% \end{aligned}
+% \end{equation}
+
+% where $y_{10}$ is the price of insurance when the firm's insolvency rate is $10$ percent.
+
+% Our model is implemented in Gorontalo, Indonesia and Los Angeles, California. This is
+% because both locations have similar and high risk indices, with Los Angeles having the highest
+% disaster risk index in the United States.
+
+% %% 并排放两个子图
+% \begin{figure}[H]      % H表示强制固定在当前位置
+% \small
+% \centering
+% \begin{subfigure}{0.5\textwidth}
+% \centering
+% \includegraphics[height=5.5cm]{fig4a.jpg}
+% \caption{Gorontalo}    % \label{fig4a}
+% \end{subfigure}
+% \begin{subfigure}{0.45\textwidth}
+% \centering
+% \includegraphics[height=5.5cm]{fig4b.jpg}
+% \caption{Los Angeles}   % \label{fig4b}
+% \end{subfigure}
+% \caption{Location of the two areas on the map} \label{fig4}
+% \end{figure}
+
+% After searching for relevant data, we calculated that in order to ensure that the probability
+% of the company's bankruptcy after investing in catastrophe insurance in Gorontalo is less than
+% $10\%$, we need to charge a premium of $\$342.745$ for every $\$10,000$ of coverage, which is calculated
+% in equation \eqref{eq14}, of which $\$283.465$ is the pure premium and $\$59.28$ is the additional
+% premium. Searching for relevant information we find that $5\%$ of the per capita disposable income (GNI) of 
+% Gorontalo is only $\$137.25$, so the likelihood of residents being willing to purchase
+% catastrophe insurance is low and the company should not invest in catastrophe insurance
+% in the area.
+
+% In order to ensure that the probability of insolvency of the company after investing in
+% catastrophe insurance in Los Angeles is less than $10\%$, through the formula \eqref{eq14} 
+% calculated that for every $\$10,000$ of coverage need to charge a premium of $\$295.09$ of 
+% which the pure premium is $\$200$ and the additional premium is $\$95.09$ (because of the higher 
+% return on investment in the market in the U.S.). The per capita disposable income in 
+% Los Angeles ($5\%$ of GNI is $\$3,162.65$), which is much higher than the cost of catastrophe 
+% insurance. In order to determine the most appropriate cost of insurance to earn a greater benefit, 
+% we plotted the trend of total premium income as a function of premiums.
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \small
+% \centering
+% \includegraphics[width=0.5\textwidth]{fig5.jpg}
+% \caption{Relationship between company revenue and insurance price in Los Angeles} \label{fig5}
+% \end{figure}
+
+% From the Figure \ref{fig5}, it can be seen that with the increase of premiums, the total income of
+% insurance companies tends to increase first and then decrease. This is because when the premium
+% is too low, although the number of insured people is high, the amount of single transaction
+% is small and the number of guarantees is too high, which leads to a higher risk of bankruptcy
+% of the insurance company; whereas too high a premium will reduce the consumer's expectations
+% of catastrophe insurance, and the volume of insurance orders will be small.
+
+% In summary, for Los Angeles, a premium of about $2,500$ per $\$10,000$ of coverage can be
+% used, and $1.92$ million people are expected to purchase the company's catastrophe insurance
+% (the total population of Los Angeles is about $3.79$ million). At this point, the insurance company's
+% theoretical revenue would be around $\$4.5$ billion. Although Los Angeles has a high risk
+% index, the profits are equally attractive, so the insurance company could take the risk of launching
+% its catastrophe insurance business here.
+
+
+
+
+
+% Catastrophe bonds are risk-linked securities that transfer a specified set of risks from a
+% sponsor to investors. Catastrophe bonds emerged from a need by insurance companies to alleviate
+% some of the risks they would face if a major catastrophe occurred, which would incur
+% damages that they could not cover by the invested premiums \cite{jaffee1997, froot1999}. An insurance company issues
+% bonds through an investment bank, which are then sold to investors. These bonds are inherently
+% risky, and usually have maturities less than 3 years. If no catastrophe occurred, the insurance
+% company would pay a coupon to the investors. But if a catastrophe did occur, then the principal
+% would be forgiven and the insurance company would use this money to pay their claim-holders.
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \small
+% \centering
+% \includegraphics[width=0.65\textwidth]{fig6.jpg}
+% \caption{Insurance securitization schema} \label{fig6}
+% \end{figure}
+
+% From an economic perspective, the securitization of insurance, particularly through instruments
+% like catastrophe bonds, represents a significant innovation in the capital markets.
+% This innovation not only diversifies investment opportunities but also plays a crucial role in
+% enhancing the resilience of the insurance industry against catastrophic events. Catastrophe
+% bonds allow insurance companies to transfer the risk of extreme events, such as natural disasters,
+% to the capital markets, thereby reducing their potential liability and improving their solvency.
+% This mechanism enables insurance firms to manage their risk exposure more effectively
+% and to maintain stability in the face of potentially ruinous events. By doing so, it also ensures
+% that insurance companies can continue to offer coverage for risks that might otherwise be uninsurable
+% due to their catastrophic potential.
+
+
+
+% The government plays an important role in the country. The government can make some
+% appealing policies to stimulate people to buy insurance and cooperate with insurance companies
+% to undertake part of the risk. When people buy insurance, individuals are only required to bear part of the premium. The remainder is subsidized by the various levels of government. If
+% necessary, special groups of people may be fully covered by government finances \cite{michel2011}. When a
+% catastrophe occurs, the government can act as a reinsurer and bear part of the amount of compensation.
+% If the amount of compensation is small, the insurance company will pay directly.
+% Otherwise, it can be covered or partially paid by the government. In this way, a multi-layered
+% diversification of risk is constructed. It not only brings benefit protection to the people, but also
+% drives the development of the insurance industry \cite{aase1992}.
+
+
+
+% Through the two scenarios described above, the insurance company's market return on
+% investment in the Gorontalo region $r_m$ increased. When a natural disaster occurs, the amount
+% of compensation paid by the insurance company is shared by the insurance company, the investors
+% in the insurance securities, and the local government. In addition, the government subsidizes
+% residents for catastrophe insurance, which increases the willingness of residents to purchase
+% catastrophe insurance and reduces the actual cost paid by individuals. The insurance
+% company can set premiums at the lowest premium ($\$295.09$) that can be assumed under the
+% risk of insolvency. We plot the trend of total premium income as a function of premium at this
+% point in time.
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \small
+% \centering
+% \includegraphics[width=0.5\textwidth]{fig7.jpg}
+% \caption{The Analog trend of total premium income in Gorontalo} \label{fig7}
+% \end{figure}
+
+% As we can see from the picture. Under the company's affordable insolvency risk, the insurer
+% expects maximum revenues of $\$245$ million. The company expects maximum revenue is
+% $\$245$ million. At this time ,each $\$10,000$ of insurance amount charges $\$295.09$ of insurance
+% premiums. We expect $830,255$ people (about $73.26\%$ of the total population) to have catastrophic
+% insurance. Gorontalo residents pay only $\$137.25$ individually, and the remainder is
+% subsidized by the Gorontalo government. The government guarantees the legal rights of Gorontalo
+% residents as well as their social welfare.
+
+
+% Our insurance model has a significant impact on the development decisions of real estate developers. Based on the above model derivation, it can be learned that for areas with high
+% natural disasters and low per capita income, if the insurance company is willing to underwrite
+% policies, it will result in the high bankruptcy rate of the company not being able to realize
+% profitability \cite{blanchard1994}. Similarly, real estate developers will not choose the area for investment and development
+% due to high risk and lack of demand. That is, any area with high R value and income
+% (GNI) below a certain value is not recommended for real estate developers to invest in. In
+% addition to this, such areas have the following risk factors: 
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \small
+% \centering
+% \includegraphics[width=0.5\textwidth]{fig8.jpg}
+% \caption{Risk factors} \label{fig8}
+% \end{figure}
+
+% Further applying our model, we can calculate the insurance rate, which is the insurance
+% premium divided by insurance amount. If the area has a high insurance rate by calculating,
+% the property developer would have to bear a higher insurance cost during the construction of
+% the building as well as during the unsold period. Therefore, property developers need to carefully
+% consider and weigh the future profit and loss before making decisions.
+
+% Similarly, in other areas, we can calculate local insurance rates based on our model. According
+% to this indicator, property developer can further determine the cost of developing land
+% in local area and buying insurance. In this way we provide a reference for the property developer’s
+% decision making.
+
+% Additionally, our model can also provide guidance about how property developers build
+% construction. For each of the $18$ hazard types, we can calculate the value of EAL and Rvalue (in
+% dollars) for each hazard type. We find a positive correlation between EAL and Rvalue to some
+% extent. Thus, property developers can determine the different major hazrard type for each area
+% based on Rvalue and thus build different types of homes. For example, in the city of New Orleans,
+% USA, flooding ranks high on the list of $18$ natural disasters in terms of Rvalue. Accordingly,
+% many property companies, such as American Restorators LLC, are building houses with high
+% foundations locally to minimize damage and achieve business profitability. Our model solves
+% the problem about how to build on certain site. This approach not only maintains the interests
+% of real property developers, but also protects the lives of people in the community.
 
 \section{Building Preservation Model}
 
@@ -1127,14 +1260,7 @@ disaster risks, and provides a way to price insurance.
 {\bf Data Dependency:} Although the model has a high demand for data quality, it reflects our
 scientific attitude of pursuing accuracy and real-time performance. By working with data providers,
 we can continuously optimize the data collection and processing process.\cite{guo2024haier}
-\begin{equation}
-\left\{
-\begin{aligned}
-\cos^2{x}+\sin^2{x} &= 1 \\
-2x^2+4y+5 &= 0
-\end{aligned}
-\right.
-\end{equation}
+
 
 {\bf Model Assumptions:} The model relies on certain assumptions that may not hold true in
 \printbibliography
