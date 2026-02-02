@@ -1,0 +1,356 @@
+<mxfile host="app.diagrams.net" modified="2026-02-01T12:00:00.000Z" agent="5.0" etag="workflow" version="21.0.0" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="DWTS Analysis Workflow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;Dancing with the Stars: Comprehensive Analysis Framework&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Source -->
+        <mxCell id="data_source" value="&lt;b&gt;Raw Data&lt;/b&gt;&lt;br&gt;2026 MCM Problem C&lt;br&gt;34 Seasons | 408 Contestants&lt;br&gt;2777 Records" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="720" y="80" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Preprocessing -->
+        <mxCell id="preprocessing" value="&lt;b&gt;Data Preprocessing&lt;/b&gt;&lt;br&gt;• Missing Value Imputation&lt;br&gt;• Feature Engineering&lt;br&gt;• Score Normalization&lt;br&gt;• Competition Week Encoding" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="700" y="200" width="200" height="90" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow: Data to Preprocessing -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="data_source" target="preprocessing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Q1 Section -->
+        <mxCell id="q1_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;shadow=1;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="340" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="q1_title" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Q1: Fan Vote Prediction&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="350" width="300" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q1_bayesian" value="&lt;b&gt;Bayesian Network&lt;/b&gt;&lt;br&gt;(TAN Structure)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="390" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q1_rf" value="&lt;b&gt;Random Forest&lt;/b&gt;&lt;br&gt;(Ensemble Learning)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="230" y="390" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q1_validation" value="&lt;b&gt;Model Validation&lt;/b&gt;&lt;br&gt;• 5-Fold Cross Validation&lt;br&gt;• Confusion Matrix&lt;br&gt;• ROC-AUC Analysis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="460" width="200" height="70" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q1_shap" value="&lt;b&gt;SHAP Explainability&lt;/b&gt;&lt;br&gt;Feature Importance Analysis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="545" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q1_result" value="&lt;b&gt;Output:&lt;/b&gt; Predicted Fan Vote Categories&lt;br&gt;(High/Medium/Low)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="615" width="240" height="45" as="geometry" />
+        </mxCell>
+        
+        <!-- Q1 Internal Arrows -->
+        <mxCell id="q1_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#d6b656;" edge="1" parent="1" source="q1_bayesian" target="q1_validation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q1_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#d6b656;" edge="1" parent="1" source="q1_rf" target="q1_validation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q1_arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#d6b656;" edge="1" parent="1" source="q1_validation" target="q1_shap">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q1_arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#d6b656;" edge="1" parent="1" source="q1_shap" target="q1_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Q2 Section -->
+        <mxCell id="q2_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;shadow=1;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="420" y="340" width="360" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="q2_title" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Q2: Elimination &amp;amp; Ranking Prediction&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="440" y="350" width="320" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q2_elim" value="&lt;b&gt;Elimination Prediction&lt;/b&gt;&lt;br&gt;Multi-class Classification&lt;br&gt;(XGBoost + LightGBM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="390" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q2_rank" value="&lt;b&gt;Final Ranking Prediction&lt;/b&gt;&lt;br&gt;Regression + Ranking&lt;br&gt;(Gradient Boosting)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="610" y="390" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q2_feature" value="&lt;b&gt;Feature Engineering&lt;/b&gt;&lt;br&gt;• Historical Performance&lt;br&gt;• Relative Ranking&lt;br&gt;• Score Trajectory&lt;br&gt;• Week Position" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="470" width="200" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q2_ensemble" value="&lt;b&gt;Ensemble Learning&lt;/b&gt;&lt;br&gt;Voting + Stacking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="565" width="200" height="45" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q2_result" value="&lt;b&gt;Output:&lt;/b&gt;&lt;br&gt;Elimination Accuracy: 61.6%&lt;br&gt;Ranking Correlation: 0.89" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="625" width="240" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Q2 Internal Arrows -->
+        <mxCell id="q2_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#82b366;" edge="1" parent="1" source="q2_elim" target="q2_feature">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q2_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#82b366;" edge="1" parent="1" source="q2_rank" target="q2_feature">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q2_arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#82b366;" edge="1" parent="1" source="q2_feature" target="q2_ensemble">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q2_arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#82b366;" edge="1" parent="1" source="q2_ensemble" target="q2_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Q3 Section -->
+        <mxCell id="q3_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;shadow=1;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="820" y="340" width="340" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="q3_title" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Q3: Judge-Fan Correlation Analysis&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="840" y="350" width="300" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q3_corr" value="&lt;b&gt;Correlation Analysis&lt;/b&gt;&lt;br&gt;• Spearman Correlation&lt;br&gt;• Kendall-tau&lt;br&gt;• Rolling Window" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="390" width="140" height="70" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q3_temporal" value="&lt;b&gt;Temporal Dynamics&lt;/b&gt;&lt;br&gt;• Cross-Season Trend&lt;br&gt;• Within-Season Evolution" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="390" width="140" height="70" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q3_divergence" value="&lt;b&gt;Divergence Detection&lt;/b&gt;&lt;br&gt;• Controversial Contestants&lt;br&gt;• Score Discrepancy Index&lt;br&gt;• Anomaly Identification" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="890" y="480" width="200" height="75" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q3_factors" value="&lt;b&gt;Influencing Factors&lt;/b&gt;&lt;br&gt;• Celebrity Type&lt;br&gt;• Competition Stage&lt;br&gt;• Historical Patterns" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="890" y="570" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q3_result" value="&lt;b&gt;Output:&lt;/b&gt; Correlation Coefficient = 0.647&lt;br&gt;Moderate Positive Correlation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="870" y="645" width="240" height="45" as="geometry" />
+        </mxCell>
+        
+        <!-- Q3 Internal Arrows -->
+        <mxCell id="q3_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;" edge="1" parent="1" source="q3_corr" target="q3_divergence">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q3_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;" edge="1" parent="1" source="q3_temporal" target="q3_divergence">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q3_arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;" edge="1" parent="1" source="q3_divergence" target="q3_factors">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q3_arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#6c8ebf;" edge="1" parent="1" source="q3_factors" target="q3_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Q4 Section -->
+        <mxCell id="q4_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;shadow=1;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="340" width="360" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="q4_title" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Q4: KMDR Fairness-Enhanced Fusion&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=#e1d5e7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1220" y="350" width="320" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q4_theory" value="&lt;b&gt;Voting Theory Foundation&lt;/b&gt;&lt;br&gt;• Borda Count&lt;br&gt;• Condorcet Method&lt;br&gt;• Metric Distortion&lt;br&gt;• Kemeny Aggregation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="390" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q4_dynamic" value="&lt;b&gt;Dynamic Weighting&lt;/b&gt;&lt;br&gt;Early: 0.75 Judge&lt;br&gt;Mid: 0.60 Judge&lt;br&gt;Late: 0.50 Judge" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="390" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q4_kmdr" value="&lt;b&gt;KMDR Model&lt;/b&gt;&lt;br&gt;S = Borda + β·Condorcet - α·Distortion&lt;br&gt;α=0.4, β=0.6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="490" width="220" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q4_valid" value="&lt;b&gt;Sensitivity &amp;amp; Validity&lt;/b&gt;&lt;br&gt;• α-β Grid Search&lt;br&gt;• K-Fold CV: 20.1%±3.2%&lt;br&gt;• Bootstrap 95% CI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="555" width="220" height="65" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q4_result" value="&lt;b&gt;Output:&lt;/b&gt; Fairness-Enhanced Ranking&lt;br&gt;Controversy Rate: 0% | Satisfaction: 0.99" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="640" width="260" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Q4 Internal Arrows -->
+        <mxCell id="q4_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;" edge="1" parent="1" source="q4_theory" target="q4_kmdr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q4_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;" edge="1" parent="1" source="q4_dynamic" target="q4_kmdr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q4_arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;" edge="1" parent="1" source="q4_kmdr" target="q4_valid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="q4_arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#9673a6;" edge="1" parent="1" source="q4_valid" target="q4_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections from Preprocessing to Q1-Q4 -->
+        <mxCell id="conn_pre_q1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#333333;dashed=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="preprocessing" target="q1_box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="310" />
+              <mxPoint x="210" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn_pre_q2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#333333;dashed=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="preprocessing" target="q2_box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="310" />
+              <mxPoint x="600" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn_pre_q3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#333333;dashed=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="preprocessing" target="q3_box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="310" />
+              <mxPoint x="990" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="conn_pre_q4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#333333;dashed=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="preprocessing" target="q4_box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="310" />
+              <mxPoint x="1380" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Cross-Question Dependencies -->
+        <mxCell id="dep_q1_q2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#FF6B6B;dashed=1;dashPattern=8 4;startArrow=none;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="q1_result" target="q2_elim">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="638" />
+              <mxPoint x="400" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep_q1_q2_label" value="Fan Vote&lt;br&gt;Prediction" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#FF6B6B;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="385" y="505" width="60" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="dep_q3_q4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#4ECDC4;dashed=1;dashPattern=8 4;startArrow=none;endArrow=classic;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="q3_divergence" target="q4_kmdr">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1170" y="518" />
+              <mxPoint x="1170" y="515" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep_q3_q4_label" value="Divergence&lt;br&gt;Analysis" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#4ECDC4;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1150" y="475" width="60" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Final Integration Box -->
+        <mxCell id="integration" value="&lt;b&gt;Integrated Analysis Framework&lt;/b&gt;&lt;br&gt;&lt;br&gt;Q1 → Q2: Fan vote predictions feed elimination model&lt;br&gt;Q3 → Q4: Divergence patterns inform fairness mechanism&lt;br&gt;&lt;br&gt;All questions contribute to comprehensive DWTS understanding" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="760" width="720" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrows to Integration -->
+        <mxCell id="int_arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="q1_result" target="integration">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="740" />
+              <mxPoint x="500" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="int_arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="q2_result" target="integration">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="740" />
+              <mxPoint x="600" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="int_arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="q3_result" target="integration">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="740" />
+              <mxPoint x="990" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="int_arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="q4_result" target="integration">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1380" y="740" />
+              <mxPoint x="1100" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;strokeWidth=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="760" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="&lt;b&gt;Legend&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="765" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_q1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="50" y="790" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_q1_text" value="Q1: Prediction" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="75" y="787" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_q2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="50" y="810" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_q2_text" value="Q2: Elimination" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="75" y="807" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_q3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="165" y="790" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_q3_text" value="Q3: Correlation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="190" y="787" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_q4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="165" y="810" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_q4_text" value="Q4: Fairness" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="190" y="807" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_dep" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#FF6B6B;dashed=1;dashPattern=8 4;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="797" as="sourcePoint" />
+            <mxPoint x="330" y="797" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend_dep_text" value="Cross-Q Dependency" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="280" y="802" width="110" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend_output" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="280" y="822" width="20" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_output_text" value="Key Output" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="305" y="817" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

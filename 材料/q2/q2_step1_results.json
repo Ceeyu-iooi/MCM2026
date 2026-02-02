@@ -1,0 +1,15 @@
+{
+  "total_eliminations": 516,
+  "rank_method": {
+    "accuracy": 0.2926356589147287,
+    "accuracy_in_rank_seasons": 0.808459914231646,
+    "accuracy_in_pct_seasons": 0.7971716263919457
+  },
+  "percentage_method": {
+    "accuracy": 0.3430232558139535,
+    "accuracy_in_rank_seasons": 0.8104424677605913,
+    "accuracy_in_pct_seasons": 0.8266382671492264
+  },
+  "method_agreement_rate": 0.9108527131782945,
+  "accuracy_difference_mean": 0.02219144119683899
+}

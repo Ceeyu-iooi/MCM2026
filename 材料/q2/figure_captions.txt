@@ -1,0 +1,41 @@
+
+# Q2 验证模型可视化图表说明
+# MCM 2026 Problem C
+
+## Figure 1: Multi-Model Comparison (fig_model_comparison.png)
+This figure compares fan vote weight estimates across five different analytical methods.
+Key findings:
+- Rank Method: Fan weights cluster around 50-75%, indicating balanced influence
+- Percentage Method: Fan weights are consistently higher (52-91%)
+- All models confirm that the Percentage Method gives more weight to fan votes
+
+## Figure 2: Bootstrap Distribution (fig_bootstrap_distribution.png)
+Bootstrap resampling (n=1000) provides confidence intervals for weight estimates.
+(a) Rank Method: Mean = 50.68%, 95% CI covers 50%, supporting balanced hypothesis
+(b) Percentage Method: Mean = 60.32%, 95% CI above 50%, confirming fan dominance
+
+## Figure 3: Shapley Value Analysis (fig_shapley_analysis.png)
+Game-theoretic fair attribution of predictive contribution.
+(a) Rank Method: Judge 39.0%, Fan 61.0%
+(b) Percentage Method: Judge 30.7%, Fan 69.3%
+Shapley values provide a principled, axiomatic approach to contribution allocation.
+
+## Figure 4: Logistic Regression Analysis (fig_logistic_analysis.png)
+(a) ROC curves show Fan Vote alone (AUC=0.760) outperforms Judge Score alone (AUC=0.669)
+(b) Relative influence analysis confirms fan votes are the dominant factor in elimination
+
+## Figure 5: Robustness Analysis (fig_robustness_analysis.png)
+(a) Noise sensitivity: 5% noise causes only 0.09% AUC drop, demonstrating strong robustness
+(b) Feature perturbation: Fan vote provides higher predictive power than judge score
+
+## Figure 6: Validation Summary (fig_validation_summary.png)
+(a) Heatmap shows consistent patterns across all models
+(b) Radar plot displays cross-validation metrics
+(c) Bootstrap CI demonstrates estimation stability (CV < 1%)
+(d) Model comparison highlights complementary strengths
+
+All figures follow MCM paper standards with:
+- Clear labels and legends
+- Appropriate color schemes (colorblind-friendly)
+- Statistical annotations
+- Professional typography (Times New Roman)

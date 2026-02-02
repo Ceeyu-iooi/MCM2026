@@ -1,15 +1,15 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'mcmthesis-demo.blg'
-[98] biber-MSWIN64:340> INFO - === 
-[136] Biber.pm:420> INFO - Reading 'mcmthesis-demo.bcf'
-[218] Biber.pm:994> INFO - Found 5 citekeys in bib section 0
-[228] Biber.pm:4463> INFO - Processing section 0
-[238] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
-[293] bibtex.pm:1713> INFO - LaTeX decoding ...
-[310] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[345] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[345] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[345] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[345] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[352] bbl.pm:676> INFO - Writing 'mcmthesis-demo.bbl' with encoding 'UTF-8'
-[355] bbl.pm:779> INFO - Output to mcmthesis-demo.bbl
+[101] biber-MSWIN64:340> INFO - === 
+[138] Biber.pm:420> INFO - Reading 'mcmthesis-demo.bcf'
+[219] Biber.pm:994> INFO - Found 4 citekeys in bib section 0
+[229] Biber.pm:4463> INFO - Processing section 0
+[239] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[294] bibtex.pm:1713> INFO - LaTeX decoding ...
+[312] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[349] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[349] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[349] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[349] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[356] bbl.pm:676> INFO - Writing 'mcmthesis-demo.bbl' with encoding 'UTF-8'
+[359] bbl.pm:779> INFO - Output to mcmthesis-demo.bbl

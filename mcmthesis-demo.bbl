@@ -151,40 +151,6 @@
       \field{year}{2020}
       \field{dateera}{ce}
     \endentry
-    \entry{guo2024haier}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=ad466bebaed6dd7a197941dcd1cdf73f}{%
-           family={Hao},
-           familyi={H\bibinitperiod},
-           given={Guo},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{publisher}{2}{%
-        {Nanjing University of Posts}%
-        {Telecommunications}%
-      }
-      \strng{namehash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{fullhash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{fullhashraw}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{bibnamehash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{authorbibnamehash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{authornamehash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{authorfullhash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{authorfullhashraw}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{With the development of technology and the times, how to promote China to move toward a more advanced digital development path has become a hot topic. To promote the development of the digital economy, the government has introduced a series of documents and policies to guide enterprises to increase investment in digital transformation and improve the application level of digital technologies. Against this background, more and more enterprises are taking digital transformation as the main direction for future development and actively seeking to implement digital strategies. Digital transformation can help enterprises reduce product costs and improve operational efficiency. At the same time, through organizational change, process reengineering, and business growth, enterprises can more efficiently respond to industry competition. This paper focuses on the issue of “financial performance evaluation of manufacturing enterprises under the background of digital transformation,” and selects Haier Smart Home, a leading company in the home appliance industry, to establish a financial performance evaluation system to explore whether digital transformation has a positive impact on the company's financial performance. First, this study uses relevant theoretical knowledge of digital transformation and financial performance to analyze the motivation, process, and impact of Haier Smart Home's digital transformation on its financial performance. Second, the case study selects multiple financial indicators of Haier Smart Home from 2012 to 2022, covering development ability, operational ability, solvency, and profitability, analyzing their development trends, and comparing them with other companies in the industry. Furthermore, the study applies the Analytic Hierarchy Process (AHP) and Grey Relational Analysis to comprehensively evaluate the company’s financial performance, calculating the weights of primary and secondary financial performance indicators, and multiplying them with the fuzzy comprehensive evaluation matrix to obtain the overall financial performance level.}
-      \field{journaltitle}{Engineering Science II Series; Economics and Management Science}
-      \field{number}{XX}
-      \field{title}{A Study on the Financial Performance of Haier Smart Home under the Background of Digital Transformation}
-      \field{volume}{XX}
-      \field{year}{2024}
-      \field{pages}{XX\bibrangedash XX}
-      \range{pages}{1}
-      \keyw{Haier Smart Home,Digital Transformation,Financial Performance}
-    \endentry
     \entry{chatgpt2024}{online}{}{}
       \name{author}{1}{}{%
         {{hash=0523b13262b12c215d8009938f5c14f1}{%
@@ -199,8 +165,8 @@
       \strng{authornamehash}{0523b13262b12c215d8009938f5c14f1}
       \strng{authorfullhash}{0523b13262b12c215d8009938f5c14f1}
       \strng{authorfullhashraw}{0523b13262b12c215d8009938f5c14f1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{ChatGPT: Optimizing Language Models for Dialogue}

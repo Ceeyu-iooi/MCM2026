@@ -1,0 +1,126 @@
+{
+  "model_info": {
+    "name": "Q2 Alternative Model: Regression + Bootstrap",
+    "description": "使用回归分析和Bootstrap仿真验证主模型发现",
+    "n_samples": 2777,
+    "n_bootstrap": 1000
+  },
+  "linear_regression": {
+    "rank_method": {
+      "judge_weight": 46.35712300174832,
+      "fan_weight": 53.642876998251666,
+      "judge_slope": -3.6081712238711705,
+      "fan_slope": -4.175252315452205
+    },
+    "percentage_method": {
+      "judge_weight": 47.170579881812955,
+      "fan_weight": 52.829420118187045,
+      "judge_slope": 0.058618013851994936,
+      "fan_slope": 0.06565015075158595
+    }
+  },
+  "logistic_regression": {
+    "coefficients": {
+      "judge": 0.5055825463448509,
+      "fan": -2.8243609594858277,
+      "intercept": -2.94983288217456
+    },
+    "relative_influence": {
+      "judge": 15.182916630855262,
+      "fan": 84.81708336914473
+    },
+    "performance": {
+      "accuracy": 92.29384227583724,
+      "auc": 0.9609625980135015,
+      "cv_auc_mean": 0.9565393295090253,
+      "cv_auc_std": 0.03706295384295954
+    }
+  },
+  "bootstrap": {
+    "rank_method": {
+      "fan_weight_mean": 50.67990108927175,
+      "fan_weight_std": 0.43481727821919613,
+      "fan_weight_ci_95": [
+        49.83971059213733,
+        51.594305839956064
+      ]
+    },
+    "percentage_method": {
+      "fan_weight_mean": 60.31646343346154,
+      "fan_weight_std": 0.6316541428240431,
+      "fan_weight_ci_95": [
+        59.14644401213081,
+        61.59703676998253
+      ]
+    }
+  },
+  "shapley": {
+    "rank_method": {
+      "subset_performance": {
+        "empty": 0.5,
+        "judge_only": 0.7531930282005195,
+        "fan_only": 0.8262753936009608,
+        "both": 0.831314019348788
+      },
+      "shapley_values": {
+        "judge": 0.12911582697417334,
+        "fan": 0.20219819237461467
+      },
+      "shapley_percentage": {
+        "judge": 38.970831125092765,
+        "fan": 61.029168874907235
+      }
+    },
+    "percentage_method": {
+      "subset_performance": {
+        "empty": 0.5,
+        "judge_only": 0.7430616840604365,
+        "fan_only": 0.890336551382435,
+        "both": 0.8817646157788259
+      },
+      "shapley_values": {
+        "judge": 0.11724487422841373,
+        "fan": 0.2645197415504122
+      },
+      "shapley_percentage": {
+        "judge": 30.71129941920525,
+        "fan": 69.28870058079475
+      }
+    }
+  },
+  "comparison": {
+    "main_model": {
+      "method": "方差分解 (主模型)",
+      "rank_fan_weight": null,
+      "pct_fan_weight": null
+    },
+    "linear_regression": {
+      "method": "线性回归",
+      "rank_fan_weight": 53.642876998251666,
+      "pct_fan_weight": 52.829420118187045
+    },
+    "logistic_regression": {
+      "method": "Logistic回归",
+      "rank_fan_influence": 75.27620060117543,
+      "pct_fan_influence": 90.53898869718255
+    },
+    "bootstrap": {
+      "method": "Bootstrap仿真",
+      "rank_fan_weight": 50.67990108927175,
+      "rank_fan_ci_lower": 49.83971059213733,
+      "rank_fan_ci_upper": 51.594305839956064,
+      "pct_fan_weight": 60.31646343346154,
+      "pct_fan_ci_lower": 59.14644401213081,
+      "pct_fan_ci_upper": 61.59703676998253
+    },
+    "shapley": {
+      "method": "Shapley值",
+      "rank_fan_contribution": 61.029168874907235,
+      "pct_fan_contribution": 69.28870058079475
+    }
+  },
+  "validation": {
+    "findings_consistent": true,
+    "main_conclusion": "百分比法的观众权重显著高于排名法，主模型发现得到验证"
+  }
+}

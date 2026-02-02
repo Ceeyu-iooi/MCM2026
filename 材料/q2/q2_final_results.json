@@ -1,0 +1,176 @@
+{
+  "step1_counterfactual": {
+    "total_eliminations": 516,
+    "rank_method": {
+      "accuracy": 0.2926356589147287,
+      "accuracy_in_rank_seasons": 0.808459914231646,
+      "accuracy_in_pct_seasons": 0.7971716263919457
+    },
+    "percentage_method": {
+      "accuracy": 0.3430232558139535,
+      "accuracy_in_rank_seasons": 0.8104424677605913,
+      "accuracy_in_pct_seasons": 0.8266382671492264
+    },
+    "method_agreement_rate": 0.9108527131782945,
+    "accuracy_difference_mean": 0.02219144119683899
+  },
+  "step2_bias_sensitivity": {
+    "variance_decomposition": {
+      "rank_fan_weight": 0.4984185737918768,
+      "rank_judge_weight": 0.5015814262081232,
+      "pct_fan_weight": 0.856403044499691,
+      "pct_judge_weight": 0.14359695550030904,
+      "weight_difference": 0.35798447070781414
+    },
+    "marginal_effect": {
+      "rank_method": 6.675130147630147,
+      "pct_method": 7.184226995226997
+    },
+    "sensitivity_gradient": {
+      "rank_method": 0.16463423799763058,
+      "pct_method": 0.14234168953765372
+    },
+    "conclusion": {
+      "more_fan_biased_method": "百分比法",
+      "weight_difference_pct": 35.798447070781414
+    }
+  },
+  "step3_controversy_cases": [
+    {
+      "name": "Jerry Rice",
+      "season": 2,
+      "actual_placement": 2,
+      "method_used": "rank",
+      "controversy": "尽管5周评委分数最低，仍获得亚军",
+      "weeks_competed": 7,
+      "avg_judge_score": 21.928571428571427,
+      "avg_fan_vote": 66.78112971005463,
+      "avg_judge_rank": 4.857142857142857,
+      "avg_fan_rank": 4.428571428571429,
+      "judge_fan_gap": 0.42857142857142794,
+      "judge_percentile": 63.461538461538446,
+      "fan_percentile": 60.66267907303543,
+      "avg_rank_placement": 4.571428571428571,
+      "avg_pct_placement": 4.714285714285714,
+      "times_eliminated_by_rank": "1",
+      "times_eliminated_by_pct": "1"
+    },
+    {
+      "name": "Billy Ray Cyrus",
+      "season": 4,
+      "actual_placement": 5,
+      "method_used": "percentage",
+      "controversy": "6周评委分数最低，仍获得第5名",
+      "weeks_competed": 8,
+      "avg_judge_score": 19.0,
+      "avg_fan_vote": 51.83983500810821,
+      "avg_judge_rank": 6.5,
+      "avg_fan_rank": 6.875,
+      "judge_fan_gap": -0.375,
+      "judge_percentile": 31.92488262910798,
+      "fan_percentile": 35.08410103797606,
+      "avg_rank_placement": 6.75,
+      "avg_pct_placement": 7.125,
+      "times_eliminated_by_rank": "3",
+      "times_eliminated_by_pct": "3"
+    },
+    {
+      "name": "Bristol Palin",
+      "season": 11,
+      "actual_placement": 3,
+      "method_used": "percentage",
+      "controversy": "12次评委分数最低，仍获得第3名",
+      "weeks_competed": 8,
+      "avg_judge_score": 22.124975,
+      "avg_fan_vote": 66.3762933292536,
+      "avg_judge_rank": 6.5,
+      "avg_fan_rank": 5.75,
+      "judge_fan_gap": 0.75,
+      "judge_percentile": 60.18505572690345,
+      "fan_percentile": 73.62254821319584,
+      "avg_rank_placement": 6.25,
+      "avg_pct_placement": 5.875,
+      "times_eliminated_by_rank": "3",
+      "times_eliminated_by_pct": "1"
+    },
+    {
+      "name": "Bobby Bones",
+      "season": 27,
+      "actual_placement": 1,
+      "method_used": "percentage",
+      "controversy": "评委分数持续较低，却赢得冠军",
+      "weeks_competed": 7,
+      "avg_judge_score": 21.928571428571427,
+      "avg_fan_vote": 56.94163996727925,
+      "avg_judge_rank": 7.285714285714286,
+      "avg_fan_rank": 7.285714285714286,
+      "judge_fan_gap": 0.0,
+      "judge_percentile": 45.92592592592592,
+      "fan_percentile": 46.65794293883581,
+      "avg_rank_placement": 7.142857142857143,
+      "avg_pct_placement": 7.285714285714286,
+      "times_eliminated_by_rank": "2",
+      "times_eliminated_by_pct": "0"
+    }
+  ],
+  "step4_judges_save": {
+    "total_eliminations": 516,
+    "rank_correct": 151,
+    "rank_accuracy": 0.2926356589147287,
+    "pct_correct": 177,
+    "pct_accuracy": 0.3430232558139535,
+    "save_correct": 131,
+    "save_accuracy": 0.25387596899224807,
+    "rank_save_difference": 46,
+    "rank_save_diff_rate": 0.08914728682170543
+  },
+  "step4_arrow_theorem": {
+    "pareto": {
+      "total_pairs": 10649,
+      "rank_violations": 0,
+      "rank_violation_rate": 0.0,
+      "pct_violations": 0,
+      "pct_violation_rate": 0.0
+    },
+    "non_dictatorship": {
+      "rank_fan_weight": 0.4984185737918768,
+      "rank_satisfies": true,
+      "pct_fan_weight": 0.856403044499691,
+      "pct_satisfies": false
+    },
+    "iia": {
+      "rank_satisfies": false,
+      "rank_reason": "排名法中，每个选手的排名取决于所有其他选手的表现",
+      "pct_satisfies": false,
+      "pct_reason": "百分比法中，总分变化会影响每个人的百分比"
+    },
+    "overall_score": {
+      "rank_method": 66.0,
+      "pct_method": 33.0
+    }
+  },
+  "step4_recommendation": {
+    "primary": "排名法",
+    "reason": "权重更平衡，评委和观众影响力相当",
+    "scores": {
+      "rank_method": {
+        "accuracy": 7.315891472868217,
+        "balance": 24.96046434479692,
+        "arrow": 16.5,
+        "total": 48.77635581766514
+      },
+      "pct_method": {
+        "accuracy": 8.575581395348838,
+        "balance": 16.089923887507727,
+        "arrow": 8.25,
+        "total": 32.915505282856564
+      },
+      "judges_save": {
+        "accuracy": 6.346899224806202,
+        "description": "评委救人机制可作为补充"
+      }
+    },
+    "include_judges_save": true,
+    "judges_save_reason": "可纠正约8%的争议淘汰"
+  }
+}

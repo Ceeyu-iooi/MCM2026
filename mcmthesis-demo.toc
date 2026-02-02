@@ -1,34 +1,29 @@
-\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Problem Background}{4}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Restatement of the Problem}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Our work}{4}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Preparation for Models}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Assumptions and Justiﬁcations}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Notations}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Data Processing}{6}{subsection.2.3}%
-\contentsline {section}{\numberline {3}TAN and SHAP Models for Fan Vote Estimation}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}TAN Model}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}SHAP Model}{10}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Model Evaluation}{11}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Consistency Test of Two Models}{11}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Validity Test and Robustness Analysis}{13}{subsubsection.3.3.2}%
-\contentsline {section}{\numberline {4}Building Preservation Model}{14}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Building Value Quantification}{14}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Indicators Determination}{14}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Weight Calculation}{15}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Quantitative Results of Building Values}{17}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}Determination of protection measures}{18}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Measure Score}{18}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Score of Protection Measures}{18}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Mentoring for Community Leaders}{18}{subsubsection.4.2.3}%
-\contentsline {section}{\numberline {5}Landmark Case Analysis}{19}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Insurance Pricing for Tokyo Tower}{19}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Architectural Value of Tokyo Tower}{19}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Sensitivity and Robustness Analysis}{20}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Sensitivity}{20}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Robustness}{20}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Model Evaluation}{21}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Strengths}{21}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Weaknesses}{21}{subsection.7.2}%
-\contentsline {section}{Appendices}{23}{section*.20}%
-\contentsline {section}{Appendix \numberline {A}First Appendix}{23}{appendix.1.A}%
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Problem Background}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Restatement of the Problem}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Our work}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Preparation for Models}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Assumptions and Notations}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Data Processing}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Fan Vote Estimation Based on TAN and SHAP Models }{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Tree Augmented Naive Bayes Model for Fan Vote Estimation}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}RF and SHAP Model for Fan Vote Estimation}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Consistency Test of Two Models}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Validity Test and Robustness Analysis}{11}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Voting Combinations Comparison via Variance Decomposition Model}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Counterfactual Simulation Modeling}{12}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Bias Sensitivity Analysis}{13}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Analysis of Controversial Cases and Method Evaluation}{14}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Discussion on the Judge Rescue Mechanism}{15}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Multi-Model Validation and Robustness Analysis}{17}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Quantifying Feature Contributions via Mixed-Effects Model}{18}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Calculate Fixed and Random Effects}{18}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Model Optimization}{19}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}An Investigation into the Influence of Judges and Audience Voting}{20}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Insight:Uncertainty Propagation Framework}{21}{section.6}%
+\contentsline {section}{\numberline {7}Design of a Score Fusion Mechanism Based on the KMDR Model}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Establishment and Evaluation of the Score Fusion Mechanism}{22}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Sensitivity Analysis}{25}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Sensitivity and Robustness Analysis}{25}{section.8}%
+\contentsline {section}{\numberline {9}Strengths and Weaknesses}{25}{section.9}%
+\contentsline {section}{Appendices}{28}{section*.33}%

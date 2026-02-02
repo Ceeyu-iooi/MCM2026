@@ -1,0 +1,20 @@
+{
+  "method_comparison": {
+    "rank_accuracy": 0.2926356589147287,
+    "pct_accuracy": 0.3430232558139535,
+    "method_agreement_rate": 0.9108527131782945,
+    "total_eliminations": 516
+  },
+  "bias_sensitivity": {
+    "rank_mean_sensitivity": 0.14564476477641328,
+    "pct_mean_sensitivity": 0.12249677834080637,
+    "rank_mean_fan_weight": 0.4984185737918768,
+    "pct_mean_fan_weight": 0.856403044499691,
+    "more_fan_biased": "percentage"
+  },
+  "judges_save": {
+    "accuracy": 0.25387596899224807,
+    "changes_from_rank": 46,
+    "change_rate": 0.08914728682170543
+  }
+}

@@ -1,0 +1,10 @@
+﻿Analysis,Metric,Value
+Alpha-Beta Sensitivity,"Best elim acc (α,β)","(0.1,0.2)=0.234"
+Alpha-Beta Sensitivity,"Best champ acc (α,β)","(0.1,0.2)=0.000"
+Dynamic Weight Sensitivity,Current vs Fixed weight,0.200 vs 0.190
+K-Fold CV (k=5),Mean±Std (elim),0.201±0.032
+Bootstrap 95% CI,CI Lower,0.171
+Bootstrap 95% CI,CI Upper,0.231
+McNemar Test (vs Fixed),p-value,0.0528
+Temporal Stability,Early-Late difference,0.058
+Noise Robustness (20%),Degradation,33.0%

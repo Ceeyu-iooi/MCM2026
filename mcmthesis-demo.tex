@@ -65,8 +65,7 @@
 % \setcounter{tocdepth}{2}  % 设置目录到二级标题, 将目录控制在1页
                           % 若可接受目录2页, 注释掉该句, 将到三级标题
                           
-\title{Veils of Uncertainty: Weaving Risk into the Tapestry of Preservation
-Under the Weather's Watch}
+\title{ }
 
 % \author{\small \href{https://www.latexstudio.net/}
 %   {\includegraphics[width=7cm]{mcmthesis-logo}}}
@@ -79,49 +78,22 @@ Under the Weather's Watch}
 \begin{document}
 
 \begin{abstract}
-\par As the tapestry of nature weaves its unpredictable patterns, humanity’s quest for stability
-becomes ever more pressing. In the shadow of uncertainty, we find resilience, crafting shields
-against the tempests of fate.
+\par In the operation of the renowned entertainment competition show Dancing with the Stars (DWTS), significant discrepancies between professional judges' scores and audience voting preferences have exposed flaws in the existing elimination mechanism. This paper, grounded in multi-statistical modeling principles, primarily investigates big data analysis and optimization of the voting mechanism.
 
-First, we establish a Risk Analysis model to comprehensively assess the Expected Annual
-Loss (EAL) from extreme weather in terms of population, building, and agriculture. The
-assessment for each aspect is calculated from three perspectives: natural hazard exposure, Historic
-Loss Ratio, and the likelihood risk factor of natural hazard annualized frequency. Community
-Risk Factor (CRF) is calculated from social vulnerability and community resilience.
-EAL and CRF are used to quantify the risk levels of various regions and rank them using the
-K-means algorithm, resulting in a risk level map of the United States.
-Second, we develop a Risk-incorporated Capital Asset Pricing Model (CAPM) to aid
-insurance companies in underwriting decisions. This model combines market return rates, the
-risk-free rate, and bankruptcy theory with a $10\%$ bankruptcy probability to set insurance rates.
-It evaluates if the region's residents can afford these premiums, providing decision-making advice
-for insurance companies.
+{\bf For Problem 1}, we employed a dual reconstruction modeling strategy combining the TAN model with the Random Forest model and SHAP interpretability analysis to estimate hidden audience voting data and quantify uncertainty. The results showed that the TAN model achieved an accuracy of 82.48\%, while the RF model reached 84.90\%. The consistency in prediction direction between the two models was 88.76\%, enabling precise reconstruction of hidden audience voting data and quantification of its uncertainty.
 
-More specifically, we apply our Risk-incorporated Capital Asset Pricing Model in Los
-Angeles and Gorontalo. In Los Angeles, insurance companies see high profits and low risks.
-However, in Gorontalo, the required premium for $\$10,000$ coverage is $\$342.745$, beyond local
-affordability. We recommend insurance securitization and partnerships with local governments
-to reduce premiums. Consequently, Gorontalo residents could pay just $\$137.25$ annually,
-with companies projecting $\$245$ million in revenue.
+{\bf For Problem 2}, we combined counterfactual simulation and bias sensitivity analysis methods to construct a variance decomposition model based on audience voting data from Problem 1. By setting thresholds for audience vote weight calculations and validating the rationality of two vote synthesis mechanisms through Spearman's correlation analysis, we determined that the percentage method (85.6\%) significantly outweighs the ranking method (49.8\%) in audience vote weighting, demonstrating greater preference for audience votes. The judge rescue mechanism can correct 8.9\% of controversial elimination outcomes,which can significantly enhanced the fairness of the program when combined with the ranking method.
 
-Third, we establish a Building Preservation Model, selecting seven secondary indicators
-such as the annual number of visitors and construction cost, and three primary indicators: cultural
-values and community influence, economy, and history. These are weighted using the
-Sperman-CRITIC algorithm and AHP method to calculate building value, combined with
-risk levels to determine the preservation level of buildings. Based on the preservation level, the
-community's investment and measures for building protection can be determined.
-Then our models inform investment and protection strategies for Tokyo Tower, acknowledging
-its value and the necessity of preservation in an earthquake zone. We communicate these
-findings and propose protection measures to the Tokyo Tower community.
+{\bf For Problem 3} ,we constructed a mixed-effects model incorporating ridge regression regularization and calculated intraclass correlation coefficients (ICC) to quantify the contribution of factors such as professional dancers and contestant characteristics to elimination outcomes. Additionally, we employed directed acyclic graph (DAG) to uncover causal relationships among variables. Results indicate that professional dancers significantly influence contestant rankings (57.73\%) and judge scores (48.50\%). Variables like weekly contestant scores and age exert greater weight on outcomes, while fan following indirectly impacts final rankings by influencing audience votes.
 
-Finally, we analyze the sensitivity and robustness of our models, the models can change
-the insurance rate sensitively according to the change of the market predicted return and the
-slight error of the risk factor calculation will not affect the models’ result, which verifies the
-sensitivity and robustness of our models. In addition we analyze the strengths and weaknesses
-of the models.
+{\bf For Problem 4}, through analysis of dynamic weight fusion, contestant consensus scoring, and metered distortion penalty mechanisms, we established a score fusion mechanism based on the KMDR model. By optimizing weight parameters via $\alpha-\beta$ parameter grid search and setting four fairness evaluation metrics—including Condorcet efficiency and satisfaction balance—we designed an optimal voting scoring mechanism. Simulation results demonstrate a 100\% undisputed champion rate and 96.3\% early elimination rationality. The dynamic weight parameter adjustment strategy achieves a balanced blend of professionalism and entertainment value.
+
+We also constructed an uncertainty propagation framework to analyze the transmission of uncertainty from voting data estimation through mechanism rationality analysis to the quantification of eigenvalue contributions. Finally, we conducted robustness and parameter sensitivity analyses on the model while evaluating its strengths and weaknesses.
+
+
 
 \begin{keywords}
-Risk Analysis, Risk-Capital Asset Pricing Model, Sperman-CRITIC, AHP,
-Building Preservation Model
+TAN ; Random Forest ; Mixed-Effects ; Voting Mechanism 
 \end{keywords}
 
 \end{abstract}
@@ -130,8 +102,12 @@ Building Preservation Model
 \maketitle
 
 %% Generate the Table of Contents, if it's needed.
-\tableofcontents
 
+\begingroup
+% 调整目录的行距系数，0.9 表示比正常缩小10%，可根据需要微调
+\renewcommand{\baselinestretch}{0.9}
+\tableofcontents
+\endgroup
 \newpage
 
 \section{Introduction}
@@ -162,7 +138,7 @@ In order to clearly illustrate our work, we draw the flowchart Figure \ref{fig1}
 \begin{figure}[H]    % H表示强制固定在当前位置
 \small
 \centering
-\includegraphics[width=0.8\textwidth]{fig1.jpg}
+\includegraphics[width=1.0\textwidth]{workflow_diagram_v2.drawio1.png}
 \caption{Our work} \label{fig1}
 \end{figure}
 
@@ -173,7 +149,7 @@ we need to make reasonable assumptions to simplify the model, and each hypothesi
 followed by its corresponding explanation:
 
 
-\subsection{Assumptions and Justiﬁcations}
+\subsection{Assumptions and Notations}
 
 \begin{itemize}
 \item {\bf Assumption:} The data we use are accurate and valid.
@@ -192,7 +168,7 @@ complexity inherent in regional studies by focusing on aggregate data, thereby p
 a generalized view of each area's performance or condition.
 \end{itemize}
 
-\subsection{Notations}
+
 
 The key mathematical notations used in this paper are listed in Table \ref{tbl1}. 
 
@@ -206,11 +182,11 @@ The key mathematical notations used in this paper are listed in Table \ref{tbl1}
 \toprule             % 画顶端横线
 {\bf Symbol}    &  {\bf Definition}     \\
 \midrule             % 画中间横线
-$V$     & Fans Vote Score  \\
-$SV$   & Social Vulnerability  \\
-$CR$   & Community Resilience  \\
-$CRF$  & Community Risk Factor \\
-$HLR$  & Historic Loss Ratio   \\
+$V_i$     & Fans Vote Score of the $i$-th contestant  \\
+$Y$     & $Y \in \{0, 1\}:$Elimination Flag (0=Not Eliminated, 1=Eliminated)  \\
+$X$   & $X = (X_1, X_2, ..., X_n):$Feature Vetor \\
+$S_i$  & Judge score of the $i$-th contestant \\
+$R_i$  & The rank of the $i$-th contestant   \\
 \bottomrule         % 画底部横线
 \end{tabular}
 \vspace{2pt} % 稍微调整间距
@@ -231,32 +207,45 @@ Preliminary exploratory analysis of the dataset reveals three core issues: imput
 \caption{Data Processing Workflow} \label{fig_dp}
 \end{figure}
 
-Differentiated strategies were applied to three scenarios of hidden missing values: missing scores from the fourth judge were imputed using the average scores from other judges in the same week; missing entries for unbroadcasted weeks were marked as invalid data and excluded from the training sample; other missing fields were filled with the median values from celebrity metrics within the same industry during the same season. Anomaly detection was performed using the 3$\sigma$ rule combined with competition scoring domain rules, identifying 27 judge score anomalies. These were replaced with the contestant's average score from valid weeks within the same season. Zero scores after elimination were retained with a status feature added to clearly distinguish between “valid competition weeks” and “post-elimination weeks,” preventing interference from invalid data.
-
-Feature Transformation Phase Standardized processing was applied to different feature types: Continuous numerical features like age underwent Z-score normalization, resulting in transformed feature means $\approx$ 0 and standard deviations $\approx$ 1, effectively eliminating unit differences and enhancing cross-season comparability. Qualitative categorical features such as star industry were quantified via dummy variable encoding. Time-series derived features were constructed based on tournament progression logic to capture dynamic evolutionary patterns. Feature importance calibration was performed using SHAP values, identifying elimination risk coefficient, cumulative ranking, and relative performance as core influencing features. Their SHAP values were 0.32, 0.28, and 0.21 respectively, aligning closely with the actual impact mechanisms of the tournament. This provides a high-quality data foundation and parameter support for subsequent modeling analysis.
+As shown in the {\bf Figure \ref{fig_dp}}, differentiated processing strategies are implemented for three scenarios involving latent missing values. During the feature transformation phase, standardized processing is applied to different feature types. Feature importance calibration is completed based on SHAP value analysis, identifying elimination risk coefficient, cumulative ranking, and relative performance as core influencing features. Their SHAP values are 0.32, 0.28, and 0.21 respectively, demonstrating high alignment with the actual impact mechanisms of the competition. This provides a high-quality data foundation and parameter support for subsequent modeling analysis.
 
 
 
 
 
 
-\section{TAN and SHAP Models for Fan Vote Estimation}
-In the show Dancing with the Stars, a common scenario occurs: some celebrities receive low scores from professional judges yet advance smoothly or even win the championship thanks to high audience support rates. To understand this discrepancy between judge scores and audience support, we must first establish a model to reverse-engineer these undisclosed audience voting data while quantifying the uncertainty of such estimates.\cite{inverse}
+\section{Fan Vote Estimation Based on TAN and SHAP Models }
+In the show Dancing with the Stars, a common scenario occurs: some celebrities receive low scores from professional judges yet advance smoothly or even win the championship thanks to high audience support rates. To understand this discrepancy between judge scores and audience support, we establish a model to reverse-engineer these undisclosed audience voting data while quantifying the uncertainty of such estimates.\cite{inverse}
 
-\subsection{TAN Model}
+\subsection{Tree Augmented Naive Bayes Model for Fan Vote Estimation}
 In real-world data, features often exhibit dependencies. For example:$week\_rank$ is highly correlated with $cumulative\_rank$ (partial correlation coefficient = 0.553);$remaining\_weeks$ is strongly negatively correlated with $weeks\_participated$ (partial correlation coefficient = -0.665)
-Ignoring these dependencies degrades the performance of traditional Bayesian models.As shown in the {\bf Figure \ref{fig1-1}}, 
+Ignoring these dependencies degrades the performance of traditional Bayesian models. 
 {\bf TAN (Tree Augmented Naive Bayes)} is an extension of Naive Bayes \cite{beiyesi} that allows for tree-like dependency structures between features:
 
 \begin{equation}
 P(Y \mid X) \propto P(Y)\cdot P(X_{root} \mid Y)\cdot \prod_{j\ne root} P(X_j \mid Pa(X_j), Y)
 \end{equation}
 
-\begin{itemize}
-\item$ Y \in \{0, 1\}:$Elimination Flag (0=Not Eliminated, 1=Eliminated)
 
-\item $X = (X_1, X_2, ..., X_n):$feature vetor
-\end{itemize}
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+% \caption{Maximum Spanning Tree of Feature Dependency} \label{fig_model1}
+
+% \begin{subfigure}{0.4\textwidth}
+% \includegraphics[width=1.0\textwidth]{fig1-1.png}
+% \caption{TAN Network Structure} \label{fig1-1}
+%  \end{subfigure}
+%  \begin{subfigure}{0.4\textwidth}
+\includegraphics[width=0.5\textwidth]{fig1-2.png}
+\caption{Conditional Mutual Information Matrix}
+\label{fig_1-2}
+% \end{subfigure}\\
+
+
+
+
+\end{figure}
+
 
 To determine the optimal feature dependency structure, we first compute the conditional mutual information between all feature pairs:
 \begin{equation}
@@ -264,26 +253,17 @@ To determine the optimal feature dependency structure, we first compute the cond
 I(X_i; X_j | Y) = \sum_y \sum_{x_i} \sum_{x_j} P(x_i, x_j, y) \cdot \log\left[ \frac{P(x_i, x_j | y)\cdot P(x_j | y)} {P(x_i | y)} \right]
 \end{aligned}
 \end{equation}
+
+
+
+
+
 As shown in the {\bf Figure \ref{fig_1-2}}, conditional mutual information measures the statistical dependence between features $X_i$ and $X_j$ given the category $Y$. A higher value indicates that both features must be considered together when predicting $Y$.
 Using conditional mutual information as edge weights, construct a maximum spanning tree using {\bf Prim's algorithm}.
 
 
 
-\begin{figure}[H]    % H表示强制固定在当前位置
-\caption{Maximum Spanning Tree of Feature Dependency} \label{fig_model1}
 
-\begin{subfigure}{0.4\textwidth}
-\includegraphics[width=1.0\textwidth]{fig1-1.png}
-\caption{TAN Network Structure} \label{fig1-1}
- \end{subfigure}\begin{subfigure}{0.4\textwidth}
-\includegraphics[width=1.0\textwidth]{fig1-2.png}
-\caption{Conditional Mutual Information Matrix} \label{fig_1-2}
-\end{subfigure}\\
-
-
-
-
-\end{figure}
 
 
 For a new sample $X = (X_1, X_2, ..., X_n)$, compute the posterior probability via Softmax normalization:
@@ -302,17 +282,21 @@ V &= (1 - P( (Y=1) \mid X)) \times 100
 \end{aligned}
 \end{equation}
 
-As shown in the {\bf Figure \ref{fig_1-5}}, this represents the distribution of audience votes.A lower elimination probability indicates higher audience support.
+
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
 \includegraphics[width=1.0\textwidth]{fig1-5.png}
 \caption{Fan Vote Score Distribution} \label{fig_1-5}
 \end{figure}
-After solving the TAN model,as shown in the {\bf Figure \ref{fig_TAN_result}}, the model achieved an {\bf Accuracy Rate} of { $\bf 82.48\%$}  and a {\bf ROC-AUC Value} of {\bf 0.8102}, indicating that the TAN model can effectively distinguish eliminated contestants from those who advanced. The recall for the elimination category was $56.14\%$, indicating the model identified over half of actual eliminations; precision was $46.72\%$, with an F1 score of $51.00\%$. Collectively, these metrics reflect the model's classification capability on the imbalanced dataset (where eliminations constituted only $16.24\%$ of events).
+As shown in the {\bf Figure \ref{fig_1-5}}, this represents the distribution of audience votes.A lower elimination probability indicates higher audience support.
+After solving the TAN model,as shown in the {\bf Figure \ref{fig_TAN_result}}, the model achieved an {\bf Accuracy Rate} of { $\bf 82.48\%$}  and a {\bf ROC-AUC Value} of {\bf 0.8102}, indicating that the TAN model can effectively distinguish eliminated contestants from those who advanced.
+%  The recall for the elimination category was $56.14\%$, indicating the model identified over half of actual eliminations; precision was $46.72\%$, with an F1 score of $51.00\%$. Collectively, these metrics reflect the model's classification capability on the imbalanced dataset (where eliminations constituted only $16.24\%$ of events).
 
-By modeling conditional dependencies between features, the TAN model learned nine significant feature dependency edges in the {\bf Figure \ref{fig_1-4}} (e.g., $week\_rank\rightarrow cumulative\_rank$, 
-$weeks\_participated\rightarrow remaining\_weeks$). These dependencies align with the actual logic of dance competitions—cumulative rankings are highly correlated with weekly rankings, while the number of weeks participated naturally correlates negatively with the number of weeks remaining.
+% By modeling conditional dependencies between features, the TAN model learned nine significant feature dependency edges in the {\bf Figure \ref{fig_1-4}}
+%  (e.g., $week\_rank\rightarrow cumulative\_rank$, 
+% $weeks\_participated\rightarrow remaining\_weeks$). 
+% These dependencies align with the actual logic of dance competitions—cumulative rankings are highly correlated with weekly rankings, while the number of weeks participated naturally correlates negatively with the number of weeks remaining.
 
 
 \begin{figure}[H] 
@@ -328,16 +312,16 @@ $weeks\_participated\rightarrow remaining\_weeks$). These dependencies align wit
 \end{subfigure}\\
 \end{figure}
 
-\begin{figure}[H]    % H表示强制固定在当前位置
-\centering
-\includegraphics[width=0.43\textwidth]{fig1-6.png}
-\caption{Feature Importance}\label{fig_1-6}
-\end{figure}
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \centering
+% \includegraphics[width=0.43\textwidth]{fig1-6.png}
+% \caption{Feature Importance}\label{fig_1-6}
+% \end{figure}
 
 
 
 
-\subsection{SHAP Model}
+\subsection{RF and SHAP Model for Fan Vote Estimation}
 The Random Forest classifier, combined with SHAP (SHapley Additive exPlanations) interpretability analysis, infers audience voting scores from elimination results. The Random Forest prediction formula is:
 \begin{equation}
 \begin{aligned}
@@ -374,7 +358,12 @@ where $K$ is the number of decision trees, and $I(\cdot)$ denotes the indicator 
 % % \caption{ROC Curve(Random Forest Model)} \label{fig4_rf_roc_curve}
 % \end{figure}
 
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.6\textwidth]{fig5_rf_fan_vote_distribution.png}
 
+\caption{Fan Vote Score Distribution(Random Forest Model)} \label{fig5_rf_fan_vote_distribution}
+\end{figure}
 
 \begin{figure}[H] 
 \caption{RF Model Confusion Matrix and ROC Curve} 
@@ -396,12 +385,7 @@ where $K$ is the number of decision trees, and $I(\cdot)$ denotes the indicator 
 
 
 
-\begin{figure}[H]    % H表示强制固定在当前位置
-\centering
-\includegraphics[width=0.7\textwidth]{fig5_rf_fan_vote_distribution.png}
 
-\caption{Fan Vote Score Distribution(Random Forest Model)} \label{fig5_rf_fan_vote_distribution}
-\end{figure}
 
 
 As shown in the {\bf figure \ref{fig_rf_result}}, the model achieves an {\bf accuracy rate} of $\bf 84.90\%$ and a {\bf ROC-AUC value} of {\bf 0.8860}, outperforming the TAN model across all evaluation metrics. Notably, the recall rate for the elimination category has increased to $76.32\%$, with an F1 score reaching $61.27\%$, indicating that the Random Forest model demonstrates significantly stronger capability in identifying elimination events.
@@ -418,13 +402,13 @@ Here, $N$ denotes the feature set, $S$ represents the subset excluding feature $
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
-\includegraphics[width=0.7\textwidth]{fig2_rf_shap_summary.png}
+\includegraphics[width=0.6\textwidth]{fig2_rf_shap_summary.png}
 
 \caption{SHAP Summary Plot(Random Forest Model)} \label{fig2_rf_shap_summary}
 \end{figure}
 
-\subsection{Model Evaluation}
-\subsubsection{Consistency Test of Two Models}
+
+\subsection{Consistency Test of Two Models}
 By ranking the importance of feature quantities for the two models and conducting consistency analysis, as shown in {\bf Table \ref{tbl2}}, we obtain the following results:
 
 % \begin{figure}[H]    % H表示强制固定在当前位置
@@ -487,7 +471,7 @@ Furthermore, as shown in {\bf Figure \ref{fig5_rf_fan_vote_distribution} }, both
 % \begin{proof}
 % The proof of theorem.
 % \end{proof}
-\subsubsection{Validity Test and Robustness Analysis}
+\subsection{Validity Test and Robustness Analysis}
 Stratified 10-fold cross-validation was employed to assess the model's generalization capability. Stratified sampling ensured that the proportion of positive and negative samples in each fold matched the original dataset, thereby mitigating evaluation bias caused by class imbalance.
 
 
@@ -499,7 +483,8 @@ Stratified 10-fold cross-validation was employed to assess the model's generaliz
 \end{figure}
 
 
-As shown in {\bf Figure \ref{fig_cv_boxplot}}, the average accuracy of the random forest model with 10-fold cross-validation is 0.8524, with a standard deviation of only 0.0213. This indicates the model exhibits stable performance across different data partitions and possesses strong generalization capabilities. The ROC-AUC reaches 0.8906, demonstrating the model's excellent ability to distinguish classification boundaries. Recall (0.6766) exceeds precision (0.5898), indicating the model tends to identify more rejected cases—aligning with the early warning system's design objectives.
+As shown in {\bf Figure \ref{fig_cv_boxplot}}, the average accuracy of the random forest model with 10-fold cross-validation is 0.8524, with a standard deviation of only 0.0213. This indicates the model exhibits stable performance across different data partitions and possesses strong generalization capabilities. The ROC-AUC reaches 0.8906, demonstrating the model's excellent ability to distinguish classification boundaries. 
+% Recall (0.6766) exceeds precision (0.5898), indicating the model tends to identify more rejected cases—aligning with the early warning system's design objectives.
 
 % Learning curve analysis is used to assess whether a model is overfitting or underfitting. By observing the trend of training set and validation set accuracy across different training sample sizes, we evaluate the model's learning capability and generalization ability. As shown in {\bf Figure \ref{fig_learning_curve}},the gap between training set accuracy (0.9253) and validation set accuracy (0.8570) is 0.0682, indicating mild overfitting within an acceptable range. As the training sample size increases, the test set accuracy steadily improves, indicating that the model can effectively learn patterns within the data.
 
@@ -836,433 +821,871 @@ After adding 5\% noise to the data, the model's accuracy changed by only 0.43\%,
 % the problem about how to build on certain site. This approach not only maintains the interests
 % of real property developers, but also protects the lives of people in the community.
 
-\section{Building Preservation Model}
-
-\subsection{Building Value Quantification}
-
-Building value is measured in terms of the building's cultural value and community influence,
-economic value, and historical value. Therefore, we take these three main aspects as primary
-indicators.
-
-\subsubsection{Indicators Determination}
-
-For the cultural value and community influence, we synthesized various factors, such as
-geography and network, and finally selected the three most representative secondary indicators
-to construct our model. Similarly, for the economic and historical value, we selected two secondary
-indicators each to improve the model. The specific description and indicators selected
-are shown in Table \ref{tbl3}.
-
-% 创建Excel表格(可合并单元格), 导入在线生成表格: https://www.latex-tables.com/
-% 设置网格线、右侧可设置背景色
-
-\begin{table}[H]
-\small
-\centering
-\caption{Indicators}  
-\label{tbl3}         
-\begin{tblr}{
-  row{odd} = {LightGreen},
-  row{1} = {ForestGreen},
-  cell{2}{1} = {r=3}{LightGreen},
-  cell{5}{1} = {r=2}{},
-  cell{7}{1} = {r=2}{},
-  vlines,
-  hline{1-2,5,7,9} = {-}{},
-  hline{3-4,6,8} = {2-3}{}}
-Object    & Indicators & Description      \\
-{Cultural Values and \\ Community influence} 
-   & NG  & Number of Google search terms   \\
-   & P   & {Participation in events held \\ around the building} \\
-   & ANV & Annual number of visitors        \\
-Economy  & LV         & Land value         \\
-         & CC         & Construction cost  \\
-History  & NH         & Number of historical research documents  \\
-         & DP         & Degree of preservation
-\end{tblr}
-\end{table}
 
 
+\section{Voting Combinations Comparison via Variance Decomposition Model}
+
+There are two voting combinations in the program:
 \begin{itemize}
-\item Cultural Value and Community Influence
-\begin{description}
-\item [$\circ$] Global Visibility
-
-The cultural value of a building depends to a large extent on its global visibility. So we
-quantify its global visibility through two metrics, ``Number of Google search terms''
-(NG) and ``Annual number of visitors'' (ANV). This approach balances online and offline,
-making the measurement of cultural values more quantifiable and accurate.
-
-\item [$\circ$] Impact on the Community
-
-Buildings have a strong connection with local communities. When measuring the value
-of a building, we take into account its impact on the local community. Research has
-shown that the more influence a building has on the local community, the more the
-value of the landmark itself will increase. Besides, it will further promote the increase
-of influence, realizing a positive feedback loop. Therefore, we choose ``Participation in
-events held around the building'' (P) to quantify the building's influence on the community.
-We calculate P as follows:
+\item Rank Method:Each contestant receives a judge ranking based on the judges' scores and an audience ranking based on viewer votes. The two rankings are combined to form a composite ranking, and the contestant with the highest composite ranking is eliminated.
 
 \begin{equation}
-P = \frac{1}{N} \times \sum_{i = 1}^N \frac{NCMP_i}{NTC_i}
-\end{equation}
-
-where $NCMP_i$ represents ``Number of community members participating in activities''
-at the $i$th activity, $NTC_i$ means the total number of people in the community at the
-time of the $i$th activity and N means the total number of activities conducted around
-the building.
-
-\end{description}
-
-\item Economy Value
-
-For economic value, we mainly consider the value of the building in terms of its construction.
-Therefore, we considered the value of the land it occupies. And it is measured
-by the indicator ``Land value'' (LV).
-
-\begin{equation}
-LV = P_c \times Area
-\end{equation}
-
-where $P_c$ represents the current price of the land and Area represents the area occupied by
-the building. Meanwhile, for the value created during the construction of the building itself,
-we use ``Construction cost'' (CC) for quantitative assessment. Taking inflation into account,
-we define Construction cost as all costs involved in the implementation of that construction
-project under this year's Engineering News-Record (ENR) benchmark for the region. Both
-the $LV$ and $CC$ metrics are expressed in U.S. dollars.
-
-\item Historic Value
-
-\begin{description}
-\item [$\circ$] Historical Research Value
-
-The historical value of a building is largely dependent on its place in historical research.
-So we quantify its visibility and importance in the academic world through NH. NH
-refers to the number of historical research documents related to the building, including
-but not limited to books, papers, reports, etc. This indicator reflects the building's attention
-and depth of research in the historical community. The higher NH value means
-the building has a higher historical research value.
-
-\item [$\circ$] The Preservation Condition
-
-The historic value of a building is also affected by its state of preservation. We use
-``Degree of preservation'' (DP) to measure the extent to which a building has been preserved
-from its original state. It includes aspects such as structural integrity, exterior
-preservation, and interior decoration. The assessment of DP can be based on expert
-review, preservation grade, and comparative analysis with the original state. Highly
-preserved buildings not only better transmit history and culture, but also provide rich
-materials for future research.
-\end{description}
-\end{itemize}
-
-\subsubsection{Weight Calculation}
-
-CRITIC is an objective assignment method based on data volatility. The idea of this
-method was based on two indicators, contrast intensity and correlation indicators. When calculating
-the weights, we need to multiply the contrast intensity with the correlation indicator
-and then normalize to get the final weights.
-
-\begin{itemize}
-\item Contrast intensity refers to the magnitude of the difference in values between evaluation
-programs for the same indicator, expressed as a standard deviation. The larger the standard
-deviation, the greater the fluctuation . That is, the larger the difference in the values taken between
-the programs, the higher the weight will be.
-\item The Sperman correlation coefficient is used to express the correlation between indicators.
-If there is a strong positive correlation between two indicators, it means that the less conflicting
-they are, the lower the weight will be.
-\end{itemize}
-
-1) There are $n$ samples to be evaluated and $p$ evaluation indicators to form the raw indicator
-data matrix.
-\[
-X = \begin{pmatrix}
-x_{11} & \cdots & x_{1p} \\
-\vdots & \ddots & \vdots \\
-x_{n1} & \cdots & x_{np}
-\end{pmatrix}
-\]
-
-where $x_{ij}$ represents the value of the $j$th evaluation indicator for the $i$th sample.
-
-2) In order to remove the effect of the scale each indicator is normalized. The indicators
-we selected are of benefit attributes type, so the normalization formula:
-\[
-X_{ij} = \frac{x_{ij}-\min(x_j)}{\max(x_j)-\min(x_j)}
-\]
-\noindent where $X_{ij}$ is normalized to obtain a numerical matrix.
-
-3) Then we calculate the contrast intensity of the indicator:
-\[
-\left\{
 \begin{aligned}
-& \bar{x_j} = \frac{1}{n}\sum_{i=1}^{n} x_{ij} \\
-& S_j = \sqrt{\frac{\sum_{i=1}^{n}(x_{ij}-\bar{x_j})^2}{n-1}}
+C_{Rank,i} = R_{judge,i}+R_{fan, i}
 \end{aligned}
-\right.
-\]
-\noindent where $S_j$ represents the strength of comparison of the $j$th indicator.
-
-The larger the $S_j$, the greater the difference in values for that indicator. The more information
-the indicator reflects, the stronger the evaluation strength of the indicator itself and
-the more weight should be assigned to it.
-
-4) Calculation of the conflicting nature of the indicators
-\[
-\left\{
+\end{equation}
+\item Percentage Method:Each contestant's judge scores and audience votes are converted into percentages of the total score, then combined to form a composite percentage. The contestant with the lowest composite percentage is eliminated.
+\begin{equation}
 \begin{aligned}
-& d_i = \mathrm{rank}(x_{ij})- \mathrm{rank}(x_{ik}) \\
-& r_{jk} = 1-\frac{6 \sum d_i^2}{n (n^2-1)} \\
-& R_j = \sum_{k=1,k\neq j}^p (1-r_{jk})
+ C_{Pct,i}= \frac{S_i}{\sum_j S_j}+\frac{V_i}{\sum_j V_j}
 \end{aligned}
-\right.
-\]
-\noindent where $R_{jk}$ denotes the Sperman correlation coefficient between evaluation indicators $j$ and
-$k$. $R_j$ denotes the conflictual of the $j$th indicator.
-
-The Sperman correlation coefficient is used to express the correlation between indicators.
-The stronger the correlation between two indicators, the less they conflict, the more they reflect
-the same information, and the more repetitive the content of the evaluation is. To a certain
-extent, the evaluation strength of the indicator is weakened and the weight assigned to it should
-be reduced.
-
-5) Calculation of the amount of information:
-\[
-C_j = S_j \times R_j
-\]
-
-6) Based on the amount of information, we calculate the weights of each indicator defined
-$w_j$:
-\[
-w_j = \frac{C_j}{\sum_{j=1}^p C_j}
-\]
-
-7) The score for each indicator is:
-\[
-Score_{object} = \sum_{j=1}^p w_j s_j
-\]
-\noindent where $object$ represents ``Cultural values and community influence'', ``Economy'', ``History'',
-$s_j$ denotes the value of the $j$th secondary indicator.
-
-Applying the CRITIC weighting method for each level 1 indicator separately, the objective
-weights for each level 2 indicator were obtained as shown in the following Table \ref{tbl1}.
-
-\subsubsection{Quantitative Results of Building Values}
-
-In order to assign weights to these three level 1 indicators to get the final building value,
-we use hierarchical analysis to construct a judgment matrix to get the weights of the three level
-1 indicators:
-\[
-\theta = (0.4432, 0.3873, 0.1694)
-\]
-\noindent where the consistency ratio of the judgment matrix $= 0.017591$, and the consistency is acceptable.
-Ultimately, our building impact score is calculated as follows:
-
-\begin{equation}
-V_{score} = \sum_{i=1}^3 \theta_i Score_{object}
 \end{equation}
-
-% 创建Excel表格(可合并单元格), 导入在线生成表格: https://www.latex-tables.com/
-% 设置网格线、右侧可设置背景色
-
-\begin{table}[H]
-\small
-\centering
-\caption{The weight of indicators}
-\label{tbl4}
-\begin{tblr}{
-  cells = {LightGreen},
-  row{1} = {ForestGreen},
-  row{3} = {},
-  cell{2}{1} = {r=3}{},
-  cell{2}{2} = {r=3}{Wheat},
-  cell{5}{1} = {r=2}{},
-  cell{5}{2} = {r=2}{Wheat},
-  cell{5}{3} = {},
-  cell{5}{4} = {},
-  cell{7}{1} = {r=2}{},
-  cell{7}{2} = {r=2}{Wheat},
-  cell{7}{3} = {},
-  cell{7}{4} = {},
-  vlines,
-  hline{1-2,5,7,9} = {-}{},
-  hline{3-4,6,8} = {3-4}{}}
-Object  & Weight & Indicators & Weight \\
-{Cultural Values and \\ Community influence} 
-   & 0.4432 & NG  & 0.1698 \\
-   &        & P   & 0.4429 \\
-   &        & ANV & 0.3873 \\
-Economy  & 0.3873 & LV         & 0.4272 \\
-         &        & CC         & 0.5728 \\
-History  & 0.1694 & NH         & 0.6286 \\
-         &        & DP         & 0.3714 
-\end{tblr}
-\end{table}
-
-% 更多颜色https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/xcolor/xcolor.pdf
-
-\subsection{Determination of protection measures}
-
-\subsubsection{Measure Score}
-
-In Model 1, we obtained a composite risk score $R_{score}$ of each region by analyzing $18$
-natural hazards. Next, in the above section, we quantified the value of the building to get the
-score $V_{score}$. By multiplying the risk score and the value score, $M_{score}$ is obtained, which is
-used to assess the conservation priority of the building and the extent and scale of conservation
-measures that need to be taken.
-
-\begin{equation}
-M_{score} = V_{score} \times R_{score}
-\end{equation}
-
-A higher $M_{score}$ indicates a higher value of the building, along with a higher risk of exposure
-to natural hazards. Therefore, more urgent and comprehensive protection measures are
-needed. Based on the statistical distribution of $M_{score}$, we set reasonable thresholds to recognize
-low, medium, and heigh grades, and the values of the specific thresholds need to be set
-based on expert recommendations and industry standards.
-
-\subsubsection{Score of Protection Measures}
-
-\begin{itemize}
-\item {\bf Low:} For low-grade $M_{score}$ buildings, basic conservation measures, such as routine
-maintenance and inspections and, where necessary, minor repairs, are undertaken. The risk or
-value of these buildings is low, so the measures taken are mainly preventive and low-cost.
-\item {\bf Medium:} For medium-grade $M_{score}$, moderate protection measures are implemented, including
-enhanced structural inspections, improved safety features, and disaster preparedness
-programs. These measures aim to increase the resistance and resilience of buildings and require
-moderate investment.
-\item {\bf High:} For high-grade $M_{score}$, implement comprehensive and high-intensity protection
-measures. This may include comprehensive structural reinforcement, installation of advanced
-security systems, and customized risk management plans in cooperation with external experts.
-Given the high risk or value of these buildings, the goal of the measures is to minimize potential
-losses, even if this means higher initial costs.
 \end{itemize}
 
-{\bf Note that:} The ``one-size-fits-all'' approach to disaster protection measures ignores the impact
-of regional differences, architectural characteristics and socio-economic factors, and can
-lead to poor protection and resource utilization. So specific protection measures still need to be
-derived from a thoughtful local analysis by natural disaster experts.
 
-\subsubsection{Mentoring for Community Leaders}
 
-Our model provides a quantitative and systematic framework for community leaders to
-help them determine the extent and priority of preservation measures based on a building's risk
 
-and value scores. The model makes the decision-making process more scientific and accurate
-by combining risk scores (which consider threats such as natural hazards) and value scores
-(which include historical, cultural, economic, and community importance). It promotes optimal
-allocation of resources and ensures that high-value or high-risk buildings are adequately protected,
-while also taking into account economic benefits. In addition, the model encourages
-community involvement and support, improves disaster response capacity, and supports sustainable
-community development. Through this approach, community leaders are able to make
-more informed decisions to protect and maintain important buildings in their neighborhoods,
-contributing to the overall well-being and development of the community.
+\subsection{Counterfactual Simulation Modeling}
 
-\section{Landmark Case Analysis}
+Counterfactual Simulation Modeling
+Apply both methods to all 34 seasons to construct a controlled comparative experiment.Load all 34 seasons' judge scores and predicted audience vote data to simulate the ranking method: for each elimination week, compute judge rankings and audience rankings to derive a composite ranking; simulate the percentage method: for each elimination week, compute judge percentages and audience percentages to derive a composite percentage.
 
-We select Tokyo Tower in Japan as the landmark for evaluation and analysis.
+Compare the eliminated contestants predicted by each method against the actual eliminated contestants, and calculate the proportion of identical decisions produced by both methods.As shown in the {\bf Figure~\ref{fig_counterfactual}}, both methods yielded identical results in 91.1\% of elimination decisions. This indicates that the impact of method selection is relatively limited, as judges' and viewers' preferences align in most cases. The percentage method achieved a slightly higher prediction accuracy (34.30\%) than the ranking method (29.26\%). This may be attributed to the fact that Seasons 3-27 actually employed the percentage method, allowing viewers' voting behavior to adapt to this approach.
 
 \begin{figure}[H]    % H表示强制固定在当前位置
-\small
 \centering
-\includegraphics[width=0.5\textwidth]{fig9.jpg}
-\caption{Location of Tokyo Tower} \label{fig9}
+\includegraphics[width=1.0\textwidth]{q2_fig1_counterfactual.png}
+
+\caption{Counterfactual Simulation Modeling} \label{fig_counterfactual}
 \end{figure}
 
-\subsection{Insurance Pricing for Tokyo Tower}
+\subsection{Bias Sensitivity Analysis}
+Bias Sensitivity Analysis aims to quantify the extent to which audience votes influence the final outcome.Decompose the variance of the composite score into judge components and audience components, and calculate the contribution of the audience component to the total variance (audience weighting formula):
+\begin{equation}
+\begin{aligned}
+W_{fan} =\frac{Var(Fan\_Component)}{Var(Combined\_Score)}
+\end{aligned}
+\end{equation}
+To measure the impact of minor shifts in audience votes on elimination probability, Marginal Effect analysis is employed:
+\begin{equation}
+\begin{aligned}
+Marginal\_Effect = \frac{\partial P(Y=1)}{\partial V_i}
+\end{aligned}
+\end{equation}
+% Simultaneously, calculate the gradient of the composite score with respect to changes in audience votes to measure sensitivity.
 
-Designed by Japanese architect Tachu Naito, the Tokyo Tower cost $\$8.4$ million to build
-at the time and was constructed to send broadcast signals in Tokyo. Currently, Tokyo's GNI
-per capita is $\$36,964.96$, and the Tokyo capital market is currently functioning well. The risk
-score for Tokyo is calculated to be 86. According to the insurance pricing model, the optimal
-insurance rate for an insurance company to issue catastrophe insurance in Tokyo is $3.8\%$. In
-view of the special historical value of the Tokyo Tower, the insurance company may appropriately
-increase the insurance rate. As a result, the Tokyo government spends approximately US
-$\$319,200$ per year on catastrophe insurance for the Tokyo Tower.
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \centering
+% \includegraphics[width=1.0\textwidth]{q2_fig2_bias_sensitivity.png}
 
-\subsection{Architectural Value of Tokyo Tower}
+% \caption{Bias Sensitivity Analysis} \label{fig_bias_sensitivity}
+% \end{figure}
 
-In 2011, a major earthquake struck northeastern Japan, and this earthquake caused some
-damage to Tokyo Tower, bending the antenna at the tip of the tower by $2$ degrees, resulting in
-the end of the experimental broadcasting of terrestrial wave digital sound broadcasting, and the
-interruption of the transmission of the $24/7$ terrestrial analog television signals. 
-Tokyo Tower entered a maintenance period during which analog signals and FM broadcasting-related services
-also began to be transferred to Tokyo Skytree, so the proportion of Tokyo Tower's actual
-use gradually decreased. However, Tokyo Tower has attracted more than $3$ million visitors as
-a tourist attraction and has accumulated more than $150$ million visitors. It is also a symbol of
-Japan's post-war prosperity and has a remarkable historical significance for the Japanese people.
 
-According to the calculations of the building conservation model, the Mscore of Tokyo
-Tower is located in a high conservation level area. Therefore, the government should consider
-purchasing catastrophe insurance for Tokyo Tower and strengthening its daily supervision and
-maintenance to ensure that it can withstand natural disasters, such as earthquakes, and that its
-seismic treatment measures also need to be strengthened.
+\begin{figure}[H] 
+\caption{Bias Sensitivity Analysis} 
+\centering
+\label{fig_bias_sensitivity}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{q2_fig2_bias_sensitivity1.png}
+\end{subfigure}\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{q2_fig2_bias_sensitivity2.png}
+\end{subfigure}\\
+\end{figure}
+
+
+As shown in the {\bf Figure \ref{fig_bias_sensitivity}}, the weight of audience votes in the {\bf percentage method} {\bf (85.6\%)} is {\bf significantly higher} than that in the ranking method {\bf (49.8\%)}, with a difference of 35.8 percentage points. The mathematical reason for this discrepancy is that in the ranking method, regardless of how many audience votes a contestant receives, their contribution is identical as long as their ranking remains the same. In contrast, the percentage method directly reflects the absolute difference in vote counts through the percentage.  This implies that during the percentage method era (Seasons 3-27), contestants with strong fan bases—such as Bristol Palin and Bobby Bones were more likely to secure a significant audience vote advantage, thereby offsetting lower judge scores.
+
+
+
+
+\subsection{Analysis of Controversial Cases and Method Evaluation}
+
+Based on the above discussion, we analyze cases where contestants such as Bristol Palin, Bobby Bones, Jerry Rice, and Billy Ray Cyrus received extremely low judge scores yet still achieved high rankings during the season. For each controversial contestant, we simulate their performance under two voting methods: calculating how many times they would be eliminated under the ranking system versus the percentage system. If a contestant faces more eliminations under one method, it indicates that method is more ``disadvantageous'' to them.
+
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=1.0\textwidth]{q2_fig3_controversy_cases.png}
+
+\caption{Analysis of Controversial Cases} \label{fig_controversy_cases}
+\end{figure}
+
+
+As shown in the {\bf Figure \ref{fig_controversy_cases}}, Bristol's case demonstrates the percentage method's bias toward contestants with large fan bases. Her audience vote percentile (73.6\%) significantly exceeded her judge vote percentile (60.2\%), and this disparity was fully leveraged under the percentage system to propel her into the finals. The Bobby Bones case exemplifies the extreme bias of the percentage method. As a radio host, he commands a massive fanbase, which translates into a substantial audience vote advantage under this system. This advantage completely offsets his lower dance technique scores.
+
+
+
+\subsection{Discussion on the Judge Rescue Mechanism}
+
+Starting from Season 28, DWTS introduced the “judges' save” mechanism. Once the bottom two contestants are determined, the judges may vote to save one of them. This provides an opportunity for professional judgment to correct “unfair” eliminations. By utilizing judges' scores from all seasons, elimination results, and fan vote scores predicted by the random forest model in Problem 1, we can calculate the prediction accuracy of elimination using the three methods shown in the {\bf Figure \ref{fig_judge_save}}, thereby {\bf quantifying} the impact of the judges' save mechanism.
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=1.0\textwidth]{q2.png}
+
+\caption{Analysis of the Impact of Judges' Save Mechanism} \label{fig_judge_save}
+\end{figure}
+
+The judge's lifeline mechanism altered approximately 8.9\% of elimination outcomes. Although its prediction accuracy was relatively low (25.4\%), it provided an opportunity to correct errors in disputed cases and increased the weight of professional judgment.
+
+We evaluated the two methods across three dimensions: prediction accuracy, weight balance, and Arrow's theorem scores.
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.8\textwidth]{q2_fig5_final_analysis.png}
+
+\caption{Multi-Criteria Analysis of two Methods} \label{fig_final_analysis}
+\end{figure}
+
+Therefore, the primary recommendation is the {\bf Ranking System combined with the Judges' Save Mechanism}. This approach has been adopted by DWTS since Season 28. Within the framework of Arrow's theorem, the ranking system achieves a higher fairness score, while the judges' save mechanism provides an opportunity to correct approximately 9\% of controversial eliminations.
+
+
+\subsection{Multi-Model Validation and Robustness Analysis}
+To validate the reliability of the Variance Decomposition Model for Problem 2, we employed multi-model cross-validation to enhance the model's feasibility and robustness. The selected validation models are listed in the {\bf Table \ref{table_validation_models}} below.
+
+%% 三线表
+\begin{table}[H]     % H表示强制固定在当前位置
+\small
+\centering           % 设置居中
+\caption{Validation Models}  % 表标题
+\label{table_validation_models}         % 设置表的引用标签
+\begin{tabular}{lll}  % 2列, c表示居中对齐, l和r表示左右对齐
+\toprule             % 画顶端横线
+\textbf{Model}      & \textbf{Method Type}  & \textbf{Purpose of Verification}       \\
+\midrule             % 画中间
+Linear Regression   & Parameter Regression  & Quantify the weight contribution ratio \\
+Logistic regression & Classification Model  & Analyze Factors Affecting Elimination  \\
+BootstrapSimulation & Resampling Statistics & Constructing Confidence Intervals      \\
+SHAP                & Game Theory           & Fair distribution of contributions    \\
+\bottomrule         % 画底部横线
+\end{tabular}
+\vspace{2pt} % 稍微调整间距
+\begin{flushleft} \small
+\end{flushleft}
+\end{table}
+
+
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+
+% \includegraphics[width=0.8\textwidth]{fig_validation_summary.png}
+% \caption{Validation Summary} \label{fig_validation_summary}
+% \end{figure}\begin{figure}[H]    % H表示强制固定在当前位置
+
+% \includegraphics[width=0.7\textwidth]{fig_robustness_analysis.png}
+% \caption{Robustness Analysis} \label{fig_robustness_analysis}
+% \end{figure}
+
+
+% 正文区直接插入
+\begin{figure}[H]
+    \caption{Multi-Model Validation and Robustness Analysis}
+    \centering
+    % 调整宽度为0.45\textwidth，适配mcmthesis的页边距
+    \begin{subfigure}{0.52\textwidth}
+        
+        \includegraphics[width=\textwidth]{fig_validation_summary.png}
+        \caption{Validation Summary}
+        \label{fig_validation_summary}  % 保持你原来的标签格式
+    \end{subfigure}
+    \quad  % 用quad控制固定间距（比hfill更稳定）
+    \begin{subfigure}{0.42\textwidth}
+        
+        \includegraphics[width=\textwidth]{fig_robustness_analysis.png}
+        \caption{Robustness Analysis}
+        \label{fig_robustness_analysis}
+    \end{subfigure}
+\end{figure}
+
+% \begin{figure}[H] 
+% \caption{Uncertainty Propagation Analysis Results} 
+% \centering
+% \label{fig_propagation_analysis}
+% \begin{subfigure}{0.5\textwidth}
+% \includegraphics[width=0.9\textwidth]{fig_uncertainty_propagation (1).png}
+% \end{subfigure}\begin{subfigure}{0.5\textwidth}
+% \includegraphics[width=0.9\textwidth]{fig_sensitivity_analysis (1).png}
+% \end{subfigure}\\
+% \end{figure}
+
+
+As shown in the {\bf Figure \ref{fig_validation_summary}},all methods confirm that the percentage method yields higher audience weights than the ranking method, demonstrating consistency. Most methods indicate audience weights under the percentage method fall within the 50-90\% range, reflecting stronger audience dominance. Shapley values validate the rationality of weight allocation from a fair distribution perspective.
+
+
+
+The model's performance stability was evaluated when introducing varying levels of noise into the input data. As shown in the {\bf Figure \ref{fig_robustness_analysis}}, performance remained largely consistent within the 0\%–20\% noise range without significant decline, indicating strong resistance to input noise interference. As noise levels increased, fluctuations in performance scores slightly widened, yet overall stability was maintained, validating the model's robustness.
+
+% Building value is measured in terms of the building's cultural value and community influence,
+% economic value, and historical value. Therefore, we take these three main aspects as primary
+% indicators.
+
+% \subsubsection{Indicators Determination}
+
+% For the cultural value and community influence, we synthesized various factors, such as
+% geography and network, and finally selected the three most representative secondary indicators
+% to construct our model. Similarly, for the economic and historical value, we selected two secondary
+% indicators each to improve the model. The specific description and indicators selected
+% are shown in Table \ref{tbl3}.
+
+% % 创建Excel表格(可合并单元格), 导入在线生成表格: https://www.latex-tables.com/
+% % 设置网格线、右侧可设置背景色
+
+% \begin{table}[H]
+% \small
+% \centering
+% \caption{Indicators}  
+% \label{tbl3}         
+% \begin{tblr}{
+%   row{odd} = {LightGreen},
+%   row{1} = {ForestGreen},
+%   cell{2}{1} = {r=3}{LightGreen},
+%   cell{5}{1} = {r=2}{},
+%   cell{7}{1} = {r=2}{},
+%   vlines,
+%   hline{1-2,5,7,9} = {-}{},
+%   hline{3-4,6,8} = {2-3}{}}
+% Object    & Indicators & Description      \\
+% {Cultural Values and \\ Community influence} 
+%    & NG  & Number of Google search terms   \\
+%    & P   & {Participation in events held \\ around the building} \\
+%    & ANV & Annual number of visitors        \\
+% Economy  & LV         & Land value         \\
+%          & CC         & Construction cost  \\
+% History  & NH         & Number of historical research documents  \\
+%          & DP         & Degree of preservation
+% \end{tblr}
+% \end{table}
+
+
+% \begin{itemize}
+% \item Cultural Value and Community Influence
+% \begin{description}
+% \item [$\circ$] Global Visibility
+
+% The cultural value of a building depends to a large extent on its global visibility. So we
+% quantify its global visibility through two metrics, ``Number of Google search terms''
+% (NG) and ``Annual number of visitors'' (ANV). This approach balances online and offline,
+% making the measurement of cultural values more quantifiable and accurate.
+
+% \item [$\circ$] Impact on the Community
+
+% Buildings have a strong connection with local communities. When measuring the value
+% of a building, we take into account its impact on the local community. Research has
+% shown that the more influence a building has on the local community, the more the
+% value of the landmark itself will increase. Besides, it will further promote the increase
+% of influence, realizing a positive feedback loop. Therefore, we choose ``Participation in
+% events held around the building'' (P) to quantify the building's influence on the community.
+% We calculate P as follows:
+
+% \begin{equation}
+% P = \frac{1}{N} \times \sum_{i = 1}^N \frac{NCMP_i}{NTC_i}
+% \end{equation}
+
+% where $NCMP_i$ represents ``Number of community members participating in activities''
+% at the $i$th activity, $NTC_i$ means the total number of people in the community at the
+% time of the $i$th activity and N means the total number of activities conducted around
+% the building.
+
+% \end{description}
+
+% \item Economy Value
+
+% For economic value, we mainly consider the value of the building in terms of its construction.
+% Therefore, we considered the value of the land it occupies. And it is measured
+% by the indicator ``Land value'' (LV).
+
+% \begin{equation}
+% LV = P_c \times Area
+% \end{equation}
+
+% where $P_c$ represents the current price of the land and Area represents the area occupied by
+% the building. Meanwhile, for the value created during the construction of the building itself,
+% we use ``Construction cost'' (CC) for quantitative assessment. Taking inflation into account,
+% we define Construction cost as all costs involved in the implementation of that construction
+% project under this year's Engineering News-Record (ENR) benchmark for the region. Both
+% the $LV$ and $CC$ metrics are expressed in U.S. dollars.
+
+% \item Historic Value
+
+% \begin{description}
+% \item [$\circ$] Historical Research Value
+
+% The historical value of a building is largely dependent on its place in historical research.
+% So we quantify its visibility and importance in the academic world through NH. NH
+% refers to the number of historical research documents related to the building, including
+% but not limited to books, papers, reports, etc. This indicator reflects the building's attention
+% and depth of research in the historical community. The higher NH value means
+% the building has a higher historical research value.
+
+% \item [$\circ$] The Preservation Condition
+
+% The historic value of a building is also affected by its state of preservation. We use
+% ``Degree of preservation'' (DP) to measure the extent to which a building has been preserved
+% from its original state. It includes aspects such as structural integrity, exterior
+% preservation, and interior decoration. The assessment of DP can be based on expert
+% review, preservation grade, and comparative analysis with the original state. Highly
+% preserved buildings not only better transmit history and culture, but also provide rich
+% materials for future research.
+% \end{description}
+% \end{itemize}
+
+% \subsubsection{Weight Calculation}
+
+% CRITIC is an objective assignment method based on data volatility. The idea of this
+% method was based on two indicators, contrast intensity and correlation indicators. When calculating
+% the weights, we need to multiply the contrast intensity with the correlation indicator
+% and then normalize to get the final weights.
+
+% \begin{itemize}
+% \item Contrast intensity refers to the magnitude of the difference in values between evaluation
+% programs for the same indicator, expressed as a standard deviation. The larger the standard
+% deviation, the greater the fluctuation . That is, the larger the difference in the values taken between
+% the programs, the higher the weight will be.
+% \item The Sperman correlation coefficient is used to express the correlation between indicators.
+% If there is a strong positive correlation between two indicators, it means that the less conflicting
+% they are, the lower the weight will be.
+% \end{itemize}
+
+% 1) There are $n$ samples to be evaluated and $p$ evaluation indicators to form the raw indicator
+% data matrix.
+% \[
+% X = \begin{pmatrix}
+% x_{11} & \cdots & x_{1p} \\
+% \vdots & \ddots & \vdots \\
+% x_{n1} & \cdots & x_{np}
+% \end{pmatrix}
+% \]
+
+% where $x_{ij}$ represents the value of the $j$th evaluation indicator for the $i$th sample.
+
+% 2) In order to remove the effect of the scale each indicator is normalized. The indicators
+% we selected are of benefit attributes type, so the normalization formula:
+% \[
+% X_{ij} = \frac{x_{ij}-\min(x_j)}{\max(x_j)-\min(x_j)}
+% \]
+% \noindent where $X_{ij}$ is normalized to obtain a numerical matrix.
+
+% 3) Then we calculate the contrast intensity of the indicator:
+% \[
+% \left\{
+% \begin{aligned}
+% & \bar{x_j} = \frac{1}{n}\sum_{i=1}^{n} x_{ij} \\
+% & S_j = \sqrt{\frac{\sum_{i=1}^{n}(x_{ij}-\bar{x_j})^2}{n-1}}
+% \end{aligned}
+% \right.
+% \]
+% \noindent where $S_j$ represents the strength of comparison of the $j$th indicator.
+
+% The larger the $S_j$, the greater the difference in values for that indicator. The more information
+% the indicator reflects, the stronger the evaluation strength of the indicator itself and
+% the more weight should be assigned to it.
+
+% 4) Calculation of the conflicting nature of the indicators
+% \[
+% \left\{
+% \begin{aligned}
+% & d_i = \mathrm{rank}(x_{ij})- \mathrm{rank}(x_{ik}) \\
+% & r_{jk} = 1-\frac{6 \sum d_i^2}{n (n^2-1)} \\
+% & R_j = \sum_{k=1,k\neq j}^p (1-r_{jk})
+% \end{aligned}
+% \right.
+% \]
+% \noindent where $R_{jk}$ denotes the Sperman correlation coefficient between evaluation indicators $j$ and
+% $k$. $R_j$ denotes the conflictual of the $j$th indicator.
+
+% The Sperman correlation coefficient is used to express the correlation between indicators.
+% The stronger the correlation between two indicators, the less they conflict, the more they reflect
+% the same information, and the more repetitive the content of the evaluation is. To a certain
+% extent, the evaluation strength of the indicator is weakened and the weight assigned to it should
+% be reduced.
+
+% 5) Calculation of the amount of information:
+% \[
+% C_j = S_j \times R_j
+% \]
+
+% 6) Based on the amount of information, we calculate the weights of each indicator defined
+% $w_j$:
+% \[
+% w_j = \frac{C_j}{\sum_{j=1}^p C_j}
+% \]
+
+% 7) The score for each indicator is:
+% \[
+% Score_{object} = \sum_{j=1}^p w_j s_j
+% \]
+% \noindent where $object$ represents ``Cultural values and community influence'', ``Economy'', ``History'',
+% $s_j$ denotes the value of the $j$th secondary indicator.
+
+% Applying the CRITIC weighting method for each level 1 indicator separately, the objective
+% weights for each level 2 indicator were obtained as shown in the following Table \ref{tbl1}.
+
+% \subsubsection{Quantitative Results of Building Values}
+
+% In order to assign weights to these three level 1 indicators to get the final building value,
+% we use hierarchical analysis to construct a judgment matrix to get the weights of the three level
+% 1 indicators:
+% \[
+% \theta = (0.4432, 0.3873, 0.1694)
+% \]
+% \noindent where the consistency ratio of the judgment matrix $= 0.017591$, and the consistency is acceptable.
+% Ultimately, our building impact score is calculated as follows:
+
+% \begin{equation}
+% V_{score} = \sum_{i=1}^3 \theta_i Score_{object}
+% \end{equation}
+
+% % 创建Excel表格(可合并单元格), 导入在线生成表格: https://www.latex-tables.com/
+% % 设置网格线、右侧可设置背景色
+
+% \begin{table}[H]
+% \small
+% \centering
+% \caption{The weight of indicators}
+% \label{tbl4}
+% \begin{tblr}{
+%   cells = {LightGreen},
+%   row{1} = {ForestGreen},
+%   row{3} = {},
+%   cell{2}{1} = {r=3}{},
+%   cell{2}{2} = {r=3}{Wheat},
+%   cell{5}{1} = {r=2}{},
+%   cell{5}{2} = {r=2}{Wheat},
+%   cell{5}{3} = {},
+%   cell{5}{4} = {},
+%   cell{7}{1} = {r=2}{},
+%   cell{7}{2} = {r=2}{Wheat},
+%   cell{7}{3} = {},
+%   cell{7}{4} = {},
+%   vlines,
+%   hline{1-2,5,7,9} = {-}{},
+%   hline{3-4,6,8} = {3-4}{}}
+% Object  & Weight & Indicators & Weight \\
+% {Cultural Values and \\ Community influence} 
+%    & 0.4432 & NG  & 0.1698 \\
+%    &        & P   & 0.4429 \\
+%    &        & ANV & 0.3873 \\
+% Economy  & 0.3873 & LV         & 0.4272 \\
+%          &        & CC         & 0.5728 \\
+% History  & 0.1694 & NH         & 0.6286 \\
+%          &        & DP         & 0.3714 
+% \end{tblr}
+% \end{table}
+
+% % 更多颜色https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/xcolor/xcolor.pdf
+
+% \subsection{Determination of protection measures}
+
+% \subsubsection{Measure Score}
+
+% In Model 1, we obtained a composite risk score $R_{score}$ of each region by analyzing $18$
+% natural hazards. Next, in the above section, we quantified the value of the building to get the
+% score $V_{score}$. By multiplying the risk score and the value score, $M_{score}$ is obtained, which is
+% used to assess the conservation priority of the building and the extent and scale of conservation
+% measures that need to be taken.
+
+% \begin{equation}
+% M_{score} = V_{score} \times R_{score}
+% \end{equation}
+
+% A higher $M_{score}$ indicates a higher value of the building, along with a higher risk of exposure
+% to natural hazards. Therefore, more urgent and comprehensive protection measures are
+% needed. Based on the statistical distribution of $M_{score}$, we set reasonable thresholds to recognize
+% low, medium, and heigh grades, and the values of the specific thresholds need to be set
+% based on expert recommendations and industry standards.
+
+% \subsubsection{Score of Protection Measures}
+
+% \begin{itemize}
+% \item {\bf Low:} For low-grade $M_{score}$ buildings, basic conservation measures, such as routine
+% maintenance and inspections and, where necessary, minor repairs, are undertaken. The risk or
+% value of these buildings is low, so the measures taken are mainly preventive and low-cost.
+% \item {\bf Medium:} For medium-grade $M_{score}$, moderate protection measures are implemented, including
+% enhanced structural inspections, improved safety features, and disaster preparedness
+% programs. These measures aim to increase the resistance and resilience of buildings and require
+% moderate investment.
+% \item {\bf High:} For high-grade $M_{score}$, implement comprehensive and high-intensity protection
+% measures. This may include comprehensive structural reinforcement, installation of advanced
+% security systems, and customized risk management plans in cooperation with external experts.
+% Given the high risk or value of these buildings, the goal of the measures is to minimize potential
+% losses, even if this means higher initial costs.
+% \end{itemize}
+
+% {\bf Note that:} The ``one-size-fits-all'' approach to disaster protection measures ignores the impact
+% of regional differences, architectural characteristics and socio-economic factors, and can
+% lead to poor protection and resource utilization. So specific protection measures still need to be
+% derived from a thoughtful local analysis by natural disaster experts.
+
+% \subsubsection{Mentoring for Community Leaders}
+
+% Our model provides a quantitative and systematic framework for community leaders to
+% help them determine the extent and priority of preservation measures based on a building's risk
+
+% and value scores. The model makes the decision-making process more scientific and accurate
+% by combining risk scores (which consider threats such as natural hazards) and value scores
+% (which include historical, cultural, economic, and community importance). It promotes optimal
+% allocation of resources and ensures that high-value or high-risk buildings are adequately protected,
+% while also taking into account economic benefits. In addition, the model encourages
+% community involvement and support, improves disaster response capacity, and supports sustainable
+% community development. Through this approach, community leaders are able to make
+% more informed decisions to protect and maintain important buildings in their neighborhoods,
+% contributing to the overall well-being and development of the community.
+
+\section{Quantifying Feature Contributions via Mixed-Effects Model}
+Problem 3 requires us to analyze the characteristics of dancers and contestants, construct corresponding models, and quantify the contribution of dancer characteristics and contestant characteristics to the contestant's final score and judges' scores.
+\subsection{Calculate Fixed and Random Effects}
+
+A {\bf Mixed Effects Model} is a statistical model that incorporates both fixed effects and random effects, suitable for data with hierarchical structures or repeated measurements. Its basic form is:
+\begin{equation}
+\begin{aligned}
+y_{ij} = X_{ij} \cdot \beta + Z_{ij} \cdot b_j + \epsilon_{ij}
+\end{aligned}
+\end{equation}
+Where: $y_{ij}$ is the performance of star $i$ by dancer $j$ (judges' scores or final ranking); $X_{ij}$ is the fixed effects design matrix (star characteristics) ; $\beta$ is the fixed effects coefficient vector; $Z_{ij}$ is the random effects design matrix (typically intercepts) ; $b_j \sim N(0, {\sigma^2}_b)$ is the random effects for dancer j •;$\epsilon _{ij} \sim N(0, {\sigma^2}_\epsilon )$ is the residual error.
+
+First, estimate the random effects by grouping the data by dancer and calculating the within-group mean for each dancer as the random effect estimate:
+\begin{equation}
+    \begin{aligned}
+b\ _j = \bar{{y}\ _j} - \bar{y}
+\end{aligned}
+\end{equation}
+
+Then estimate the fixed effects, subtract the group effects from the original dependent variable, and use Ridge regression to fit the fixed effects.
+\begin{equation}  
+\begin{aligned}
+\beta = (X'X + \alpha I ) ^ {-1} X' (y - Zb )
+\end{aligned}
+\end{equation}
+Where $\alpha$ is the regularization parameter to prevent overfitting; $I$ is the identity matrix.Through model estimation, significant fixed effects (contributions of player characteristics to performance) can be obtained, as shown in {\bf Table \ref{table_mixed}}.Variables such as $week\_std$, $avg\_place\_std$, $age\_std$, $age\_std$, and $season\_std$ significantly alter the ranking coefficient, reflecting pronounced fixed effects including stage history, age, and week effects.
+
+% 三线表
+\begin{table}[H]     % H表示强制固定在当前位置
+\small
+\centering           % 设置居中
+\caption{Feature Variable Contributions}  % 表标题
+\label{table_mixed}         % 设置表的引用标签
+\begin{tabular}{llp{0.1\textwidth}lp{0.1\textwidth}}  % 2列, c表示居中对齐, l和r表示左右对齐
+\toprule             % 画顶端横线
+\textbf{Variable}  & \textbf{Weighting Factor} & \textbf{p-value} & Ranking Factor & \textbf{p-value} \\
+\midrule 
+seasons\_std       & +0.1103                   & 0.0020           & +0.2461        & 0.0009           \\
+avg\_place\_std    & -0.4336                   & 0.0000           & -0.4053        & 0.0000           \\
+age\_std           & +0.5666                   & 0.0178           & +1.0791        & 0.0000           \\
+followers\_std     & +0.2779                   & 0.0299           & +0.0853        & 0.4933           \\
+season\_std        & +0.2498                   & 0.0000           & +0.4058        & 0.0000           \\
+week\_std          & -0.9351                   & 0.0000           & -0.9804        & 0.0000           \\
+exp\_x\_fans       & +0.1478                   & 0.0279           & -0.0703        & 0.2772           \\
+champ\_x\_fans     & -0.3599                   & 0.0268           & -0.0733        & 0.6544           \\
+season\_x\_fans    & -0.1318                   & 0.0099           & -0.0846        & 0.1258           \\
+ind\_Entertainment & -0.4823                   & 0.0025           & +0.0924        & 0.5936     \\
+\bottomrule         % 画底部横线
+\end{tabular}
+\end{table}
+
+Decomposing the variance in $week\_rank$ and $placement$ for the model reveals the contribution of the dancer effect to the total variation. Calculate the intraclass correlation coefficient ($ICC$):
+
+\begin{equation}
+  \begin{aligned}
+ICC = \frac{\sigma^2_b}{\sigma^2_b + \sigma^2_\varepsilon}
+\end{aligned}
+\end{equation}
+Through model estimation, we can determine the contribution of the professional dancer effect to the final ranking: 57.73\%, and to the judges' scores: 48.50\%. In the ranking model, $ICC$ = 0.4777, and in the scoring model, $ICC$ = 0.4305. $ICC$ values close to 0.5 indicate that approximately half of the variation stems from dancer differences, demonstrating that professional dancers significantly impact celebrity contestants' performance scores.
+
+
+\subsection{Model Optimization}
+We systematically optimized the base model by incorporating the nonlinear term $age\_squared$ to capture the nonlinear effects of age and incorporated temporal trends via $season\_std$ and $week\_std$ to enhance interpretability and predictive power.  The optimized model achieved a 37.3\% increase in variance for the judge scoring model and a 35.9\% increase in variance for the ranking model. This enables better quantification of how features like professional dancer experience, celebrity age, fan count, and season count contribute to contestant performance scores,as shown in  {\bf Figure \ref{fig_effects_analysis_v2}}.
+
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \centering
+% \includegraphics[width=1.0\textwidth]{q3_fig6_validation_r2_comparison.png}
+
+% \caption{Model Improvement Variance Test} \label{fig_validation_r2_comparison}
+% \end{figure}
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.8\textwidth]{q3_fig7_effects_analysis_v2.png}
+
+\caption{Enhanced Model Effects Analysis} \label{fig_effects_analysis_v2}
+\end{figure}
+
+
+\subsection{An Investigation into the Influence of Judges and Audience Voting}
+A directed acyclic graph (DAG) is a visualization tool used to represent causal relationships between variables. DAG explicitly distinguish between direct effects, indirect effects, and confounding effects. Based on mixed-effects model coefficients and domain knowledge, they identify the following four key causal pathways:
+\begin{itemize}
+\item Dancer's Historical Record $\to$ Judges' Scores $\to$ Final Ranking
+\item Social media followers $\to$ Fan voting $\to$ Final ranking
+\item Star's Age $\to$ Judges' Scores / Fan Votes $\to$ Final Ranking
+\item $Season \times Fans \to$ Judge Scores / Fan Votes $\to$ Final Ranking
+\end{itemize}
+
+Through interaction analysis, the {\bf Figure \ref{fig_causal_dag}} reveals causal pathways linking professional dancer characteristics and celebrity characteristics to fan and judge votes, while distinguishing the direct impact of judges' scores from the indirect influence of fan voting.As shown in {\bf Figure \ref{fig_effect_decomposition}}, the direct effect of dancer characteristics (25\%) is the largest, indicating  {`` Who is your dance partner? '' }  is the primary factor determining scores. The indirect effect of social media (18\%) is also significant, validating the importance of the fan voting mechanism.
+
+Therefore, social media follower counts, industry background, and interaction metrics primarily influence judges' scores rather than follower-driven rankings. Champion dancers' partnerships and the age effect exert stronger influence on fan voting. This indicates that judges evaluate technical proficiency, while fans respond more broadly to star appeal.
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.6\textwidth]{q3_fig_causal_dag.png}
+
+\caption{Causal DAG} \label{fig_causal_dag}
+\end{figure}
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.7\textwidth]{q3_fig_effect_decomposition.png}
+
+\caption{Effect Decomposition} \label{fig_effect_decomposition}
+\end{figure}
+
+
+
+
+
+
+
+% We select Tokyo Tower in Japan as the landmark for evaluation and analysis.
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \small
+% \centering
+% \includegraphics[width=0.5\textwidth]{fig9.jpg}
+% \caption{Location of Tokyo Tower} \label{fig9}
+% \end{figure}
+
+% \subsection{Insurance Pricing for Tokyo Tower}
+
+% Designed by Japanese architect Tachu Naito, the Tokyo Tower cost $\$8.4$ million to build
+% at the time and was constructed to send broadcast signals in Tokyo. Currently, Tokyo's GNI
+% per capita is $\$36,964.96$, and the Tokyo capital market is currently functioning well. The risk
+% score for Tokyo is calculated to be 86. According to the insurance pricing model, the optimal
+% insurance rate for an insurance company to issue catastrophe insurance in Tokyo is $3.8\%$. In
+% view of the special historical value of the Tokyo Tower, the insurance company may appropriately
+% increase the insurance rate. As a result, the Tokyo government spends approximately US
+% $\$319,200$ per year on catastrophe insurance for the Tokyo Tower.
+
+% \subsection{Architectural Value of Tokyo Tower}
+
+% In 2011, a major earthquake struck northeastern Japan, and this earthquake caused some
+% damage to Tokyo Tower, bending the antenna at the tip of the tower by $2$ degrees, resulting in
+% the end of the experimental broadcasting of terrestrial wave digital sound broadcasting, and the
+% interruption of the transmission of the $24/7$ terrestrial analog television signals. 
+% Tokyo Tower entered a maintenance period during which analog signals and FM broadcasting-related services
+% also began to be transferred to Tokyo Skytree, so the proportion of Tokyo Tower's actual
+% use gradually decreased. However, Tokyo Tower has attracted more than $3$ million visitors as
+% a tourist attraction and has accumulated more than $150$ million visitors. It is also a symbol of
+% Japan's post-war prosperity and has a remarkable historical significance for the Japanese people.
+
+% According to the calculations of the building conservation model, the Mscore of Tokyo
+% Tower is located in a high conservation level area. Therefore, the government should consider
+% purchasing catastrophe insurance for Tokyo Tower and strengthening its daily supervision and
+% maintenance to ensure that it can withstand natural disasters, such as earthquakes, and that its
+% seismic treatment measures also need to be strengthened.
+
+
+\section{Insight:Uncertainty Propagation Framework}
+
+
+The fan vote estimates for Question 1 are likely based on reverse-engineering from limited information, inherently carrying uncertainty. When these estimates serve as inputs for Question 2 and Question 3, how does this uncertainty affect the reliability of subsequent conclusions?
+
+We establish a propagation framework designed to quantify and trace how uncertainty in Question~1 fan vote estimates propagates to Question~2 controversy identification and Question~3 factor analysis. As shown in \textbf{Figure~\ref{fig_propagation_framework}}, the confidence intervals for Question~1 fan vote estimates are quantified using Bootstrap resampling. Monte Carlo simulations are employed to propagate Question~1 uncertainty into the Question~2 controversy identification model. To analyze the impact of Question~1 uncertainty on Question~3 mixed-effects model coefficient estimates, a coefficient \textbf{Sensitivity Analysis} is conducted.
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.8\textwidth]{fig_propagation_framework (1).png}
+
+\caption{Uncertainty Propagation Framework} \label{fig_propagation_framework}
+\end{figure}
+
+
+\textbf{Figure~\ref{fig_propagation_analysis}} was obtained through calculation. This matrix quantifies the uncertainty propagation amplification effect (Amplification Factor) between different questions (Question~1, Question~2, Question~3). Despite moderate uncertainty in Question~1 voting estimates (CI width = 0.336), conclusions from Question~2 dispute identification and Question~3 factor analysis remain stable. Only a slight amplification occurs along the Question~1~$\to$~Question~2 path (Uncertainty Amplification Factor of $1.13\times$), and Question~3's characteristic statistics remain significant after propagation. Thus, this model framework demonstrates strong robustness and overall reliability.
+
+
+\begin{figure}[H] 
+\caption{Uncertainty Propagation Analysis Results} 
+\label{fig_propagation_analysis}\centering
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{fig_uncertainty_propagation (1).png}
+\end{subfigure}\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{fig_sensitivity_analysis (1).png}
+\end{subfigure}\\
+\end{figure}
+
+
+\section{Design of a Score Fusion Mechanism Based on the KMDR Model}
+
+\subsection{Establishment and Evaluation of the Score Fusion Mechanism}
+
+In reality competition shows like DWTS, the design of the scoring mechanism directly impacts the fairness and credibility of the competition. To address the potential systemic discrepancies between judges' scores and audience votes, we developed a KMDR (Kemeny-Metric Distortion Rank) model based on cutting-edge research in social choice theory and voting system design.
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.8\textwidth]{q4.png}
+
+\caption{KMDR Model Principle Workflow} \label{fig_kmdr_workflow}
+\end{figure}
+
+As shown in {\bf Figure~\ref{fig_kmdr_workflow}},Our goal in establishing the model is to design a composite scoring function $G = f(S, V, t)$ that satisfies the fairness, dynamic adaptability, accuracy, and interpretability.Below is the solution and performance evaluation of the scoring fusion mechanism.
+
+\begin{itemize}
+
+\item Superiority of Simulation Results
+
+Based on simulations using KMDR, the results are shown in the {\bf Figure~\ref{fig_champion_quality}}. Across the simulated 32 seasons, we analyzed the quality of these champions from two dimensions: overall strength and controversy. The figure indicates that the mean overall strength distribution of KMDR champions is 0.6502, with a standard deviation of 0.098, demonstrating that champions generally possess a high and stable overall level. Most crucially, none of the 32 KMDR champions were controversial selections—a stark contrast to the potential “one-sided dominance” issues present in existing systems. This demonstrates that KMDR does not merely “predict” existing outcomes but offers a fairer, more reasonable alternative.
+
+
+
+
+\begin{figure}[H] 
+\caption{KMDR Simulation Analysis Results} 
+\label{fig_propagation_analysis}\centering
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{fig_simulation_champions.png}
+\caption{KMDR Champion Quality Analysis} \label{fig_champion_quality}
+\end{subfigure}\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{fig_simulation_elimination.png}
+\caption{KMDR Early Elimination Rationality Analysis} \label{fig_elimination_rationality}
+\end{subfigure}\\
+
+\end{figure}
+
+\item Highly Rational Elimination Decision
+
+The rationality of early elimination decisions serves as a key metric for evaluating ranking systems. As shown in the {\bf Figure \ref{fig_elimination_rationality}}, we analyzed the strength distribution of eliminated contestants over the first three weeks: 96.3\% of eliminated contestants ranked below the 20th percentile in overall strength, indicating highly rational elimination decisions. Unlike existing mechanisms that may prematurely eliminate contestants who are “weak with judges but strong with audiences” or “weak with audiences but strong with judges,” KMDR ensures that only contestants deemed weak by both parties are eliminated.
+
+
+
+
+
+\item Significantly enhanced fairness
+
+Beyond simulation evaluation, we also assess KMDR's fairness from a theoretical perspective. Based on social choice theory, we employ four independent metrics:
+Satisfaction Balance, Noise Robustness,
+Condorcet Efficiency ,
+and Disagreement Penalty Correlation.
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.7\textwidth]{fig_fairness_metrics.png}
+
+\caption{KMDR Fairness Metrics Analysis Results} \label{fig_fairness_metrics}
+\end{figure}
+
+As shown in the {\bf Figure \ref{fig_fairness_metrics}}, KMDR achieves the second-highest satisfaction balance after the percentage method, realizing mutual satisfaction among judges (0.958) and audiences (0.967). KMDR demonstrates a remarkable Condorcet efficiency of 98.79\%, ensuring that the “consensus favorite” receives the deserved ranking. Its disagreement penalty mechanism exhibits statistical significance (p<0.01), proving that the metric distortion theory's penalty mechanism effectively constrains “controversial contestants.”
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.8\textwidth]{fig_kmdr_weight_dynamics.png}
+
+\caption{KMDR Dynamic Weight Adjustment Adaptation} \label{fig_kmdr_weight_dynamics}
+\end{figure}
+
+
+
+
+\item Dynamic Weight Adjustment Adaptation
+
+One of KMDR's core innovations is dynamically adjusting the judge-audience weighting based on the competition stage. {\bf Figure \ref{fig_kmdr_weight_dynamics}} illustrates how the weighting changes over the weeks of the competition (0.75 in the early stage, 0.60 in the middle stage, and 0.50 in the late stage). This dynamic weighting adjustment strategy aligns with the developmental patterns of reality TV shows: early screening requires professionalism, while the later finals demand public participation. This design balances both competitiveness and entertainment value.
+
+
+
+
+
+
+\end{itemize}
+
+\subsection{Sensitivity Analysis}
+
+The distortion penalty coefficient $\alpha$ and Condorcet consensus reward coefficient $\beta$ are core parameters of the KMDR model. To investigate the model's response characteristics to variations in these two key parameters, we conducted a spatial exploration sensitivity analysis of the $\alpha-\beta$ parameters. We constructed an 8$\times$8 parameter grid with 0.1 increments within the interval [0.1, 0.8], yielding a total of 64 combinations. The elimination prediction accuracy was evaluated for each combination.
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.9\textwidth]{fig_sensitivity_heatmap.png}
+
+\caption{KMDR Parameter Sensitivity Heatmap} \label{fig_kmdr_sensitivity}
+\end{figure}
+
+The results of the parameter sensitivity heatmap analysis are shown in the figure. We find that the elimination prediction accuracy reaches its highest value of 23.4\% under the optimal parameter combination ($\alpha$=0.1, $\beta$=0.2), while the elimination accuracy under the current parameters is 20.0\% which falls within a reasonable range. The model exhibits sensitivity to variations in the β parameter. Excessively high $\beta$ values lead to over-rewarding of “moderate” performers. The $\alpha$ parameter demonstrates stable performance within the 0.2–0.6 range, indicating the robustness of the metric distortion penalty mechanism. This confirms the robustness and reliability of the KMDR model.
+
+
+
 
 \section{Sensitivity and Robustness Analysis}
 
-\subsection{Sensitivity}
 
-In section 4.3, factor is introduced to estimate the parameters of the expected return
-of the market. Therefore, change the size of this parameter, that is, the capital market environment
-has changed. Below we analyze the sensitivity of this parameter. Gradual reduction of
-the parameter by $5\%$. The reason for considering only a decrease in r and not an increase in r
-is to reflect the worst-case scenario, i.e. a gradual decrease in capital market returns, and to see
-if our model is sensitive to the parameter.
 
-Therefore, Re-simulate the calculation results and obtain $3$ sets of curves as shown in
-Figure \ref{fig10}.
+
+% \subsection{Sensitivity}
+
+% In section 4.3, factor is introduced to estimate the parameters of the expected return
+% of the market. Therefore, change the size of this parameter, that is, the capital market environment
+% has changed. Below we analyze the sensitivity of this parameter. Gradual reduction of
+% the parameter by $5\%$. The reason for considering only a decrease in r and not an increase in r
+% is to reflect the worst-case scenario, i.e. a gradual decrease in capital market returns, and to see
+% if our model is sensitive to the parameter.
+
+% Therefore, Re-simulate the calculation results and obtain $3$ sets of curves as shown in
+% Figure \ref{fig10}.
 
 % 并排两个图(非子图)
-\begin{figure}[H]
-\begin{floatrow}
-\ffigbox[\FBwidth]
-{
-\includegraphics[width=0.48\textwidth]{fig10.jpg}
-}
-{\caption{Sensitivity analysis of $r_m$} \label{fig10}}
-\ffigbox[\FBwidth]
-{
-\includegraphics[width=0.48\textwidth]{fig11.jpg}
-}
-{\caption{Robustness analysis of $R_{value}$} \label{fig11}}
-\end{floatrow}
-\end{figure}
+% \begin{figure}[H]
+% \begin{floatrow}
+% \ffigbox[\FBwidth]
+% {
+% \includegraphics[width=0.48\textwidth]{fig10.jpg}
+% }
+% {\caption{Sensitivity analysis of $r_m$} \label{fig10}}
+% \ffigbox[\FBwidth]
+% {
+% \includegraphics[width=0.48\textwidth]{fig11.jpg}
+% }
+% {\caption{Robustness analysis of $R_{value}$} \label{fig11}}
+% \end{floatrow}
+% \end{figure}
 
-The results show that as r decreases, the profit gained by the insurance company if it sells
-the insurance company at the same price tends to decrease. This makes sense because lower
-capital market interest rates result in lower profits for insurance companies. The trend of the
-curve obtained by sensitivity test is consistent with the actual situation.
+% The results show that as r decreases, the profit gained by the insurance company if it sells
+% the insurance company at the same price tends to decrease. This makes sense because lower
+% capital market interest rates result in lower profits for insurance companies. The trend of the
+% curve obtained by sensitivity test is consistent with the actual situation.
 
-\subsection{Robustness}
+% \subsection{Robustness}
 
-We verify the robustness of the model. Given the uncertainty of natural hazards, we may
-have errors in the calculation of Rvalue, which affects our grading of the risk indicators for each
-region. Randomly selecting some of the more than $3,000$ counties in the United States and
-deviating its Rvalue by $5\%$, and again grading these areas, the results obtained are shown in
-Figure \ref{fig11}.
+% We verify the robustness of the model. Given the uncertainty of natural hazards, we may
+% have errors in the calculation of Rvalue, which affects our grading of the risk indicators for each
+% region. Randomly selecting some of the more than $3,000$ counties in the United States and
+% deviating its Rvalue by $5\%$, and again grading these areas, the results obtained are shown in
+% Figure \ref{fig11}.
 
-As can be seen from the figure, the grading of the original regions changes only slightly
-after randomly selecting regions to bias their measurements. This indicates that the small error
-in $R$ does not cause large changes in the model results and our model is stable.
-
-
-\section{Model Evaluation}
-
-\subsection{Strengths}
-
-{\bf Robustness and Flexibility:} Our model demonstrates strong adaptability to various parameter
-variations through sensitivity analysis and robustness testing, and is able to provide
-reliable predictions under different scenarios.
-
-{\bf Comprehensive consideration:} Our model integrates social and economic factors, natural
-disaster risks, and provides a way to price insurance.
-
-\subsection{Weaknesses}
-
-{\bf Data Dependency:} Although the model has a high demand for data quality, it reflects our
-scientific attitude of pursuing accuracy and real-time performance. By working with data providers,
-we can continuously optimize the data collection and processing process.\cite{guo2024haier}
+% As can be seen from the figure, the grading of the original regions changes only slightly
+% after randomly selecting regions to bias their measurements. This indicates that the small error
+% in $R$ does not cause large changes in the model results and our model is stable.
 
 
-{\bf Model Assumptions:} The model relies on certain assumptions that may not hold true in
+\section{Strengths and Weaknesses}
+
+
+
+% {\bf Robustness and Flexibility:} Our model demonstrates strong adaptability to various parameter
+% variations through sensitivity analysis and robustness testing, and is able to provide
+% reliable predictions under different scenarios.
+
+% {\bf Comprehensive consideration:} Our model integrates social and economic factors, natural
+% disaster risks, and provides a way to price insurance.
+
+
+% {\bf Data Dependency:} Although the model has a high demand for data quality, it reflects our
+% scientific attitude of pursuing accuracy and real-time performance. By working with data providers,
+% we can continuously optimize the data collection and processing process.\cite{guo2024haier}
+
+
+% {\bf Model Assumptions:} The model relies on certain assumptions that may not hold true in
 \printbibliography
 
 \newpage
@@ -1306,7 +1729,7 @@ We stand at a pivotal moment in the history of Tokyo Tower, poised to embark on 
 
 \begin{appendices}
 
-\section{First Appendix}
+% \section{First Appendix}
 
 \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input Python source:}}
 \begin{lstlisting}[language=python]

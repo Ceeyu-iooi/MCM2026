@@ -1,0 +1,5 @@
+name,season,actual_placement,method_used,controversy,weeks_competed,avg_judge_score,avg_fan_vote,avg_judge_rank,avg_fan_rank,judge_fan_gap,judge_percentile,fan_percentile,avg_rank_placement,avg_pct_placement,times_eliminated_by_rank,times_eliminated_by_pct,cf_method_used,cf_actual_eliminated_times,cf_alternative_method,cf_alt_eliminated_times,cf_difference
+Jerry Rice,2,2,rank,尽管5周评委分数最低，仍获得亚军,7,21.928571428571427,66.78112971005463,4.857142857142857,4.428571428571429,0.42857142857142794,63.461538461538446,60.66267907303543,4.571428571428571,4.714285714285714,1,1,rank,1,percentage,1,0
+Billy Ray Cyrus,4,5,percentage,6周评委分数最低，仍获得第5名,8,19.0,51.83983500810821,6.5,6.875,-0.375,31.92488262910798,35.08410103797606,6.75,7.125,3,3,percentage,3,rank,3,0
+Bristol Palin,11,3,percentage,12次评委分数最低，仍获得第3名,8,22.124975,66.3762933292536,6.5,5.75,0.75,60.18505572690345,73.62254821319584,6.25,5.875,3,1,percentage,1,rank,3,2
+Bobby Bones,27,1,percentage,评委分数持续较低，却赢得冠军,7,21.928571428571427,56.94163996727925,7.285714285714286,7.285714285714286,0.0,45.92592592592592,46.65794293883581,7.142857142857143,7.285714285714286,2,0,percentage,0,rank,2,2

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.14)  31 JAN 2026 15:29
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.14)  2 FEB 2026 12:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -973,52 +973,55 @@ Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 ))
 \@quotelevel=\count486
 \@quotereset=\count487
-LaTeX Font Info:    Trying to load font information for T1+txr on input line 79.
+LaTeX Font Info:    Trying to load font information for T1+txr on input line 78.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
 ) (./mcmthesis-demo.aux
+
+LaTeX Warning: Label `fig_propagation_analysis' multiply defined.
+
 
 LaTeX Warning: Label `LastPage' multiply defined.
 
 )
 \openout1 = `mcmthesis-demo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 79.
-LaTeX Font Info:    Trying to load font information for OML+txmi on input line 79.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 78.
+LaTeX Font Info:    Trying to load font information for OML+txmi on input line 78.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 79.
-LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 79.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 78.
+LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 78.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 79.
-LaTeX Font Info:    Trying to load font information for OMX+txex on input line 79.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 78.
+LaTeX Font Info:    Trying to load font information for OMX+txex on input line 78.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 79.
-LaTeX Font Info:    Trying to load font information for U+txexa on input line 79.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 78.
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 78.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
 \c@lstlisting=\count488
 
 *geometry* driver: auto-detecting
@@ -1055,7 +1058,7 @@ LaTeX Font Info:    ... okay on input line 79.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 79.
+Package hyperref Info: Link coloring OFF on input line 78.
 (./mcmthesis-demo.out) (./mcmthesis-demo.out)
 \@outlinefile=\write5
 \openout5 = `mcmthesis-demo.out'.
@@ -1088,75 +1091,70 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'mcmthesis-demo.bbl' found.
  (./mcmthesis-demo.bbl)
-Package biblatex Info: Reference section=0 on input line 79.
-Package biblatex Info: Reference segment=0 on input line 79.
+Package biblatex Info: Reference section=0 on input line 78.
+Package biblatex Info: Reference segment=0 on input line 78.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <12> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 130.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 102.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <17.28> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 130.
-
-Missing character: There is no ’ ("2019) in font t1xr!
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 130.
-(d:/texlive/2025/texmf-dist/tex/latex/txfonts/ot1txr.fd
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 102.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 102.
+ (d:/texlive/2025/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsya on input line 130.
+LaTeX Font Info:    Trying to load font information for U+txsya on input line 102.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyb on input line 130.
+LaTeX Font Info:    Trying to load font information for U+txsyb on input line 102.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 130.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 102.
  (d:/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 130.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 102.
  (d:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 130.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 102.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 130.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 102.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+esint on input line 130.
+LaTeX Font Info:    Trying to load font information for U+esint on input line 102.
  (d:/texlive/2025/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-Missing character: There is no ’ ("2019) in font t1xr!
+Missing character: There is no — ("2014) in font t1xr!
+Missing character: There is no — ("2014) in font t1xr!
 
 
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+txss on input line 133.
+LaTeX Font Info:    Trying to load font information for T1+txss on input line 109.
  (d:/texlive/2025/texmf-dist/tex/latex/txfonts/t1txss.fd
 File: t1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/b/n' in size <17.28> not available
-(Font)              Font shape `T1/txss/bx/n' tried instead on input line 133.
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 109.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 16.41594pt on input line 133.
- (./mcmthesis-demo.toc
-Missing character: There is no ﬁ ("FB01) in font t1xr!
-
-
-LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 34.
-[2])
+(Font)              scaled to size 16.41594pt on input line 109.
+ (./mcmthesis-demo.toc)
 \tf@toc=\write6
 \openout6 = `mcmthesis-demo.toc'.
 
 
 
-[3]
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 10.40245pt on input line 111.
+[2]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <14.4> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 138.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 114.
 
 Missing character: There is no “ ("201C) in font t1xr!
 Missing character: There is no ” ("201D) in font t1xr!
@@ -1164,69 +1162,51 @@ Missing character: There is no “ ("201C) in font t1xr!
 Missing character: There is no ” ("201D) in font t1xr!
 Missing character: There is no — ("2014) in font t1xr!
 Missing character: There is no — ("2014) in font t1xr!
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 150.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 126.
 (d:/texlive/2025/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
 Missing character: There is no “ ("201C) in font t1xr!
 Missing character: There is no ” ("201D) in font t1xr!
-File: ./figures/fig1.jpg Graphic file (type bmp)
-<./figures/fig1.jpg>
+File: ./figures/workflow_diagram_v2.drawio1.png Graphic file (type bmp)
+<./figures/workflow_diagram_v2.drawio1.png>
+
+
+[3]
+Missing character: There is no ’ ("2019) in font t1xr!
+LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10.95> not available
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 183.
 
 
 [4]
-Missing character: There is no ﬁ ("FB01) in font t1xb!
-Missing character: There is no ’ ("2019) in font t1xr!
-
-
-[5]
-LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10.95> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 207.
 File: ./figures/fig2.png Graphic file (type bmp)
 <./figures/fig2.png>
 
-Missing character: There is no “ ("201C) in font t1xr!
-Missing character: There is no ” ("201D) in font t1xr!
-Missing character: There is no “ ("201C) in font t1xr!
-Missing character: There is no ” ("201D) in font t1xr!
+
+[5]
+File: ./figures/fig1-2.png Graphic file (type bmp)
+<./figures/fig1-2.png>
 
 
 [6]
-
-[7]
-File: ./figures/fig1-1.png Graphic file (type bmp)
-<./figures/fig1-1.png>
-File: ./figures/fig1-2.png Graphic file (type bmp)
-<./figures/fig1-2.png>
 File: ./figures/fig1-5.png Graphic file (type bmp)
 <./figures/fig1-5.png>
-
-
-[8]
-Missing character: There is no — ("2014) in font t1xr!
-
-Overfull \hbox (52.99275pt too wide) in paragraph at lines 314--316
-\T1/txr/m/n/12 cant fea-ture de-pen-dency edges in the \T1/txr/bx/n/12 Fig-ure []5b[] \T1/txr/m/n/12 (e.g., $\OML/txmi/m/it/12 week[]rank \OMS/txsy/m/n/12 ! \OML/txmi/m/it/12 cumulative[]rank$\T1/txr/m/n/12 , $\OML/txmi/m/it/12 weeks[]participated \OMS/txsy/m/n/12 !
- []
-
 File: ./figures/fig1-3.png Graphic file (type bmp)
 <./figures/fig1-3.png>
 File: ./figures/fig1-4.png Graphic file (type bmp)
 <./figures/fig1-4.png>
-File: ./figures/fig1-6.png Graphic file (type bmp)
-<./figures/fig1-6.png>
 
 
-[9]
+[7]
+File: ./figures/fig5_rf_fan_vote_distribution.png Graphic file (type bmp)
+<./figures/fig5_rf_fan_vote_distribution.png>
 File: ./figures/fig3_rf_confusion_matrix.png Graphic file (type bmp)
 <./figures/fig3_rf_confusion_matrix.png>
 File: ./figures/fig4_rf_roc_curve.png Graphic file (type bmp)
 <./figures/fig4_rf_roc_curve.png>
-File: ./figures/fig5_rf_fan_vote_distribution.png Graphic file (type bmp)
-<./figures/fig5_rf_fan_vote_distribution.png>
 
 
-[10]
+[8]
 Missing character: There is no “ ("201C) in font t1xr!
 Missing character: There is no ” ("201D) in font t1xr!
 Missing character: There is no “ ("201C) in font t1xr!
@@ -1234,132 +1214,200 @@ Missing character: There is no ” ("201D) in font t1xr!
 File: ./figures/fig2_rf_shap_summary.png Graphic file (type bmp)
 <./figures/fig2_rf_shap_summary.png>
 
-Underfull \hbox (badness 3058) in paragraph at lines 450--451
+
+[9]
+Underfull \hbox (badness 3058) in paragraph at lines 434--435
 []|\T1/txr/m/n/10.95 High pos-i-tive cor-re-la-tion be-tween two
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 454--455
+Underfull \hbox (badness 1552) in paragraph at lines 438--439
 []|\T1/txr/m/n/10.95 Feature im-por-tance rank-ings are nearly
  []
 
-
-
-[11]
 Missing character: There is no — ("2014) in font t1xr!
 Missing character: There is no — ("2014) in font t1xr!
 File: ./figures/fig6_rf_tan_comparison.png Graphic file (type bmp)
 <./figures/fig6_rf_tan_comparison.png>
 
 
-[12]
+[10]
 File: ./figures/fig_cv_boxplot.png Graphic file (type bmp)
 <./figures/fig_cv_boxplot.png>
 
-Missing character: There is no — ("2014) in font t1xr!
 Missing character: There is no – ("2013) in font t1xr!
+
+
+[11]
 File: ./figures/fig_robustness_noise.png Graphic file (type bmp)
 <./figures/fig_robustness_noise.png>
 
 
+[12]
+File: ./figures/q2_fig1_counterfactual.png Graphic file (type bmp)
+<./figures/q2_fig1_counterfactual.png>
+
+
 [13]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
+File: ./figures/q2_fig2_bias_sensitivity1.png Graphic file (type bmp)
+<./figures/q2_fig2_bias_sensitivity1.png>
+File: ./figures/q2_fig2_bias_sensitivity2.png Graphic file (type bmp)
+<./figures/q2_fig2_bias_sensitivity2.png>
+
+Missing character: There is no — ("2014) in font t1xr!
+File: ./figures/q2_fig3_controversy_cases.png Graphic file (type bmp)
+<./figures/q2_fig3_controversy_cases.png>
 
 
 [14]
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+File: ./figures/q2.png Graphic file (type bmp)
+<./figures/q2.png>
+
 
 [15]
+File: ./figures/q2_fig5_final_analysis.png Graphic file (type bmp)
+<./figures/q2_fig5_final_analysis.png>
+
 
 [16]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
+File: ./figures/fig_validation_summary.png Graphic file (type bmp)
+<./figures/fig_validation_summary.png>
+File: ./figures/fig_robustness_analysis.png Graphic file (type bmp)
+<./figures/fig_robustness_analysis.png>
+
+Missing character: There is no – ("2013) in font t1xr!
 
 
 [17]
+Missing character: There is no • ("2022) in font t1xr!
+
+Overfull \hbox (2.67296pt too wide) in paragraph at lines 1361--1363
+\T1/txr/m/n/12 can be ob-tained, as shown in \T1/txr/bx/n/12 Ta-ble []4[]\T1/txr/m/n/12 .Vari-ables such as $\OML/txmi/m/it/12 week[]std$\T1/txr/m/n/12 , $\OML/txmi/m/it/12 avg[]place[]std$\T1/txr/m/n/12 , $\OML/txmi/m/it/12 age[]std$\T1/txr/m/n/12 , $\OML/txmi/m/it/12 age[]std$\T1/txr/m/n/12 ,
+ []
+
+
 
 [18]
-File: ./figures/fig9.jpg Graphic file (type bmp)
-<./figures/fig9.jpg>
+Overfull \hbox (6.94496pt too wide) in paragraph at lines 1399--1400
+\T1/txr/m/n/12 to cap-ture the non-lin-ear ef-fects of age and in-cor-po-rated tem-po-ral trends via $\OML/txmi/m/it/12 season[]std$ \T1/txr/m/n/12 and $\OML/txmi/m/it/12 week[]std$
+ []
+
+File: ./figures/q3_fig7_effects_analysis_v2.png Graphic file (type bmp)
+<./figures/q3_fig7_effects_analysis_v2.png>
 
 
 [19]
-File: ./figures/fig10.jpg Graphic file (type bmp)
-<./figures/fig10.jpg>
-File: ./figures/fig10.jpg Graphic file (type bmp)
-<./figures/fig10.jpg>
-File: ./figures/fig10.jpg Graphic file (type bmp)
-<./figures/fig10.jpg>
-File: ./figures/fig11.jpg Graphic file (type bmp)
-<./figures/fig11.jpg>
-File: ./figures/fig11.jpg Graphic file (type bmp)
-<./figures/fig11.jpg>
-File: ./figures/fig11.jpg Graphic file (type bmp)
-<./figures/fig11.jpg>
-
-Overfull \hbox (9.20576pt too wide) detected at line 1226
- [] 
+Overfull \hbox (1.569pt too wide) in paragraph at lines 1427--1428
+[]\T1/txr/m/n/12 Through in-ter-ac-tion anal-y-sis, the \T1/txr/bx/n/12 Fig-ure []19[] \T1/txr/m/n/12 re-veals causal path-ways link-ing pro-fes-sional dancer
  []
 
+File: ./figures/q3_fig_causal_dag.png Graphic file (type bmp)
+<./figures/q3_fig_causal_dag.png>
+File: ./figures/q3_fig_effect_decomposition.png Graphic file (type bmp)
+<./figures/q3_fig_effect_decomposition.png>
 
 
 [20]
-Overfull \hbox (5.98514pt too wide) in paragraph at lines 1267--1267
+File: ./figures/fig_propagation_framework (1).png Graphic file (type bmp)
+<./figures/fig_propagation_framework (1).png>
+File: ./figures/fig_uncertainty_propagation (1).png Graphic file (type bmp)
+<./figures/fig_uncertainty_propagation (1).png>
+File: ./figures/fig_sensitivity_analysis (1).png Graphic file (type bmp)
+<./figures/fig_sensitivity_analysis (1).png>
+
+
+[21]
+File: ./figures/q4.png Graphic file (type bmp)
+<./figures/q4.png>
+
+
+[22]
+Missing character: There is no — ("2014) in font t1xr!
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+File: ./figures/fig_simulation_champions.png Graphic file (type bmp)
+<./figures/fig_simulation_champions.png>
+File: ./figures/fig_simulation_elimination.png Graphic file (type bmp)
+<./figures/fig_simulation_elimination.png>
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+File: ./figures/fig_fairness_metrics.png Graphic file (type bmp)
+<./figures/fig_fairness_metrics.png>
+
+
+[23]
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+File: ./figures/fig_kmdr_weight_dynamics.png Graphic file (type bmp)
+<./figures/fig_kmdr_weight_dynamics.png>
+
+
+[24]
+File: ./figures/fig_sensitivity_heatmap.png Graphic file (type bmp)
+<./figures/fig_sensitivity_heatmap.png>
+
+Missing character: There is no β ("3B2) in font t1xr!
+Missing character: There is no “ ("201C) in font t1xr!
+Missing character: There is no ” ("201D) in font t1xr!
+Missing character: There is no – ("2013) in font t1xr!
+
+Overfull \hbox (5.98514pt too wide) in paragraph at lines 1690--1690
 []\T1/txr/m/n/12 Laurent Cav-a-lier. ``In-verse Prob-lems in Statis-tics''. In: \T1/txr/m/it/12 In-verse Prob-lems and High-Dimensional
  []
 
-LaTeX Font Info:    Trying to load font information for T1+txtt on input line 1266.
-(d:/texlive/2025/texmf-dist/tex/latex/txfonts/t1txtt.fd
+
+
+[25]
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 1689.
+ (d:/texlive/2025/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Overfull \hbox (7.54082pt too wide) in paragraph at lines 1267--1267
+Overfull \hbox (7.54082pt too wide) in paragraph at lines 1690--1690
 []\T1/txr/m/n/12 OpenAI. \T1/txr/m/it/12 Chat-GPT: Op-ti-miz-ing Lan-guage Mod-els for Di-a-logue\T1/txr/m/n/12 . 2024. \T1/txr/m/sc/12 url\T1/txr/m/n/12 : []$\T1/txtt/m/n/12 https : / / openai .
  []
 
 
 
-[21]
+[26]
 
-[22]
+[27]
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <24.88> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 1307.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 1312.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 1730.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 1735.
  (d:/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1321.
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1744.
  (d:/texlive/2025/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1326.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1749.
  (./code/mcmthesis-matlab1.m)
 
-[23]
+[28]
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 1333.
+(Font)              scaled to size 13.67995pt on input line 1756.
 LaTeX Font Info:    Font shape `T1/txss/b/n' in size <14.4> not available
-(Font)              Font shape `T1/txss/bx/n' tried instead on input line 1333.
+(Font)              Font shape `T1/txss/bx/n' tried instead on input line 1756.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 13.67995pt on input line 1333.
+(Font)              scaled to size 13.67995pt on input line 1756.
 
 
-[24
+[29
 
 ]
 
-[25] 
+[30] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./mcmthesis-demo.aux)
  ***********
@@ -1371,18 +1419,18 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `mcmthesis-demo.out' has not changed.
-(rerunfilecheck)             Checksum: F4DDAB2C31FA14287E3FC65EC3A3583C;5827.
+(rerunfilecheck)             Checksum: 9B10035EAB30716CE012396D2A850F9A;6968.
 Package logreq Info: Writing requests to 'mcmthesis-demo.run.xml'.
 \openout1 = `mcmthesis-demo.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27908 strings out of 475796
- 493518 string characters out of 5774033
- 1520222 words of memory out of 5000000
- 50400 multiletter control sequences out of 15000+600000
- 638339 words of font info for 184 fonts, out of 8000000 for 9000
+ 27846 strings out of 475796
+ 493476 string characters out of 5774033
+ 1521122 words of memory out of 5000000
+ 50324 multiletter control sequences out of 15000+600000
+ 635618 words of font info for 178 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 87i,14n,117p,2222b,5066s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,13n,117p,1989b,5066s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on mcmthesis-demo.pdf (25 pages).
+Output written on mcmthesis-demo.pdf (30 pages).
