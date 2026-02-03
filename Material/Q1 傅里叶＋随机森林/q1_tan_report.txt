@@ -1,0 +1,65 @@
+
+================================================================================
+Q1: 树增强朴素贝叶斯 (TAN) 方法报告
+================================================================================
+
+1. 模型概述
+------------
+模型名称: Tree Augmented Naive Bayes (TAN)
+特征数量: 12
+训练样本: 2075 (Season 1-27)
+评估样本: 702 (Season 28-34)
+
+2. 模型性能
+------------
+Accuracy:           82.48%
+Elimination Recall: 56.14%
+Elimination Prec:   46.72%
+Elimination F1:     51.00%
+ROC-AUC:            0.8102
+Average Precision:  0.5016
+
+3. 混淆矩阵
+------------
+             Predicted
+             Not-Elim  Eliminated
+Actual
+Not-Elim        515        73
+Eliminated       50        64
+
+4. TAN网络结构 (特征依赖关系)
+-----------------------------
+  week_total_score → week_percent
+  week_percent → remaining_weeks
+  remaining_weeks → weeks_participated
+  week_percent → week_rank
+  week_rank → cumulative_rank
+  week_rank → relative_performance
+  relative_performance → elimination_risk
+  remaining_weeks → judge_score_std
+  cumulative_rank → age_zscore
+  age_zscore → celebrity_age_during_season
+  age_zscore → industry_code
+
+5. 观众投票分数统计
+-------------------
+均值:   79.42
+标准差: 30.13
+最小值: 0.33
+最大值: 100.00
+
+淘汰选手平均分: 39.60
+晋级选手平均分: 88.51
+
+6. 可视化文件
+-------------
+- fig1_tan_network_structure.png: TAN网络结构图
+- fig2_mutual_information_heatmap.png: 互信息热力图
+- fig3_tan_confusion_matrix.png: 混淆矩阵
+- fig4_tan_roc_curve.png: ROC曲线
+- fig5_fan_vote_distribution.png: 观众投票分数分布
+- fig6_feature_importance.png: 特征重要性
+
+================================================================================
+报告生成时间: 2026-01-30
+================================================================================

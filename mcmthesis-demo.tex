@@ -26,7 +26,7 @@
 \documentclass{mcmthesis}
  %\documentclass[CTeX = true]{mcmthesis}  % 当使用 CTeX 套装时请注释上一行使用该行的设置
 \mcmsetup{tstyle = \color{red}\bfseries,  % 修改题号，队号的颜色和加粗显示，黑色可以修改为 black
-          tcn = 2400860, problem = C,     % 修改队号，参赛题号
+          tcn = 2615954, problem = C,     % 修改队号，参赛题号
           sheet = true, titleinsheet = true, keywordsinsheet = true,
           titlepage = false, abstract = true}
 
@@ -53,6 +53,12 @@
 \usepackage{tabularray}   % 增强表格功能
 \usepackage{lastpage}     % 获取最后一页页码
 
+\usepackage{appendix}
+
+% 核心修改：把复数 Appendices 改成单数 Appendix
+\renewcommand{\appendixtocname}{Appendix}
+\renewcommand{\appendixpagename}{Appendix}
+
 \usepackage[style=numeric,backend=biber]{biblatex}
 %\usepackage[style=apa,backend=biber]{biblatex}  % APA风格: style=apa
 \ExecuteBibliographyOptions{sorting=none}           % 按引用顺序
@@ -65,7 +71,7 @@
 % \setcounter{tocdepth}{2}  % 设置目录到二级标题, 将目录控制在1页
                           % 若可接受目录2页, 注释掉该句, 将到三级标题
                           
-\title{ }
+\title{\bf \Large Analysis and Optimization of DWTS Voting Fairness -Uncertainty Propagation and KMDR Fusion Mechanism }%
 
 % \author{\small \href{https://www.latexstudio.net/}
 %   {\includegraphics[width=7cm]{mcmthesis-logo}}}
@@ -78,22 +84,39 @@
 \begin{document}
 
 \begin{abstract}
-\par In the operation of the renowned entertainment competition show Dancing with the Stars (DWTS), significant discrepancies between professional judges' scores and audience voting preferences have exposed flaws in the existing elimination mechanism. This paper, grounded in multi-statistical modeling principles, primarily investigates big data analysis and optimization of the voting mechanism.
+\vspace {-2pt} 
+\par Throughout the 34-season history of Dancing with the Stars (DWTS), significant discrepancies between professional judges' scores and audience voting preferences have sparked multiple controversial eliminations, exposing core flaws in the existing elimination mechanism's balance between fairness and entertainment value. Based on 2,777 historical records, we employed multi-model statistical methods to systematically investigate the rationality of the voting mechanism and proposes optimization solutions.
 
-{\bf For Problem 1}, we employed a dual reconstruction modeling strategy combining the TAN model with the Random Forest model and SHAP interpretability analysis to estimate hidden audience voting data and quantify uncertainty. The results showed that the TAN model achieved an accuracy of 82.48\%, while the RF model reached 84.90\%. The consistency in prediction direction between the two models was 88.76\%, enabling precise reconstruction of hidden audience voting data and quantification of its uncertainty.
 
-{\bf For Problem 2}, we combined counterfactual simulation and bias sensitivity analysis methods to construct a variance decomposition model based on audience voting data from Problem 1. By setting thresholds for audience vote weight calculations and validating the rationality of two vote synthesis mechanisms through Spearman's correlation analysis, we determined that the percentage method (85.6\%) significantly outweighs the ranking method (49.8\%) in audience vote weighting, demonstrating greater preference for audience votes. The judge rescue mechanism can correct 8.9\% of controversial elimination outcomes,which can significantly enhanced the fairness of the program when combined with the ranking method.
 
-{\bf For Problem 3} ,we constructed a mixed-effects model incorporating ridge regression regularization and calculated intraclass correlation coefficients (ICC) to quantify the contribution of factors such as professional dancers and contestant characteristics to elimination outcomes. Additionally, we employed directed acyclic graph (DAG) to uncover causal relationships among variables. Results indicate that professional dancers significantly influence contestant rankings (57.73\%) and judge scores (48.50\%). Variables like weekly contestant scores and age exert greater weight on outcomes, while fan following indirectly impacts final rankings by influencing audience votes.
+% In the renowned entertainment competition show Dancing with the Stars (DWTS), significant discrepancies exist between professional judges' scores and audience voting preferences. This has led to multiple controversial eliminations throughout the show's history, exposing fairness flaws in the existing elimination mechanism. Based on 2,777 historical records from 34 seasons, this paper employs multi-model statistical methods to systematically investigate the rationality of the voting mechanism and proposes optimization solutions.
 
-{\bf For Problem 4}, through analysis of dynamic weight fusion, contestant consensus scoring, and metered distortion penalty mechanisms, we established a score fusion mechanism based on the KMDR model. By optimizing weight parameters via $\alpha-\beta$ parameter grid search and setting four fairness evaluation metrics—including Condorcet efficiency and satisfaction balance—we designed an optimal voting scoring mechanism. Simulation results demonstrate a 100\% undisputed champion rate and 96.3\% early elimination rationality. The dynamic weight parameter adjustment strategy achieves a balanced blend of professionalism and entertainment value.
 
-We also constructed an uncertainty propagation framework to analyze the transmission of uncertainty from voting data estimation through mechanism rationality analysis to the quantification of eigenvalue contributions. Finally, we conducted robustness and parameter sensitivity analyses on the model while evaluating its strengths and weaknesses.
+
+
+
+
+\vspace {2pt} 
+
+{\bf For Problem 1(Estimating Hidden Audience Votes)}, we constructed a dual-reconstruction modeling framework combining {\bf TAN Bayesian Networks}  and {\bf Random Forest} + {\bf SHAP} to reverse-engineer audience vote data while quantifying uncertainty. The TAN model achieved 82.48\% accuracy, the RF model reached 84.90\%, and the two models demonstrated 88.76\% consistency in predictions, enabling robust estimation through cross-validation.
+
+\vspace {2pt} 
+{\bf For Problem 2(Voting Synthesis Mechanism Comparison)}, we established a {\bf Variance Decomposition Model} based on the voting data from Problem 1 to quantify the differing impacts of the percentage method and ranking method on elimination outcomes. Results reveal that the {\bf Percentage Method} amplifies audience voting influence to 85.6\%, compared to 49.8\% under the Rank Method,indicating a pronounced entertainment-oriented skew. The Judges' Save mechanism successfully corrects 8.9\% of controversial eliminations , with synergistic effects when combined with Rank Method significantly enhancing procedural fairness.
+
+\vspace {2pt} 
+{\bf For Problem 3(Feature Attribution Quantification)} , we established a {\bf Mixed-Effects Model} , calculating ICC to decompose variance contributions from dancers and celebrity characteristics. Analysis shows that 57.73\% of performance variance is attributable to dancer skill differentials, while 48.50\% of judge score variance stems from dancer effects . DAG causal inference reveals that celebrity fan base indirectly influences final rankings through audience voting, with age and weekly performance scores exhibiting higher direct impact weights.
+
+\vspace {2pt} 
+{\bf For Problem 4(Mechanism Optimization)},  we proposed a {\bf KMDR Dynamic Weighting Model} based on Borda-Condorcet fusion, balancing professionalism and entertainment through distortion penalties $\alpha$  and consensus rewards $\beta$ . Parameter grid search  identified the optimal configuration ($\alpha$=0.4, $\beta$=0.6). Simulation results show: 100\% undisputed champion rate, 96.3\% early elimination rationality, and  82.7\% constraint rate for controversial contestants.
+
+% We also constructed an uncertainty propagation framework to analyze the transmission of uncertainty from voting data estimation through mechanism rationality analysis to the quantification of eigenvalue contributions. Finally, we conducted robustness and parameter sensitivity analyses on the model while evaluating its strengths and weaknesses.
+\vspace {3pt} 
+We further developed an {\bf Uncertainty Propagation Framework} to achieve uncertainty quantification across the entire process:  voting estimation $\to$ mechanism evaluation $\to$ feature contribution analysis. We also conducted sensitivity analysis to validate the model's robustness to parameter perturbations and examined its strengths and weaknesses. Finally, we drafted a memorandum for the program team summarizing our research findings and providing recommendations.
 
 
 
 \begin{keywords}
-TAN ; Random Forest ; Mixed-Effects ; Voting Mechanism 
+TAN,Random Forest,Mixed-Effects,Voting Mechanism,KMDR 
 \end{keywords}
 
 \end{abstract}
@@ -105,9 +128,11 @@ TAN ; Random Forest ; Mixed-Effects ; Voting Mechanism
 
 \begingroup
 % 调整目录的行距系数，0.9 表示比正常缩小10%，可根据需要微调
-\renewcommand{\baselinestretch}{0.9}
+\renewcommand{\baselinestretch}{0.8}
 \tableofcontents
 \endgroup
+
+
 \newpage
 
 \section{Introduction}
@@ -124,7 +149,7 @@ statement, we need to solve the following problems:
 
 \begin{itemize}
 \item {\bf Problem 1:} Develop a model to estimate hidden audience voting data and quantify its uncertainty.
-\item {\bf Problem 2:} Compare the rationality of two voting synthesis mechanisms (Ranking and Percentage) in DWTS, and quantify the impact of the judges' “bottom two elimination” mechanism.
+\item {\bf Problem 2:} Compare the rationality of two voting synthesis mechanisms (Ranking and Percentage) in DWTS, and quantify the impact of the judge rescue mechanism.
 \item {\bf Problem 3:}  Quantify the influence of contestant characteristics, judge scores, and other factors on elimination outcomes and voting results, identifying core influencing factors.
 \item {\bf Problem4:} Design an optimal voting mechanism that balances multiple objectives including program fairness and entertainment value.
 \end{itemize}
@@ -152,20 +177,14 @@ followed by its corresponding explanation:
 \subsection{Assumptions and Notations}
 
 \begin{itemize}
-\item {\bf Assumption:} The data we use are accurate and valid.
-\item {\bf Justification:} Our data is collected from the World Bank and some other official web
-sites and research papers. it’s reasonable to assume the high quality of their data.
-\item {\bf Assumption:} The regions under study will remain peaceful and stable, with no significant
-events other than natural disasters occurring in the foreseeable future.
-\item {\bf Justification:} A stable capital market environment provides a predictable framework
-within which we can project our expected returns. It is important to note that this assumption
-does not negate the potential impact of natural disasters.
-\item {\bf Assumption:} The estimated figures for each region represent an average level of performance
-or condition for that area.
-\item {\bf Justification:} For the purposes of this study, treating each region as a cohesive entity
-allows for a more streamlined analysis. This methodological approach simplifies the
-complexity inherent in regional studies by focusing on aggregate data, thereby providing
-a generalized view of each area's performance or condition.
+\item {\bf Assumption 1:} The publicly available data provided  is authentic and valid, with missing values and outliers accounting for an extremely low proportion that does not affect the overall statistical patterns.
+ble to assume the high quality of their data.
+\item {\bf Assumption 2:} Audience voting behavior exhibits stability, and there exists a significant statistical correlation between audience votes and core variables such as judges' scores and contestant characteristics.
+
+\item {\bf Assumption 3:} The judges' scoring is professional and objective, with results accurately reflecting contestants' dance proficiency. Scoring discrepancies follow a normal distribution.
+
+
+\item {\bf Assumption 4:} Uncertainty arises solely from estimation errors in hidden voting data, while errors in model specification, parameter calibration, and other related processes are negligible.
 \end{itemize}
 
 
@@ -182,11 +201,13 @@ The key mathematical notations used in this paper are listed in Table \ref{tbl1}
 \toprule             % 画顶端横线
 {\bf Symbol}    &  {\bf Definition}     \\
 \midrule             % 画中间横线
-$V_i$     & Fans Vote Score of the $i$-th contestant  \\
+$V_i$     &Estimated  Fans Vote Score of the $i$-th contestant  \\
 $Y$     & $Y \in \{0, 1\}:$Elimination Flag (0=Not Eliminated, 1=Eliminated)  \\
 $X$   & $X = (X_1, X_2, ..., X_n):$Feature Vetor \\
 $S_i$  & Judge score of the $i$-th contestant \\
 $R_i$  & The rank of the $i$-th contestant   \\
+$C_i$  & Final score for contestant $i$  \\
+$W_{fan}$ or $W_{judge}$  & Fan vote weight or judge score weight   \\
 \bottomrule         % 画底部横线
 \end{tabular}
 \vspace{2pt} % 稍微调整间距
@@ -203,7 +224,7 @@ Preliminary exploratory analysis of the dataset reveals three core issues: imput
 \begin{figure}[H]    % H表示强制固定在当前位置
 \small
 \centering
-\includegraphics[width=1.0\textwidth]{fig2.png}
+\includegraphics[width=1.0\textwidth]{shuju.png}
 \caption{Data Processing Workflow} \label{fig_dp}
 \end{figure}
 
@@ -215,10 +236,10 @@ As shown in the {\bf Figure \ref{fig_dp}}, differentiated processing strategies 
 
 
 \section{Fan Vote Estimation Based on TAN and SHAP Models }
-In the show Dancing with the Stars, a common scenario occurs: some celebrities receive low scores from professional judges yet advance smoothly or even win the championship thanks to high audience support rates. To understand this discrepancy between judge scores and audience support, we establish a model to reverse-engineer these undisclosed audience voting data while quantifying the uncertainty of such estimates.\cite{inverse}
+Regarding the controversy surrounding celebrity contestants receiving low scores from judges yet achieving high final rankings in the program, to understand this discrepancy between judge scores and audience support, we establish a model to reverse-engineer these undisclosed audience voting data while quantifying the uncertainty of such estimates.\cite{inverse}
 
 \subsection{Tree Augmented Naive Bayes Model for Fan Vote Estimation}
-In real-world data, features often exhibit dependencies. For example:$week\_rank$ is highly correlated with $cumulative\_rank$ (partial correlation coefficient = 0.553);$remaining\_weeks$ is strongly negatively correlated with $weeks\_participated$ (partial correlation coefficient = -0.665)
+In the program dataset, certain features exhibit dependency. For example:$week\_rank$ is highly correlated with $cumulative\_rank$ (partial correlation coefficient = 0.553);$remaining\_weeks$ is strongly negatively correlated with $weeks\_participated$ (partial correlation coefficient = -0.665)
 Ignoring these dependencies degrades the performance of traditional Bayesian models. 
 {\bf TAN (Tree Augmented Naive Bayes)} is an extension of Naive Bayes \cite{beiyesi} that allows for tree-like dependency structures between features:
 
@@ -303,10 +324,10 @@ After solving the TAN model,as shown in the {\bf Figure \ref{fig_TAN_result}}, t
 \caption{Confusion Matrix and ROC Curve} 
 \centering
 \label{fig_TAN_result}
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
 \includegraphics[width=0.9\textwidth]{fig1-3.png}
 \caption{Confusion Matrix(TAN Model)} \label{fig_1-3}
-\end{subfigure}\begin{subfigure}{0.5\textwidth}
+\end{subfigure}\begin{subfigure}{0.4\textwidth}
 \includegraphics[width=0.8\textwidth]{fig1-4.png}
 \caption{ROC Curve(Area Visualization)} \label{fig_1-4}
 \end{subfigure}\\
@@ -322,13 +343,14 @@ After solving the TAN model,as shown in the {\bf Figure \ref{fig_TAN_result}}, t
 
 
 \subsection{RF and SHAP Model for Fan Vote Estimation}
-The Random Forest classifier, combined with SHAP (SHapley Additive exPlanations) interpretability analysis, infers audience voting scores from elimination results. The Random Forest prediction formula is:
+
+To cross-validate with the TAN model, we developed a combined approach integrating random forests with SHAP explainability analysis to infer audience voting scores from elimination results. The Random Forest prediction formula is:
 \begin{equation}
 \begin{aligned}
 \hat{y} = \text{mode} \{h_{1} (x), h_{2} (x), \ldots, h_{k} (x)\}
 \end{aligned}
 \end{equation}
-Here, $h_{k}(x)$ denotes the prediction result of the $k$th decision tree, and $\text{mode}$ represents majority voting.
+Here, $h_{k}(x)$ denotes the prediction result of the $k-$th decision tree, and $\text{mode}$ represents majority voting.
 For binary classification problems, the elimination probability is calculated as:
 \begin{equation}
 \begin{aligned}
@@ -360,7 +382,7 @@ where $K$ is the number of decision trees, and $I(\cdot)$ denotes the indicator 
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
-\includegraphics[width=0.6\textwidth]{fig5_rf_fan_vote_distribution.png}
+\includegraphics[width=0.5\textwidth]{fig5_rf_fan_vote_distribution.png}
 
 \caption{Fan Vote Score Distribution(Random Forest Model)} \label{fig5_rf_fan_vote_distribution}
 \end{figure}
@@ -402,7 +424,7 @@ Here, $N$ denotes the feature set, $S$ represents the subset excluding feature $
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
-\includegraphics[width=0.6\textwidth]{fig2_rf_shap_summary.png}
+\includegraphics[width=0.5\textwidth]{fig2_rf_shap_summary.png}
 
 \caption{SHAP Summary Plot(Random Forest Model)} \label{fig2_rf_shap_summary}
 \end{figure}
@@ -427,7 +449,7 @@ By ranking the importance of feature quantities for the two models and conductin
 \centering           % 设置居中
 \caption{Consistency Metrics for the Two Models}  % 表标题
 \label{tbl2}         % 设置表的引用标签
-\begin{tabular}{llp{0.4\textwidth}}  % 2列, c表示居中对齐, l和r表示左右对齐
+\begin{tabular}{llp{0.5\textwidth}}  % 2列, c表示居中对齐, l和r表示左右对齐
 \toprule             % 画顶端横线
 \textbf{Consistency Metrics}          & \textbf{Value} & \textbf{Statistical Interpretation} \\  
 \midrule             % 画中间横线
@@ -471,52 +493,7 @@ Furthermore, as shown in {\bf Figure \ref{fig5_rf_fan_vote_distribution} }, both
 % \begin{proof}
 % The proof of theorem.
 % \end{proof}
-\subsection{Validity Test and Robustness Analysis}
-Stratified 10-fold cross-validation was employed to assess the model's generalization capability. Stratified sampling ensured that the proportion of positive and negative samples in each fold matched the original dataset, thereby mitigating evaluation bias caused by class imbalance.
 
-
-\begin{figure}[H]    % H表示强制固定在当前位置
-\centering
-\includegraphics[width=1.0\textwidth]{fig_cv_boxplot.png}
-
-\caption{Cross-validation Boxplot} \label{fig_cv_boxplot}
-\end{figure}
-
-
-As shown in {\bf Figure \ref{fig_cv_boxplot}}, the average accuracy of the random forest model with 10-fold cross-validation is 0.8524, with a standard deviation of only 0.0213. This indicates the model exhibits stable performance across different data partitions and possesses strong generalization capabilities. The ROC-AUC reaches 0.8906, demonstrating the model's excellent ability to distinguish classification boundaries. 
-% Recall (0.6766) exceeds precision (0.5898), indicating the model tends to identify more rejected cases—aligning with the early warning system's design objectives.
-
-% Learning curve analysis is used to assess whether a model is overfitting or underfitting. By observing the trend of training set and validation set accuracy across different training sample sizes, we evaluate the model's learning capability and generalization ability. As shown in {\bf Figure \ref{fig_learning_curve}},the gap between training set accuracy (0.9253) and validation set accuracy (0.8570) is 0.0682, indicating mild overfitting within an acceptable range. As the training sample size increases, the test set accuracy steadily improves, indicating that the model can effectively learn patterns within the data.
-
-% \begin{figure}[H]    % H表示强制固定在当前位置
-% \centering
-% \includegraphics[width=0.6\textwidth]{fig_learning_curve.png}
-
-% \caption{Learning Curve} \label{fig_learning_curve}
-% \end{figure}
-
-% A statistical analysis of the residuals between the model's predicted probabilities and the actual labels reveals,as shown in {\bf Figure \ref{fig_residual_analysis}},the mean residual of the predicted probabilities is -0.0959, close to zero, indicating no systematic overestimation or underestimation by the model. The skewness (-0.0851), also near zero, suggests the residual distribution is essentially symmetric. The positive kurtosis (1.5978) indicates that prediction errors are concentrated within a narrow range. Overall, the model's predictions are reliable, and the error distribution is reasonable.
-
-
-% \begin{figure}[H]    % H表示强制固定在当前位置
-% \centering
-% \includegraphics[width=0.8\textwidth]{fig_residual_analysis.png}
-
-% \caption{Residual Analysis} \label{fig_residual_analysis}
-% \end{figure}
-
-Next, robustness testing is conducted by adding Gaussian noise at varying levels (1\%–-20\%) to the input features to assess the model's stability when data contains minor errors. Noise is added proportionally to each feature's standard deviation to simulate measurement errors encountered during actual data acquisition.
-
-
-
-
-\begin{figure}[H]    % H表示强制固定在当前位置
-\centering
-\includegraphics[width=0.8\textwidth]{fig_robustness_noise.png}
-
-\caption{Robustness Analysis: Noise Injection} \label{fig_robustness_noise}
-\end{figure}
-After adding 5\% noise to the data, the model's accuracy changed by only 0.43\%, and the ROC-AUC changed by 0.0060. After adding 10\% noise, the accuracy changed by +1.00\%. This indicates that the model possesses strong robustness against interference and can still reliably output stable results even when actual data contains minor measurement errors.
 
 % %% 并排子图
 % \begin{figure}[H]    % H表示强制固定在当前位置
@@ -825,7 +802,7 @@ After adding 5\% noise to the data, the model's accuracy changed by only 0.43\%,
 
 \section{Voting Combinations Comparison via Variance Decomposition Model}
 
-There are two voting combinations in the program:
+Following our discussion of Problem 1, we have now obtained an effective and accurate estimate of audience voting. Next, we will study the voting aggregation mechanism based on this voting estimate.There are two voting combinations in the program:
 \begin{itemize}
 \item Rank Method:Each contestant receives a judge ranking based on the judges' scores and an audience ranking based on viewer votes. The two rankings are combined to form a composite ranking, and the contestant with the highest composite ranking is eliminated.
 
@@ -847,20 +824,20 @@ C_{Rank,i} = R_{judge,i}+R_{fan, i}
 
 \subsection{Counterfactual Simulation Modeling}
 
-Counterfactual Simulation Modeling
-Apply both methods to all 34 seasons to construct a controlled comparative experiment.Load all 34 seasons' judge scores and predicted audience vote data to simulate the ranking method: for each elimination week, compute judge rankings and audience rankings to derive a composite ranking; simulate the percentage method: for each elimination week, compute judge percentages and audience percentages to derive a composite percentage.
+
+To present the simulation results of both methods, we employed counterfactual simulation modeling to apply both approaches to all 34 seasons, constructing a comparative experiment.Load all 34 seasons' judge scores and predicted audience vote data to simulate the ranking method: for each elimination week, compute judge rankings and audience rankings to derive a composite ranking; simulate the percentage method: for each elimination week, compute judge percentages and audience percentages to derive a composite percentage.
 
 Compare the eliminated contestants predicted by each method against the actual eliminated contestants, and calculate the proportion of identical decisions produced by both methods.As shown in the {\bf Figure~\ref{fig_counterfactual}}, both methods yielded identical results in 91.1\% of elimination decisions. This indicates that the impact of method selection is relatively limited, as judges' and viewers' preferences align in most cases. The percentage method achieved a slightly higher prediction accuracy (34.30\%) than the ranking method (29.26\%). This may be attributed to the fact that Seasons 3-27 actually employed the percentage method, allowing viewers' voting behavior to adapt to this approach.
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
-\includegraphics[width=1.0\textwidth]{q2_fig1_counterfactual.png}
+\includegraphics[width=0.9\textwidth]{q2_fig1_counterfactual.png}
 
 \caption{Counterfactual Simulation Modeling} \label{fig_counterfactual}
 \end{figure}
 
 \subsection{Bias Sensitivity Analysis}
-Bias Sensitivity Analysis aims to quantify the extent to which audience votes influence the final outcome.Decompose the variance of the composite score into judge components and audience components, and calculate the contribution of the audience component to the total variance (audience weighting formula):
+To quantify the impact of audience voting on the final outcome, we employed bias sensitivity analysis,Decomposing the variance of the composite score into judge components and audience components, and calculating the contribution of the audience component to the total variance (audience weighting formula):
 \begin{equation}
 \begin{aligned}
 W_{fan} =\frac{Var(Fan\_Component)}{Var(Combined\_Score)}
@@ -907,7 +884,7 @@ Based on the above discussion, we analyze cases where contestants such as Bristo
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
-\includegraphics[width=1.0\textwidth]{q2_fig3_controversy_cases.png}
+\includegraphics[width=0.8\textwidth]{q2_fig3_controversy_cases.png}
 
 \caption{Analysis of Controversial Cases} \label{fig_controversy_cases}
 \end{figure}
@@ -935,7 +912,7 @@ We evaluated the two methods across three dimensions: prediction accuracy, weigh
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
-\includegraphics[width=0.8\textwidth]{q2_fig5_final_analysis.png}
+\includegraphics[width=0.6\textwidth]{q2_fig5_final_analysis.png}
 
 \caption{Multi-Criteria Analysis of two Methods} \label{fig_final_analysis}
 \end{figure}
@@ -943,80 +920,6 @@ We evaluated the two methods across three dimensions: prediction accuracy, weigh
 Therefore, the primary recommendation is the {\bf Ranking System combined with the Judges' Save Mechanism}. This approach has been adopted by DWTS since Season 28. Within the framework of Arrow's theorem, the ranking system achieves a higher fairness score, while the judges' save mechanism provides an opportunity to correct approximately 9\% of controversial eliminations.
 
 
-\subsection{Multi-Model Validation and Robustness Analysis}
-To validate the reliability of the Variance Decomposition Model for Problem 2, we employed multi-model cross-validation to enhance the model's feasibility and robustness. The selected validation models are listed in the {\bf Table \ref{table_validation_models}} below.
-
-%% 三线表
-\begin{table}[H]     % H表示强制固定在当前位置
-\small
-\centering           % 设置居中
-\caption{Validation Models}  % 表标题
-\label{table_validation_models}         % 设置表的引用标签
-\begin{tabular}{lll}  % 2列, c表示居中对齐, l和r表示左右对齐
-\toprule             % 画顶端横线
-\textbf{Model}      & \textbf{Method Type}  & \textbf{Purpose of Verification}       \\
-\midrule             % 画中间
-Linear Regression   & Parameter Regression  & Quantify the weight contribution ratio \\
-Logistic regression & Classification Model  & Analyze Factors Affecting Elimination  \\
-BootstrapSimulation & Resampling Statistics & Constructing Confidence Intervals      \\
-SHAP                & Game Theory           & Fair distribution of contributions    \\
-\bottomrule         % 画底部横线
-\end{tabular}
-\vspace{2pt} % 稍微调整间距
-\begin{flushleft} \small
-\end{flushleft}
-\end{table}
-
-
-
-% \begin{figure}[H]    % H表示强制固定在当前位置
-
-% \includegraphics[width=0.8\textwidth]{fig_validation_summary.png}
-% \caption{Validation Summary} \label{fig_validation_summary}
-% \end{figure}\begin{figure}[H]    % H表示强制固定在当前位置
-
-% \includegraphics[width=0.7\textwidth]{fig_robustness_analysis.png}
-% \caption{Robustness Analysis} \label{fig_robustness_analysis}
-% \end{figure}
-
-
-% 正文区直接插入
-\begin{figure}[H]
-    \caption{Multi-Model Validation and Robustness Analysis}
-    \centering
-    % 调整宽度为0.45\textwidth，适配mcmthesis的页边距
-    \begin{subfigure}{0.52\textwidth}
-        
-        \includegraphics[width=\textwidth]{fig_validation_summary.png}
-        \caption{Validation Summary}
-        \label{fig_validation_summary}  % 保持你原来的标签格式
-    \end{subfigure}
-    \quad  % 用quad控制固定间距（比hfill更稳定）
-    \begin{subfigure}{0.42\textwidth}
-        
-        \includegraphics[width=\textwidth]{fig_robustness_analysis.png}
-        \caption{Robustness Analysis}
-        \label{fig_robustness_analysis}
-    \end{subfigure}
-\end{figure}
-
-% \begin{figure}[H] 
-% \caption{Uncertainty Propagation Analysis Results} 
-% \centering
-% \label{fig_propagation_analysis}
-% \begin{subfigure}{0.5\textwidth}
-% \includegraphics[width=0.9\textwidth]{fig_uncertainty_propagation (1).png}
-% \end{subfigure}\begin{subfigure}{0.5\textwidth}
-% \includegraphics[width=0.9\textwidth]{fig_sensitivity_analysis (1).png}
-% \end{subfigure}\\
-% \end{figure}
-
-
-As shown in the {\bf Figure \ref{fig_validation_summary}},all methods confirm that the percentage method yields higher audience weights than the ranking method, demonstrating consistency. Most methods indicate audience weights under the percentage method fall within the 50-90\% range, reflecting stronger audience dominance. Shapley values validate the rationality of weight allocation from a fair distribution perspective.
-
-
-
-The model's performance stability was evaluated when introducing varying levels of noise into the input data. As shown in the {\bf Figure \ref{fig_robustness_analysis}}, performance remained largely consistent within the 0\%–20\% noise range without significant decline, indicating strong resistance to input noise interference. As noise levels increased, fluctuations in performance scores slightly widened, yet overall stability was maintained, validating the model's robustness.
 
 % Building value is measured in terms of the building's cultural value and community influence,
 % economic value, and historical value. Therefore, we take these three main aspects as primary
@@ -1335,10 +1238,10 @@ The model's performance stability was evaluated when introducing varying levels 
 % contributing to the overall well-being and development of the community.
 
 \section{Quantifying Feature Contributions via Mixed-Effects Model}
-Problem 3 requires us to analyze the characteristics of dancers and contestants, construct corresponding models, and quantify the contribution of dancer characteristics and contestant characteristics to the contestant's final score and judges' scores.
+To quantify the contribution of dancer characteristics and contestant characteristics to judges' and audience scores, we established a mixed-effects model based on fan vote estimates to achieve this quantification.
 \subsection{Calculate Fixed and Random Effects}
 
-A {\bf Mixed Effects Model} is a statistical model that incorporates both fixed effects and random effects, suitable for data with hierarchical structures or repeated measurements. Its basic form is:
+A {\bf Mixed Effects Model} is a statistical model that incorporates both fixed effects and random effects, suitable for data with hierarchical structures or repeated measurements\cite{laird_random-effects_1982}. Its basic form is:
 \begin{equation}
 \begin{aligned}
 y_{ij} = X_{ij} \cdot \beta + Z_{ij} \cdot b_j + \epsilon_{ij}
@@ -1396,7 +1299,7 @@ Through model estimation, we can determine the contribution of the professional 
 
 
 \subsection{Model Optimization}
-We systematically optimized the base model by incorporating the nonlinear term $age\_squared$ to capture the nonlinear effects of age and incorporated temporal trends via $season\_std$ and $week\_std$ to enhance interpretability and predictive power.  The optimized model achieved a 37.3\% increase in variance for the judge scoring model and a 35.9\% increase in variance for the ranking model. This enables better quantification of how features like professional dancer experience, celebrity age, fan count, and season count contribute to contestant performance scores,as shown in  {\bf Figure \ref{fig_effects_analysis_v2}}.
+To enhance the model's generalization capability,we systematically optimized the base model by incorporating the nonlinear term $age\_squared$ to capture the nonlinear effects of age and incorporated temporal trends via $season\_std$ and $week\_std$ to enhance interpretability and predictive power.  The optimized model achieved a 37.3\% increase in variance for the judge scoring model and a 35.9\% increase in variance for the ranking model. This enables better quantification of how features like professional dancer experience, celebrity age, fan count, and season count contribute to contestant performance scores,as shown in  {\bf Figure \ref{fig_effects_analysis_v2}}.
 
 
 % \begin{figure}[H]    % H表示强制固定在当前位置
@@ -1416,26 +1319,35 @@ We systematically optimized the base model by incorporating the nonlinear term $
 
 
 \subsection{An Investigation into the Influence of Judges and Audience Voting}
-A directed acyclic graph (DAG) is a visualization tool used to represent causal relationships between variables. DAG explicitly distinguish between direct effects, indirect effects, and confounding effects. Based on mixed-effects model coefficients and domain knowledge, they identify the following four key causal pathways:
+% A directed acyclic graph (DAG) is a visualization tool used to represent causal relationships between variables.\cite{neuberg_causality_2003} DAG explicitly distinguish between direct effects, indirect effects, and confounding effects. Based on mixed-effects model coefficients and domain knowledge, they identify the following four key causal pathways:
+
+
+To better visualize the causal relationships between dancers' and contestants' characteristics and their performance outcomes, we employ a directed acyclic graph (DAG)\cite{neuberg_causality_2003}.Based on mixed-effects model coefficients, we identified the following four key causal pathways:
+
+
 \begin{itemize}
+\vspace{-8pt}
 \item Dancer's Historical Record $\to$ Judges' Scores $\to$ Final Ranking
+\vspace{-8pt}
 \item Social media followers $\to$ Fan voting $\to$ Final ranking
+\vspace{-8pt}
 \item Star's Age $\to$ Judges' Scores / Fan Votes $\to$ Final Ranking
+    \vspace{-8pt}
 \item $Season \times Fans \to$ Judge Scores / Fan Votes $\to$ Final Ranking
 \end{itemize}
-
+  \vspace{-8pt}
 Through interaction analysis, the {\bf Figure \ref{fig_causal_dag}} reveals causal pathways linking professional dancer characteristics and celebrity characteristics to fan and judge votes, while distinguishing the direct impact of judges' scores from the indirect influence of fan voting.As shown in {\bf Figure \ref{fig_effect_decomposition}}, the direct effect of dancer characteristics (25\%) is the largest, indicating  {`` Who is your dance partner? '' }  is the primary factor determining scores. The indirect effect of social media (18\%) is also significant, validating the importance of the fan voting mechanism.
 
 Therefore, social media follower counts, industry background, and interaction metrics primarily influence judges' scores rather than follower-driven rankings. Champion dancers' partnerships and the age effect exert stronger influence on fan voting. This indicates that judges evaluate technical proficiency, while fans respond more broadly to star appeal.
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
-\includegraphics[width=0.6\textwidth]{q3_fig_causal_dag.png}
+\includegraphics[width=0.5\textwidth]{q3_fig_causal_dag.png}
 
 \caption{Causal DAG} \label{fig_causal_dag}
 \end{figure}
 
-
+  \vspace{-8pt}
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
 \includegraphics[width=0.7\textwidth]{q3_fig_effect_decomposition.png}
@@ -1493,7 +1405,7 @@ Therefore, social media follower counts, industry background, and interaction me
 
 The fan vote estimates for Question 1 are likely based on reverse-engineering from limited information, inherently carrying uncertainty. When these estimates serve as inputs for Question 2 and Question 3, how does this uncertainty affect the reliability of subsequent conclusions?
 
-We establish a propagation framework designed to quantify and trace how uncertainty in Question~1 fan vote estimates propagates to Question~2 controversy identification and Question~3 factor analysis. As shown in \textbf{Figure~\ref{fig_propagation_framework}}, the confidence intervals for Question~1 fan vote estimates are quantified using Bootstrap resampling. Monte Carlo simulations are employed to propagate Question~1 uncertainty into the Question~2 controversy identification model. To analyze the impact of Question~1 uncertainty on Question~3 mixed-effects model coefficient estimates, a coefficient \textbf{Sensitivity Analysis} is conducted.
+We establish a propagation framework designed to quantify and trace how uncertainty in Question~1 fan vote estimates propagates to Question~2 controversy identification and Question~3 factor analysis\cite{saltelli_sensitivity_2000}. As shown in \textbf{Figure~\ref{fig_propagation_framework}}, the confidence intervals for Question~1 fan vote estimates are quantified using Bootstrap resampling. Monte Carlo simulations are employed to propagate Question~1 uncertainty into the Question~2 controversy identification model. To analyze the impact of Question~1 uncertainty on Question~3 mixed-effects model coefficient estimates, a coefficient \textbf{Sensitivity Analysis} is conducted.
 
 
 \begin{figure}[H]    % H表示强制固定在当前位置
@@ -1518,11 +1430,11 @@ We establish a propagation framework designed to quantify and trace how uncertai
 \end{figure}
 
 
-\section{Design of a Score Fusion Mechanism Based on the KMDR Model}
+\section{KMDR Model for A Score Fusion Mechanism }
 
-\subsection{Establishment and Evaluation of the Score Fusion Mechanism}
+\subsection{Establishment KMDR Model}
 
-In reality competition shows like DWTS, the design of the scoring mechanism directly impacts the fairness and credibility of the competition. To address the potential systemic discrepancies between judges' scores and audience votes, we developed a KMDR (Kemeny-Metric Distortion Rank) model based on cutting-edge research in social choice theory and voting system design.
+In reality competition shows like DWTS, the design of the scoring mechanism directly impacts the fairness and credibility of the competition. To address the potential systemic discrepancies between judges' scores and audience votes, we developed a KMDR (Kemeny-Metric Distortion Rank) model based on cutting-edge research in social choice theory and voting system design \cite{arrow_social_2012}.
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
@@ -1533,34 +1445,40 @@ In reality competition shows like DWTS, the design of the scoring mechanism dire
 
 As shown in {\bf Figure~\ref{fig_kmdr_workflow}},Our goal in establishing the model is to design a composite scoring function $G = f(S, V, t)$ that satisfies the fairness, dynamic adaptability, accuracy, and interpretability.Below is the solution and performance evaluation of the scoring fusion mechanism.
 
+
+\subsection{Performance Evaluation of Score Fusion Mechanism}
+
+
 \begin{itemize}
 
 \item Superiority of Simulation Results
 
-Based on simulations using KMDR, the results are shown in the {\bf Figure~\ref{fig_champion_quality}}. Across the simulated 32 seasons, we analyzed the quality of these champions from two dimensions: overall strength and controversy. The figure indicates that the mean overall strength distribution of KMDR champions is 0.6502, with a standard deviation of 0.098, demonstrating that champions generally possess a high and stable overall level. Most crucially, none of the 32 KMDR champions were controversial selections—a stark contrast to the potential “one-sided dominance” issues present in existing systems. This demonstrates that KMDR does not merely “predict” existing outcomes but offers a fairer, more reasonable alternative.
+Based on simulations using KMDR, the results are shown in the {\bf Figure~\ref{fig_champion_quality}}.  The figure indicates that the mean overall strength distribution of KMDR champions is 0.6502, with a standard deviation of 0.098, demonstrating that champions generally possess a high and stable overall level. Most crucially, none of the 32 KMDR champions were controversial selections—a stark contrast to the potential “one-sided dominance” issues present in existing systems. This demonstrates that KMDR does not merely “predict” existing outcomes but offers a fairer, more reasonable alternative.
 
 
-
+% Across the simulated 32 seasons, we analyzed the quality of these champions from two dimensions: overall strength and controversy.
 
 \begin{figure}[H] 
 \caption{KMDR Simulation Analysis Results} 
 \label{fig_propagation_analysis}\centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.4\textwidth}
 \includegraphics[width=0.9\textwidth]{fig_simulation_champions.png}
 \caption{KMDR Champion Quality Analysis} \label{fig_champion_quality}
-\end{subfigure}\begin{subfigure}{0.5\textwidth}
+\end{subfigure}\begin{subfigure}{0.4\textwidth}
 \includegraphics[width=0.9\textwidth]{fig_simulation_elimination.png}
 \caption{KMDR Early Elimination Rationality Analysis} \label{fig_elimination_rationality}
 \end{subfigure}\\
 
 \end{figure}
 
+
+\vspace{-12pt}
 \item Highly Rational Elimination Decision
 
-The rationality of early elimination decisions serves as a key metric for evaluating ranking systems. As shown in the {\bf Figure \ref{fig_elimination_rationality}}, we analyzed the strength distribution of eliminated contestants over the first three weeks: 96.3\% of eliminated contestants ranked below the 20th percentile in overall strength, indicating highly rational elimination decisions. Unlike existing mechanisms that may prematurely eliminate contestants who are “weak with judges but strong with audiences” or “weak with audiences but strong with judges,” KMDR ensures that only contestants deemed weak by both parties are eliminated.
+As shown in the {\bf Figure \ref{fig_elimination_rationality}}, we analyzed the strength distribution of eliminated contestants over the first three weeks: 96.3\% of eliminated contestants ranked below the 20th percentile in overall strength, indicating highly rational elimination decisions. Unlike existing mechanisms that may prematurely eliminate contestants who are “weak with judges but strong with audiences” or “weak with audiences but strong with judges,” KMDR ensures that only contestants deemed weak by both parties are eliminated.
 
 
-
+  \vspace{-8pt}
 
 
 \item Significantly enhanced fairness
@@ -1582,17 +1500,16 @@ As shown in the {\bf Figure \ref{fig_fairness_metrics}}, KMDR achieves the secon
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
-\includegraphics[width=0.8\textwidth]{fig_kmdr_weight_dynamics.png}
+\includegraphics[width=0.6\textwidth]{fig_kmdr_weight_dynamics.png}
 
 \caption{KMDR Dynamic Weight Adjustment Adaptation} \label{fig_kmdr_weight_dynamics}
 \end{figure}
 
 
-
-
+\vspace{-12pt}
 \item Dynamic Weight Adjustment Adaptation
 
-One of KMDR's core innovations is dynamically adjusting the judge-audience weighting based on the competition stage. {\bf Figure \ref{fig_kmdr_weight_dynamics}} illustrates how the weighting changes over the weeks of the competition (0.75 in the early stage, 0.60 in the middle stage, and 0.50 in the late stage). This dynamic weighting adjustment strategy aligns with the developmental patterns of reality TV shows: early screening requires professionalism, while the later finals demand public participation. This design balances both competitiveness and entertainment value.
+One of KMDR's core innovations is dynamically adjusting the judge-audience weighting based on the competition stage. {\bf Figure \ref{fig_kmdr_weight_dynamics}} illustrates how the weighting changes over the weeks of the competition (0.75 in the early stage, 0.60 in the middle stage, and 0.50 in the late stage). This aligns with the developmental patterns of reality TV shows: early screening requires professionalism, while the later finals demand public participation. This design balances both competitiveness and entertainment value.
 
 
 
@@ -1601,9 +1518,144 @@ One of KMDR's core innovations is dynamically adjusting the judge-audience weigh
 
 \end{itemize}
 
-\subsection{Sensitivity Analysis}
 
-The distortion penalty coefficient $\alpha$ and Condorcet consensus reward coefficient $\beta$ are core parameters of the KMDR model. To investigate the model's response characteristics to variations in these two key parameters, we conducted a spatial exploration sensitivity analysis of the $\alpha-\beta$ parameters. We constructed an 8$\times$8 parameter grid with 0.1 increments within the interval [0.1, 0.8], yielding a total of 64 combinations. The elimination prediction accuracy was evaluated for each combination.
+
+\vspace{-10pt}
+
+\section{Evaluation and Sensitivity Analysis}
+
+
+
+\subsection{Validity Test and Robustness Analysis of RF Model}
+Although the RF model in {\bf Problem 1} exhibits strong robustness against interference, it is prone to overfitting or underfitting issues, resulting in insufficient generalization capabilities. Therefore, we employ stratified 10-fold cross-validation to assess the model's generalization performance. Stratified sampling ensures that the proportion of positive and negative samples in each fold matches the original dataset, thereby preventing evaluation bias caused by class imbalance.
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.8\textwidth]{fig_cv_boxplot.png}
+
+\caption{Cross-validation Boxplot} \label{fig_cv_boxplot}
+\end{figure}
+
+
+As shown in {\bf Figure \ref{fig_cv_boxplot}}, the average accuracy of the random forest model with 10-fold cross-validation is 0.8524, with a standard deviation of only 0.0213. This indicates the model exhibits stable performance across different data partitions and possesses strong generalization capabilities. The ROC-AUC reaches 0.8906, demonstrating the model's excellent ability to distinguish classification boundaries. 
+% Recall (0.6766) exceeds precision (0.5898), indicating the model tends to identify more rejected cases—aligning with the early warning system's design objectives.
+
+% Learning curve analysis is used to assess whether a model is overfitting or underfitting. By observing the trend of training set and validation set accuracy across different training sample sizes, we evaluate the model's learning capability and generalization ability. As shown in {\bf Figure \ref{fig_learning_curve}},the gap between training set accuracy (0.9253) and validation set accuracy (0.8570) is 0.0682, indicating mild overfitting within an acceptable range. As the training sample size increases, the test set accuracy steadily improves, indicating that the model can effectively learn patterns within the data.
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \centering
+% \includegraphics[width=0.6\textwidth]{fig_learning_curve.png}
+
+% \caption{Learning Curve} \label{fig_learning_curve}
+% \end{figure}
+
+% A statistical analysis of the residuals between the model's predicted probabilities and the actual labels reveals,as shown in {\bf Figure \ref{fig_residual_analysis}},the mean residual of the predicted probabilities is -0.0959, close to zero, indicating no systematic overestimation or underestimation by the model. The skewness (-0.0851), also near zero, suggests the residual distribution is essentially symmetric. The positive kurtosis (1.5978) indicates that prediction errors are concentrated within a narrow range. Overall, the model's predictions are reliable, and the error distribution is reasonable.
+
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+% \centering
+% \includegraphics[width=0.8\textwidth]{fig_residual_analysis.png}
+
+% \caption{Residual Analysis} \label{fig_residual_analysis}
+% \end{figure}
+
+Next, robustness testing is conducted by adding Gaussian noise at varying levels (1\%–-20\%) to the input features to assess the model's stability when data contains minor errors. Noise is added proportionally to each feature's standard deviation to simulate measurement errors encountered during actual data acquisition.
+
+
+
+
+\begin{figure}[H]    % H表示强制固定在当前位置
+\centering
+\includegraphics[width=0.8\textwidth]{fig_robustness_noise.png}
+
+\caption{Robustness Analysis: Noise Injection} \label{fig_robustness_noise}
+\end{figure}
+After adding 5\% noise to the data, the model's accuracy changed by only 0.43\%, and the ROC-AUC changed by 0.0060. After adding 10\% noise, the accuracy changed by +1.00\%. This indicates that the model possesses strong robustness against interference and can still reliably output stable results even when actual data contains minor measurement errors.
+
+
+\subsection{Multi-Model Validation}
+
+To validate the reliability of the Variance Decomposition Model for Problem 2, we employed multi-model cross-validation to enhance the model's feasibility and robustness. The selected validation models and their validation purposes are listed in the {\bf Table \ref{table_validation_models}} below.
+
+
+\begin{figure}[H]
+    \caption{Multi-Model Validation and Robustness Analysis}
+    \centering
+    % 调整宽度为0.45\textwidth，适配mcmthesis的页边距
+    \begin{subfigure}{0.52\textwidth}
+        
+        \includegraphics[width=\textwidth]{fig_validation_summary.png}
+        \caption{Validation Summary}
+        \label{fig_validation_summary}  % 保持你原来的标签格式
+    \end{subfigure}
+    \quad  % 用quad控制固定间距（比hfill更稳定）
+    \begin{subfigure}{0.42\textwidth}
+        
+        \includegraphics[width=\textwidth]{fig_robustness_analysis.png}
+        \caption{Robustness Analysis}
+        \label{fig_robustness_analysis}
+    \end{subfigure}
+\end{figure}
+
+%% 三线表
+\begin{table}[H]     % H表示强制固定在当前位置
+\small
+\centering           % 设置居中
+\caption{Validation Models}  % 表标题
+\label{table_validation_models}         % 设置表的引用标签
+\begin{tabular}{lll}  % 2列, c表示居中对齐, l和r表示左右对齐
+\toprule             % 画顶端横线
+\textbf{Model}      & \textbf{Method Type}  & \textbf{Purpose of Verification}       \\
+\midrule             % 画中间
+Linear Regression   & Parameter Regression  & Quantify the weight contribution ratio \\
+Logistic regression & Classification Model  & Analyze Factors Affecting Elimination  \\
+BootstrapSimulation & Resampling Statistics & Constructing Confidence Intervals      \\
+SHAP                & Game Theory           & Fair distribution of contributions    \\
+\bottomrule         % 画底部横线
+\end{tabular}
+\vspace{2pt} % 稍微调整间距
+\begin{flushleft} \small
+\end{flushleft}
+\end{table}
+
+
+
+% \begin{figure}[H]    % H表示强制固定在当前位置
+
+% \includegraphics[width=0.8\textwidth]{fig_validation_summary.png}
+% \caption{Validation Summary} \label{fig_validation_summary}
+% \end{figure}\begin{figure}[H]    % H表示强制固定在当前位置
+
+% \includegraphics[width=0.7\textwidth]{fig_robustness_analysis.png}
+% \caption{Robustness Analysis} \label{fig_robustness_analysis}
+% \end{figure}
+
+
+% 正文区直接插入
+
+
+% \begin{figure}[H] 
+% \caption{Uncertainty Propagation Analysis Results} 
+% \centering
+% \label{fig_propagation_analysis}
+% \begin{subfigure}{0.5\textwidth}
+% \includegraphics[width=0.9\textwidth]{fig_uncertainty_propagation (1).png}
+% \end{subfigure}\begin{subfigure}{0.5\textwidth}
+% \includegraphics[width=0.9\textwidth]{fig_sensitivity_analysis (1).png}
+% \end{subfigure}\\
+% \end{figure}
+
+\vspace{-10pt}
+As shown in the {\bf Figure \ref{fig_validation_summary}},all methods confirm that the percentage method yields higher audience weights than the ranking method, demonstrating consistency. Most methods indicate audience weights under the percentage method fall within the 50-90\% range, reflecting stronger audience dominance. Shapley values validate the rationality of weight allocation from a fair distribution perspective.
+
+
+
+The model's performance stability was evaluated when introducing varying levels of noise into the input data. As shown in the {\bf Figure \ref{fig_robustness_analysis}}, performance remained largely consistent within the 0\%–20\% noise range without significant decline, indicating strong resistance to input noise interference. As noise levels increased, fluctuations in performance scores slightly widened, yet overall stability was maintained, validating the model's robustness.
+
+\subsection{Spatial Exploration of KMDR Model Parameters}
+
+In Problem 4,the distortion penalty coefficient $\alpha$ and Condorcet consensus reward coefficient $\beta$ are core parameters of the KMDR model. To investigate the model's response characteristics to variations in these two key parameters, we conducted a spatial exploration sensitivity analysis of the $\alpha-\beta$ parameters. We constructed an 8$\times$8 parameter grid with 0.1 increments within the interval [0.1, 0.8], yielding a total of 64 combinations. The elimination prediction accuracy was evaluated for each combination.
 
 \begin{figure}[H]    % H表示强制固定在当前位置
 \centering
@@ -1612,14 +1664,9 @@ The distortion penalty coefficient $\alpha$ and Condorcet consensus reward coeff
 \caption{KMDR Parameter Sensitivity Heatmap} \label{fig_kmdr_sensitivity}
 \end{figure}
 
+\vspace{-5pt}
+
 The results of the parameter sensitivity heatmap analysis are shown in the figure. We find that the elimination prediction accuracy reaches its highest value of 23.4\% under the optimal parameter combination ($\alpha$=0.1, $\beta$=0.2), while the elimination accuracy under the current parameters is 20.0\% which falls within a reasonable range. The model exhibits sensitivity to variations in the β parameter. Excessively high $\beta$ values lead to over-rewarding of “moderate” performers. The $\alpha$ parameter demonstrates stable performance within the 0.2–0.6 range, indicating the robustness of the metric distortion penalty mechanism. This confirms the robustness and reliability of the KMDR model.
-
-
-
-
-\section{Sensitivity and Robustness Analysis}
-
-
 
 
 % \subsection{Sensitivity}
@@ -1669,9 +1716,29 @@ The results of the parameter sensitivity heatmap analysis are shown in the figur
 
 
 \section{Strengths and Weaknesses}
+{\bf \Large Strengths:}
+\begin{itemize}
+\vspace{-5pt}
+\item Breaking through the limitations of a single model, we constructed a dual-reconstruction modeling strategy combining TAN and RF to reverse-engineer hidden audience voting data. The consistency rate between the two models reached 88.76\%.
+\vspace{-5pt}
+\item Establish a multi-level uncertainty quantification framework for problems 1 through 3, forming a complete uncertainty propagation chain that embodies systematic modeling thinking.
+\vspace{-10pt}
+\item The dynamic weighting design of the KMDR model achieves a dynamic equilibrium between professionalism and entertainment value, with a Condorcet efficiency of 98.79\%, significantly outperforming traditional fixed-weight mechanisms.
+\vspace{-5pt}
+\item All models underwent dual validation for both validity and robustness. For instance, the RF model in Question 1 achieved an average accuracy of 0.8524 through 10-fold stratified cross-validation, demonstrating strong generalization capabilities.
+\end{itemize}
 
+\vspace{-5pt}
+{\bf \Large Weaknesses:}
+\vspace{-5pt}
+\begin{itemize}
+\item The model simplification assumptions introduce bias and fail to incorporate practical influencing factors such as trending events, resulting in minor discrepancies between some estimated outcomes and the actual program scenarios.
 
+\vspace{-5pt}
+\item The sample and data dimensions have certain limitations, which may result in the model's insufficient adaptability to different scenarios, and its generalization capability requires improvement.
 
+\vspace{-5pt}
+\end{itemize}
 % {\bf Robustness and Flexibility:} Our model demonstrates strong adaptability to various parameter
 % variations through sensitivity analysis and robustness testing, and is able to provide
 % reliable predictions under different scenarios.
@@ -1686,151 +1753,403 @@ The results of the parameter sensitivity heatmap analysis are shown in the figur
 
 
 % {\bf Model Assumptions:} The model relies on certain assumptions that may not hold true in
-\printbibliography
+\printbibliography[heading=bibintoc, title={References}]
 
 \newpage
-
+\addcontentsline{toc}{section}{Memorandum}
 \begin{center}
-{\Large \textbf{A Letter to Community Members}}   
+{\Large \textbf{Memorandum}}   
 \end{center}
 
 \vspace{0.5cm}
 
-\noindent Dear Esteemed Members of Tokyo Tower Community,
-
-We are researchers dedicated to the study of architectural preservation. In order to realize the preservation of Tokyo Tower at a lower cost, please allow me to introduce our proposal on behalf of our team.
-
-We have recently concluded a comprehensive analysis aimed at ensuring the future sustainability and preservation of our cherished Tokyo Tower. Our findings offer a strategic blueprint that prioritizes not only the physical well-being of this iconic structure but also its cultural and historical essence.
 
 
-\textbf{Recommendation Plan:}
+\noindent {\bf To:Dancing with the Stars Production Team}
 
-Our proposed plan encompasses innovative preservation techniques, structural enhancements, and community-centric initiatives designed to safeguard and celebrate the tower's legacy. We aim to implement cutting-edge solutions that address both current vulnerabilities and future challenges.
+\noindent {\bf From: Team \#2615954}
+
+\noindent {\bf Subject:DWTS Optimization Recommendations Based on Research}
+
+\noindent {\bf Date: February 2, 2026}
 
 
-\textbf{Implementation Timeline:}
-
-This ambitious project is scheduled over a five-year period, beginning with immediate preliminary assessments and followed by successive phases of structural upgrades and community engagement activities. This phased approach ensures meticulous attention to detail and the successful realization of our objectives.
+It is our honor to write to your team to present our research findings on optimal fairness mechanisms for program voting and elimination processes. Below, we will outline the core elements of this study, focusing on the practical implementation of optimal fairness mechanisms to enhance the fairness, rationality, and entertainment value of your programs.
 
 
-\textbf{Budget Overview:}
+During our research, we analyzed data from the past 34 seasons of the program. By establishing a multi-level statistical model, we simulated the operational outcomes of various voting and elimination formats. Ultimately, we discovered that:
+\begin{itemize}
 
-The financial blueprint for this venture is estimated at $\$320,000$ per annum. This budget encompasses costs associated with structural reinforcements, preservation technology, and community enrichment programs. It represents a balanced investment in tower's longevity and its significance to our community.
+    \item The percentage method places greater emphasis on audience voting than the ranking method;
 
-We stand at a pivotal moment in the history of Tokyo Tower, poised to embark on a journey that not only secures its future but also reinvigorates its role within our community. We invite you to support this noble cause, ensuring that Tokyo Tower remains a symbol of resilience, heritage, and communal unity for countless years to come.
+    \item The judge intervention mechanism provides a chance to correct errors in disputed cases;
+
+    \item The weighting of judging and audience voting is a crucial factor in the scoring mechanism.
+
+\end{itemize}
+
+Next, we will propose the following specific recommendations for the implementation and refinement of optimal fairness mechanisms:
+\begin{itemize}
+    \item   \textbf{Dynamic Weight Adjustment Mechanism:}
+   
+   Dynamically adjust the weighting of judges' and audience votes based on the characteristics of different stages of the program, adhering to the principle of optimal fairness mechanisms.
+
+\item \textbf{Refine the Judge Rescue Mechanism:}
+    
+Continuously refine the rules governing the use of the judge rescue mechanism to address limitations in the voting process, thereby enhancing the fairness and acceptance of elimination outcomes.
+
+\item \textbf{Standardize the voting process:}
+
+Guide participants to vote rationally, mitigate unreasonable interference, ensure the authenticity and validity of voting results, and provide safeguards for implementing optimal fairness mechanisms.
+\end{itemize}
+
+
+
+We sincerely hope this research provides valuable insights for your program's operations, helping to refine its voting and elimination mechanisms.
+
+Looking forward to seeing further success for Dancing with the Stars in the future!
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \vspace{1.5cm}                    % 增加间距，把落款往下推
 
 \hfill Sincerely yours,           % 右对齐
 
-\hfill {\bf Team \#2400860}       % 右对齐
+\hfill {\bf Team \#2615954}       % 右对齐
 
 \newpage
 
-\begin{appendices}
 
-% \section{First Appendix}
+% \begin{appendices}
 
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input Python source:}}
-\begin{lstlisting}[language=python]
-import numpy as np
+% % \section{First Appendix}
 
-def fft(x):
-    n = len(x)
-    if n == 1:
-        return x
-    even = fft(x[0::2])
-    odd = fft(x[1::2])
-    T = [np.exp(-2j * np.pi * k / n) * odd[k] for k in range(n // 2)]
-    return [even[k] + T[k] for k in range(n // 2)] + [even[k] - T[k] for k in range(n // 2)]
-\end{lstlisting}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input Python source:}}
+% \begin{lstlisting}[language=python]
+% import numpy as np
 
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input Matlab source:}}
-\lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
+% def fft(x):
+%     n = len(x)
+%     if n == 1:
+%         return x
+%     even = fft(x[0::2])
+%     odd = fft(x[1::2])
+%     T = [np.exp(-2j * np.pi * k / n) * odd[k] for k in range(n // 2)]
+%     return [even[k] + T[k] for k in range(n // 2)] + [even[k] - T[k] for k in range(n // 2)]
+% \end{lstlisting}
 
-\end{appendices}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input Matlab source:}}
+% \lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
+
+% \end{appendices}
 
 
 \AImatter
 
+% \addcontentsline{toc}{section}{Report on Use of AI}
+
 \begin{ReportAiUse}{9}
 
 \bibitem{AI1}
-OpenAI ChatGPT \cite{chatgpt2024} (Jan 25, 2024 version, ChatGPT-4) 
+OpenAI ChatGPT 5.2 
 
-Query1: Give me some brainstorming ideas for innovative data visualization techniques.
+Query1: How Outstanding Winner Papers Present Narrative Structures ？
 
-Output: Here are some innovative data visualization technique ideas:
+Output: This question hits the nail on the head, because what wins the Outstanding Winner award at the US Math Competition is never just the model—it's the story.
 
-(1) Interactive Dashboards: Develop dashboards that allow users to interact with the data,
-such as filtering, zooming, and selecting specific data points to see detailed information.
+(1)The Essence of Outstanding Winner Papers: 
 
-(2) Animated Visualizations: Use animations to show changes in data over time, helping
-to illustrate trends, cycles, or progressions.
+They Are Not Papers but "Technical Narrative Works"
 
-(3) Augmented Reality (AR) Visualizations: Implement AR to overlay data on real-world
-objects or environments, enhancing understanding of spatial and contextual relationships.
+(2)The "Standard Narrative Structure" of Outstanding Winner Papers (Deconstructed)
+\begin{itemize}
+\item Introduction: Not "What We Did," but "Why This Problem Deserves Serious Attention"
+\item  Problem Deconstruction: Outstanding Winner Papers Always "Reframe the Problem Structure"
+\item  Assumptions Section: The Assumptions in Outstanding Winner Papers Are "Restrained + Justified"
+\item  Model Building: Models Are Not the Protagonists but "Plot Tools"
+\item  Results Analysis: Outstanding Winner Papers Do Not Merely "Compute Results" but "Interpret Results"
+\item  Sensitivity Analysis \& Robustness: This Is the "Source of Confidence" in Outstanding Winner Papers
+\item  Conclusion: Not a Summary, but a "Return to the Original Problem"
+\end{itemize}
 
-(4) 3D Visualizations and Models: Employ 3D models to represent complex data structures,
-allowing exploration from different angles and perspectives.
 
-(5) Narrative Visualizations: Combine data visualization with storytelling, guiding viewers
-through a narrative that explains the significance of the data in a compelling way.
+% (1) Interactive Dashboards: Develop dashboards that allow users to interact with the data,
+% such as filtering, zooming, and selecting specific data points to see detailed information.
 
-(6) Real-time Data Streaming: Visualize data in real-time, updating visuals as new data
-comes in, ideal for monitoring and tracking systems.
+% (2) Animated Visualizations: Use animations to show changes in data over time, helping
+% to illustrate trends, cycles, or progressions.
 
-(7) Data Sonification: Convert data points into audio signals, making it possible to ``listen''
-to the data for patterns, trends, or anomalies.
+% (3) Augmented Reality (AR) Visualizations: Implement AR to overlay data on real-world
+% objects or environments, enhancing understanding of spatial and contextual relationships.
 
-These ideas can help present data in more engaging, insightful, and accessible ways.
+% (4) 3D Visualizations and Models: Employ 3D models to represent complex data structures,
+% allowing exploration from different angles and perspectives.
+
+% (5) Narrative Visualizations: Combine data visualization with storytelling, guiding viewers
+% through a narrative that explains the significance of the data in a compelling way.
+
+% (6) Real-time Data Streaming: Visualize data in real-time, updating visuals as new data
+% comes in, ideal for monitoring and tracking systems.
+
+% (7) Data Sonification: Convert data points into audio signals, making it possible to ``listen''
+% to the data for patterns, trends, or anomalies.
+
+% These ideas can help present data in more engaging, insightful, and accessible ways.
 
 \bibitem{AI2}
-OpenAI ChatGPT (Jan 25, 2024 version, ChatGPT-4)
+OpenAI ChatGPT 5.2 
 
-Query1: What is Engineering News-Record? Give me a brief introduction.
+Query1: What is the format of the memo?
 
-Output: Engineering News-Record (ENR) is a prominent publication within the engineering and
-construction industry, providing news, analysis, commentary, and data vital for professionals
-in the field. The publication's roots can be traced back to two separate publications from the
-late 19th century, eventually merging into what we know today as ENR in 1917. It has evolved
-to offer a wide range of content including top design firms, construction companies, projects
-in the U.S. and around the world, and industry trends affecting business management, design,
-construction methods, technology, and more. ENR is recognized for its comprehensive rankings
-of the largest construction and engineering firms, based on gross revenues, and for its ENR
-Award of Excellence, which honors individuals who have made significant contributions to the
-industry. Today, ENR is owned by BNP Media and continues to serve as an essential resource
-for contractors, project owners, engineers, architects, and other industry stakeholders with its
-print and digital magazine, website, newsletters, webinars, and events.
+Output: Below is the format for the memo:
+
+
+(1)Title Page
+
+Title: Concise, descriptive of the issue or conclusion
+
+Team Information: Team name, member names, student IDs, school
+
+Date: Submission date
+
+(2)Memo Recipient Information (To/From)
+
+Similar to formal memo format for quick identification by “superiors/clients”:
+
+
+To: [Recipient, e.g., Department Head/Client]  
+
+From: [Your Team or Lead]  
+
+Date: [Date]  
+
+Subject: [Subject]  
+
+(3)Executive Summary
+
+Typically 1 paragraph to half a page, covering:
+
+Brief research question
+
+Primary methodology
+
+Key findings/recommendations
+
+Objective: Enable recipients to grasp results and recommendations without reading the full text
+
+(4)Background
+
+Concise description of research context and rationale
+
+May include:
+\begin{itemize}
+
+
+
+
+
+
+\item Origin or context of the issue
+
+\item Known conditions or constraints
+
+\item Research objectives
+\end{itemize}
+(5)Methods
+
+Clearly outline your research/analytical approach
+
+Common format:
+
+\begin{itemize}
+
+
+\item Bulleted list of models and assumptions
+
+\item Data sources and processing methods
+
+\item Mathematical formulas or algorithms (may be included in appendices)
+
+  
+\end{itemize}
+
+
+
+
+Note: Include only essential details; avoid excessive length
+
+(6)Analysis/Discussion
+
+Core analytical findings
+
+Present using charts or tables
+
+Content logic:
+
+\begin{itemize}
+
+
+\item Problem → Method → Result → Interpretation
+
+\item Emphasize actionable conclusions
+
+\item Avoid overly academic reasoning; prioritize clarity and directness
+
+  
+\end{itemize}
+
+
+
+
+(7)Recommendations
+\begin{itemize}
+
+
+\item Propose actionable suggestions addressing the research question
+
+\item Emphasize feasibility and concrete implementation
+
+\item May be listed in short bullet points, each corresponding to an analysis result
+
+  
+\end{itemize}
+
+
+
+
+(8)Formatting Recommendations
+
+Font and Layout:
+
+\begin{itemize}
+
+
+\item Uniform font (e.g., Times New Roman or Arial)
+
+\item Font size 11–12pt
+
+\item Clear headings with distinct hierarchical levels
+
+  
+\end{itemize}
+
+
+
+
+
+Figures and Tables:
+
+\begin{itemize}
+\item Complete titles and numbering
+
+\item Clear in-text citations (referenced within main text)
+\end{itemize}
+
+Length:
+
+\begin{itemize}
+
+\item Typically 5–10 pages of main text + appendices
+
+\item Avoid lengthy, thesis-style narratives
+\end{itemize}
+
+
+% construction industry, providing news, analysis, commentary, and data vital for professionals
+% in the field. The publication's roots can be traced back to two separate publications from the
+% late 19th century, eventually merging into what we know today as ENR in 1917. It has evolved
+% to offer a wide range of content including top design firms, construction companies, projects
+% in the U.S. and around the world, and industry trends affecting business management, design,
+% construction methods, technology, and more. ENR is recognized for its comprehensive rankings
+% of the largest construction and engineering firms, based on gross revenues, and for its ENR
+% Award of Excellence, which honors individuals who have made significant contributions to the
+% industry. Today, ENR is owned by BNP Media and continues to serve as an essential resource
+% for contractors, project owners, engineers, architects, and other industry stakeholders with its
+% print and digital magazine, website, newsletters, webinars, and events.
 
 \bibitem{AI3}
-OpenAI ChatGPT (Jan 25, 2024 version, ChatGPT-4)
+OpenAI ChatGPT 5.2 
 
-Query1: What's the ENR for?
+Query1: Where can we access real-time popularity data for contestants during the broadcast of Dancing with the Stars?
 
-Output: The Engineering News-Record (ENR) serves several vital functions in the engineering and construction industry. It is recognized for:
+Output: To obtain real-time popularity data for the variety show Dancing with the Stars on Google platforms (i.e., search trends for the program or contestant names on Google), the most common method is to use Google Trends and its associated data interfaces/tools.
 
-(1) News and Analysis: ENR provides comprehensive news coverage, analysis, and commentary
-on various topics relevant to the construction industry, including major projects, industry
-trends, technological advancements, and issues affecting the sector such as safety, law,
-and labor.
+Google Trends reflects global search engine popularity changes for specific keywords (including program names or contestant names), serving as a gauge for audience engagement.
 
-(2) Rankings and Data: It publishes annual rankings of the largest construction and engineering
-firms based on gross revenues, including lists like the Top 400 U.S. General Contractors,
-Top 500 U.S. Design Firms, and Top 600 Specialty Contractors, among others. These
-rankings are widely respected and used as benchmarks within the industry.
 
-(3) Awards and Recognition: ENR recognizes industry excellence through various awards,
-including the ENR Award of Excellence, which honors individuals and projects that have made
-significant contributions to the industry.
 
-(4) Industry Insights: The publication offers insights on business management, project
-delivery, technology, workforce development, and other critical areas impacting the engineering
-and construction fields.
+\bibitem{AI4}
+OpenAI ChatGPT 5.2 
 
-ENR serves as a key resource for professionals across the construction industry, including
-contractors, project owners, engineers, architects, and suppliers, connecting diverse sectors
-with coverage that addresses common challenges and opportunities.
+Query1: Please explain the definitions of fairness and entertainment value.
+
+Output: Let’s break these two concepts down clearly and in context—especially since they often come up in competitions, media, or performance evaluation.
+
+(1) Fairness
+
+Definition: Fairness refers to the impartiality and equity in the way people, participants, or processes are treated. A process is fair if all participants have an equal opportunity to succeed and the rules are applied consistently.
+
+(2) Entertainment Value
+
+Definition: Entertainment value measures how enjoyable, engaging, or captivating a performance, product, or experience is to its audience. It reflects the subjective appeal and the ability to capture and maintain attention.
+
+
+
+
+
+
+\bibitem{AI5}
+OpenAI ChatGPT 5.2 
+
+Query1: What does a high consistency coefficient between two predictive models signify?
+
+Output:In data analysis, model evaluation, or metrology, an “excessively high consistency coefficient” (e.g., approaching or exceeding 90\%) warrants further interpretation. While it carries positive implications, it may also indicate underlying issues that require contextual assessment.
+
+
+(1)Positive Implications: High Robustness of Models/Measurements
+
+\begin{itemize}
+\item High Model Consistency:
+
+Despite differing algorithmic principles, the two models demonstrate strong convergence in interpreting the underlying patterns within the data.
+
+\item High Reliability of Measurement Tools:
+
+In fields like psychology and educational assessment (e.g., using Cronbach's alpha coefficient or inter-rater reliability), high consistency indicates that measurement tools (questionnaires, scoring criteria) are highly stable with minimal random error.
+
+\item Clear intrinsic patterns and low noise in data:
+
+High consistency sometimes indicates that the patterns to be predicted or classified within a dataset are very clear, with strong relationships between features and target variables and relatively little noise.
+\end{itemize}
+
+(2)Potential Risks and Issues Requiring Investigation
+
+\begin{itemize}
+\item Data leakage or feature overlap: 
+
+This is the most critical risk to watch for. If two models use the same information that should not appear in predictions, it leads to a false high consistency.
+
+\item Models Over-Reliance on Identical Strong Features: 
+
+If one or two dominant features exist in the data and exhibit near-linear correlation with the outcome variable, any model will primarily base judgments on these features, causing predictions to converge.
+
+\item Unreasonable Evaluation Methods or Data Partitioning: 
+
+Evaluating consistency on the same training set or using cross-validation with data partitioning that fails to ensure independence may lead to overestimation of model generalization ability.
+
+
+\end{itemize}
 
 \end{ReportAiUse}
 

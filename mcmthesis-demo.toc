@@ -8,22 +8,24 @@
 \contentsline {section}{\numberline {3}Fan Vote Estimation Based on TAN and SHAP Models }{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Tree Augmented Naive Bayes Model for Fan Vote Estimation}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}RF and SHAP Model for Fan Vote Estimation}{8}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Consistency Test of Two Models}{10}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Validity Test and Robustness Analysis}{11}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Voting Combinations Comparison via Variance Decomposition Model}{12}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Counterfactual Simulation Modeling}{12}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Bias Sensitivity Analysis}{13}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Analysis of Controversial Cases and Method Evaluation}{14}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Discussion on the Judge Rescue Mechanism}{15}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Multi-Model Validation and Robustness Analysis}{17}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Quantifying Feature Contributions via Mixed-Effects Model}{18}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Calculate Fixed and Random Effects}{18}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Model Optimization}{19}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}An Investigation into the Influence of Judges and Audience Voting}{20}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Insight:Uncertainty Propagation Framework}{21}{section.6}%
-\contentsline {section}{\numberline {7}Design of a Score Fusion Mechanism Based on the KMDR Model}{22}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Establishment and Evaluation of the Score Fusion Mechanism}{22}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Sensitivity Analysis}{25}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Sensitivity and Robustness Analysis}{25}{section.8}%
-\contentsline {section}{\numberline {9}Strengths and Weaknesses}{25}{section.9}%
-\contentsline {section}{Appendices}{28}{section*.33}%
+\contentsline {subsection}{\numberline {3.3}Consistency Test of Two Models}{9}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Voting Combinations Comparison via Variance Decomposition Model}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Counterfactual Simulation Modeling}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Bias Sensitivity Analysis}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Analysis of Controversial Cases and Method Evaluation}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Discussion on the Judge Rescue Mechanism}{13}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Quantifying Feature Contributions via Mixed-Effects Model}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Calculate Fixed and Random Effects}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Model Optimization}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}An Investigation into the Influence of Judges and Audience Voting}{17}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Insight:Uncertainty Propagation Framework}{18}{section.6}%
+\contentsline {section}{\numberline {7}KMDR Model for A Score Fusion Mechanism }{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Establishment KMDR Model}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Performance Evaluation of Score Fusion Mechanism}{19}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Evaluation and Sensitivity Analysis}{21}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Validity Test and Robustness Analysis of RF Model}{21}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Multi-Model Validation}{22}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Spatial Exploration of KMDR Model Parameters}{23}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Strengths and Weaknesses}{24}{section.9}%
+\contentsline {section}{References}{24}{section*.32}%
+\contentsline {section}{Memorandum}{25}{section*.32}%

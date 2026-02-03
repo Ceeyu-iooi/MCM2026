@@ -1,0 +1,112 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="第 1 页" id="hWmjo4jeb6tRERbR8dbr">
+    <mxGraphModel dx="3391" dy="2669" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BEL-MxsXRA_A7vibjMyq-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;strokeWidth=2;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="900" width="1660" x="-30" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-76" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;strokeWidth=2;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontFamily=Times New Roman;" value="" vertex="1">
+          <mxGeometry height="850" width="724" x="876" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontFamily=Times New Roman;" value="" vertex="1">
+          <mxGeometry height="860" width="730" x="130" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-78" edge="1" parent="1" source="LKOTMRKi1C6jRO39Ww03-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Times New Roman;" target="LKOTMRKi1C6jRO39Ww03-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-18" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fillColor=#b0e3e6;strokeColor=#0e8088;fontFamily=Times New Roman;" value="" vertex="1">
+          <mxGeometry height="650" width="697" x="893" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-1" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fillColor=#b1ddf0;strokeColor=#10739e;fontSize=37;fontStyle=1;fontFamily=Times New Roman;" value="Raw data" vertex="1">
+          <mxGeometry height="223" width="90" x="-10" y="305.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-44" edge="1" parent="1" source="LKOTMRKi1C6jRO39Ww03-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;fontFamily=Times New Roman;" target="LKOTMRKi1C6jRO39Ww03-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-2" parent="1" style="whiteSpace=wrap;strokeWidth=2;shadow=1;rounded=1;glass=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;fontStyle=1;html=1;fontFamily=Times New Roman;fontSize=21;" value="Missing Values Handling" vertex="1">
+          <mxGeometry height="78" width="171.25" x="158.75" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-55" edge="1" parent="1" source="LKOTMRKi1C6jRO39Ww03-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;fontFamily=Times New Roman;" target="LKOTMRKi1C6jRO39Ww03-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-4" parent="1" style="whiteSpace=wrap;strokeWidth=2;glass=1;fillColor=#f0a30a;strokeColor=#BD7000;rounded=1;fontColor=#000000;html=1;fontStyle=1;fontFamily=Times New Roman;fontSize=23;" value="Feature Engineering" vertex="1">
+          <mxGeometry height="80" width="167" x="156" y="583.87" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-7" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=0;html=1;fontFamily=Times New Roman;gradientColor=#97d077;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;N/A values for the fourth judge&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;&quot;&gt;:&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Imputed using the average score from the &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;other three judges for that week.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;N/A values for weeks not aired&lt;/font&gt;&lt;/b&gt;&lt;font style=&quot;&quot;&gt;:&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Marked as invalid data (is_valid=0) and &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;excluded from &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;modeling for that week.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;N/A values in other fields:&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Filled using the median score of celebrities &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;in &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;the same industry during the same season.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="270" width="420" x="380" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-8" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;html=1;labelBackgroundColor=none;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Times New Roman;gradientColor=#97d077;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;Judge Score Anomalies:&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Values outside&amp;nbsp;&lt;/font&gt;&lt;span lang=&quot;EN-US&quot; style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center; line-height: 115%;&quot;&gt;&lt;font&gt;[μ-3σ,μ+3σ]&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&amp;nbsp;identified via 3&lt;/font&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;σ&lt;/span&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&amp;nbsp;rule, &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;combined with &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;competition scoring rules (valid &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;range 1-10 points), resulted in 27 anomalies .&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;Post-elimination zero-score markers:&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;&lt;font style=&quot;&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Distinguish between “valid competition weeks” and &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;“post-&amp;nbsp;elimination weeks” to prevent invalid data &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;from interfering with analysis.&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="216" width="450" x="370" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-9" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fontStyle=1;html=1;convertToSvg=0;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontFamily=Times New Roman;gradientColor=#97d077;" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;Numeric feature standardization:&lt;span style=&quot;font-weight: normal;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Continuous variables like age undergo Z-score &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;standardization.&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Categorical variable encoding&lt;/font&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Dummy variables are assigned to qualitative &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;features like star industry&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;Time-series feature construction:&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt; &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Based on competition progression logic, discrete &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;weekly data is converted into time-series derived &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;features.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="280" width="470" x="370" y="553.87" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-11" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fontStyle=1;fontSize=23;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Times New Roman;" value="Problem 1: Audience Voting Backward Inference" vertex="1">
+          <mxGeometry height="81.69" width="293.01" x="1282" y="566.0899999999999" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-12" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fontStyle=1;fontSize=22;fillColor=#d5e8d4;strokeColor=#82b366;align=center;fontFamily=Times New Roman;" value="Problem 2: Comparative Analysis of Elimination Methods" vertex="1">
+          <mxGeometry height="70" width="322.75" x="1260.62" y="413.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-14" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fontStyle=1;fontSize=29;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Times New Roman;" value="Problem 4：Comprehensive Evaluation System" vertex="1">
+          <mxGeometry height="67" width="642" x="920.5" y="73" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-64" edge="1" parent="1" source="LKOTMRKi1C6jRO39Ww03-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontFamily=Times New Roman;" target="LKOTMRKi1C6jRO39Ww03-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-15" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fontStyle=1;html=1;fontSize=25;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;glass=0;fontFamily=Times New Roman;gradientColor=#7ea6e0;" value="judge_score_std,&amp;nbsp;&lt;br&gt;relative_performance,&amp;nbsp;&lt;br&gt;elimination_risk" vertex="1">
+          <mxGeometry height="106.13" width="270" x="918.25" y="553.87" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-63" edge="1" parent="1" source="LKOTMRKi1C6jRO39Ww03-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Times New Roman;" target="LKOTMRKi1C6jRO39Ww03-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-16" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fontSize=28;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Times New Roman;gradientColor=#7ea6e0;" value="elimination_risk, &#xa;cumulative_rank" vertex="1">
+          <mxGeometry height="102" width="235" x="925" y="397.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-62" edge="1" parent="1" source="LKOTMRKi1C6jRO39Ww03-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Times New Roman;" target="LKOTMRKi1C6jRO39Ww03-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-17" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fontSize=29;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontFamily=Times New Roman;gradientColor=#7ea6e0;" value="age_zscore,&#xa; industry_code" vertex="1">
+          <mxGeometry height="78" width="249.62" x="920.38" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-13" parent="1" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fontFamily=Times New Roman;fontStyle=1;fontSize=24;fillColor=#d5e8d4;strokeColor=#82b366;" value="Problem 3: Analysis of Star Trait Influence" vertex="1">
+          <mxGeometry height="67" width="306" x="1275.5" y="275.5" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-49" edge="1" parent="1" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;width=28.88888888888889;endSize=7.744444444444444;fillColor=#d0cee2;strokeColor=#56517e;fontFamily=Times New Roman;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="90" y="420.97798297872333" as="sourcePoint" />
+            <mxPoint x="150" y="419.99765957446823" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-54" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=19;fontStyle=1;fillColor=#e6d0de;gradientColor=#d5739d;strokeColor=#996185;fontColor=#FFFFFF;fontFamily=Times New Roman;" value="&lt;p&gt;&lt;font style=&quot;font-size: 28px;&quot;&gt;Strategies&lt;/font&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="148.5" x="169.25" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-58" parent="1" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=2;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Times New Roman;" value="" vertex="1">
+          <mxGeometry height="70" width="83" x="827" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-67" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;labelBackgroundColor=none;fontColor=light-dark(#d76d31, #ff7171);fontSize=26;fontFamily=Times New Roman;" value="apply to" vertex="1">
+          <mxGeometry height="36.5" width="116.25" x="1150" y="399.75" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-70" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=22;fontStyle=1;fillColor=#e6d0de;strokeColor=#996185;fontFamily=Times New Roman;gradientColor=#d5739d;" value="&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18));&quot;&gt;&lt;font style=&quot;font-size: 32px;&quot;&gt;Cleaned data&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="176.25" x="1163.75" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;labelBackgroundColor=none;fontColor=#FF3E5E;fontSize=35;labelBorderColor=none;fontFamily=Times New Roman;" value="Total of 23 features" vertex="1">
+          <mxGeometry height="30" width="302.75" x="1117.25" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="LKOTMRKi1C6jRO39Ww03-79" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;labelBackgroundColor=none;fontColor=#D76D31;fontSize=26;fontFamily=Times New Roman;" value="apply to" vertex="1">
+          <mxGeometry height="30" width="101.75" x="1187.13" y="566.09" as="geometry" />
+        </mxCell>
+        <mxCell id="BEL-MxsXRA_A7vibjMyq-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;labelBackgroundColor=none;fontColor=light-dark(#d76d31, #ff7171);fontSize=26;fontFamily=Times New Roman;" value="apply to" vertex="1">
+          <mxGeometry height="36.5" width="116.25" x="1165.75" y="269" as="geometry" />
+        </mxCell>
+        <mxCell id="BEL-MxsXRA_A7vibjMyq-5" edge="1" parent="1" source="BEL-MxsXRA_A7vibjMyq-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="LKOTMRKi1C6jRO39Ww03-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BEL-MxsXRA_A7vibjMyq-4" parent="1" style="whiteSpace=wrap;strokeWidth=2;glass=1;fillColor=#f0a30a;strokeColor=#BD7000;rounded=1;fontColor=#000000;html=1;fontStyle=1;fontFamily=Times New Roman;fontSize=23;" value="Outlier Handling&amp;nbsp;" vertex="1">
+          <mxGeometry height="80" width="167" x="160" y="378" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

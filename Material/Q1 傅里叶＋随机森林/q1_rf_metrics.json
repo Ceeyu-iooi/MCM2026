@@ -1,0 +1,53 @@
+{
+  "model": "Random Forest + SHAP",
+  "accuracy": 0.8433048433048433,
+  "precision": 0.5117647058823529,
+  "recall": 0.7631578947368421,
+  "f1": 0.6126760563380281,
+  "roc_auc": 0.8874865735767992,
+  "confusion_matrix": {
+    "TN": 505,
+    "FP": 83,
+    "FN": 27,
+    "TP": 87
+  },
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_depth": 10,
+    "min_samples_split": 10,
+    "min_samples_leaf": 5,
+    "class_weight": "balanced"
+  },
+  "feature_importance_gini": {
+    "week_total_score": 0.07247414045946371,
+    "week_rank": 0.04713052486773102,
+    "week_percent": 0.12008906406665242,
+    "celebrity_age_during_season": 0.04139960159375399,
+    "judge_score_std": 0.041312508061401444,
+    "age_zscore": 0.049254911922686544,
+    "remaining_weeks": 0.14827821288463686,
+    "cumulative_rank": 0.11195889598796686,
+    "elimination_risk": 0.07893788685039793,
+    "weeks_participated": 0.1767654129756935,
+    "relative_performance": 0.10385926596756326,
+    "industry_code": 0.00853957436205251
+  },
+  "feature_importance_shap": {
+    "week_total_score": 0.03316174101144137,
+    "week_rank": 0.019085268026300523,
+    "week_percent": 0.03526976190854387,
+    "celebrity_age_during_season": 0.015234715978624188,
+    "judge_score_std": 0.011370330678794869,
+    "age_zscore": 0.017408601575230186,
+    "remaining_weeks": 0.07852453131606572,
+    "cumulative_rank": 0.06247122803177093,
+    "elimination_risk": 0.0368367470023135,
+    "weeks_participated": 0.10341153569577394,
+    "relative_performance": 0.05605657253042904,
+    "industry_code": 0.0026878124287827805
+  },
+  "tan_comparison": {
+    "spearman_correlation": 0.8074545850777486,
+    "agreement_level": "高度一致"
+  }
+}

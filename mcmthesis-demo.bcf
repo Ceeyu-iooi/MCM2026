@@ -2375,7 +2375,10 @@
     <bcf:citekey order="1" intorder="1">toupiao</bcf:citekey>
     <bcf:citekey order="2" intorder="1">inverse</bcf:citekey>
     <bcf:citekey order="3" intorder="1">beiyesi</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">chatgpt2024</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">laird_random-effects_1982</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">neuberg_causality_2003</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">saltelli_sensitivity_2000</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">arrow_social_2012</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -151,36 +151,141 @@
       \field{year}{2020}
       \field{dateera}{ce}
     \endentry
-    \entry{chatgpt2024}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=0523b13262b12c215d8009938f5c14f1}{%
-           family={{OpenAI}},
-           familyi={O\bibinitperiod}}}%
+    \entry{laird_random-effects_1982}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4279cdc0481b4faaaf6bbcd8c96ffa28}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={Nan\bibnamedelima M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b6800fa115c6d5e2f07a263bd7ee8ea0}{%
+           family={Ware},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
       }
-      \strng{namehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{fullhash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{fullhashraw}{0523b13262b12c215d8009938f5c14f1}
-      \strng{bibnamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authorbibnamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authornamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authorfullhash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authorfullhashraw}{0523b13262b12c215d8009938f5c14f1}
+      \list{publisher}{1}{%
+        {[Wiley, International Biometric Society]}%
+      }
+      \strng{namehash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{fullhash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{fullhashraw}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{bibnamehash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{authorbibnamehash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{authornamehash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{authorfullhash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{authorfullhashraw}{e72b0d62d560c47e454966d0b93324b6}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{ChatGPT: Optimizing Language Models for Dialogue}
-      \field{urlday}{8}
-      \field{urlmonth}{1}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://openai.com/chatgpt
-      \endverb
-      \verb{url}
-      \verb https://openai.com/chatgpt
-      \endverb
+      \field{abstract}{Models for the analysis of longitudinal data must recognize the relationship between serial observations on the same unit. Multivariate models with general covariance structure are often difficult to apply to highly unbalanced data, whereas two-stage random-effects models can be used easily. In two-stage models, the probability distributions for the response vectors of different individuals belong to a single family, but some random-effects parameters vary across individuals, with a distribution specified at the second stage. A general family of models is discussed, which includes both growth models and repeated-measures models as special cases. A unified approach to fitting these models, based on a combination of empirical Bayes and maximum likelihood estimation of model parameters and using the {EM} algorithm, is discussed. Two examples are taken from a current epidemiological study of the health effects of air pollution.}
+      \field{journaltitle}{Biometrics}
+      \field{number}{4}
+      \field{title}{Random-Effects Models for Longitudinal Data}
+      \field{volume}{38}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{pages}{963\bibrangedash 974}
+      \range{pages}{12}
+    \endentry
+    \entry{neuberg_causality_2003}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=15534ab040ca8972033f568ee9683e0e}{%
+           family={Neuberg},
+           familyi={N\bibinitperiod},
+           given={Leland\bibnamedelima Gerson},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{fullhash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{fullhashraw}{15534ab040ca8972033f568ee9683e0e}
+      \strng{bibnamehash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{authorbibnamehash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{authornamehash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{authorfullhash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{authorfullhashraw}{15534ab040ca8972033f568ee9683e0e}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This book seeks to integrate research on cause and effect inference from cognitive science, econometrics, epidemiology, philosophy, and statistics. It puts forward the work of its author, his collaborators, and others over the past two decades as a new account of cause and effect inference that can aid practical researchers in many fields, including econometrics. Pearl adheres to several propositions on cause and effect inference. Though cause and effect relations are fundamentally deterministic (he explicitly excludes quantum mechanical phenomena from his concept of cause and effect), cause and effect analysis involves probability language. Probability language helps to convey uncertainty about cause and effect relations but is insufficient to fully express those relations. In addition to conditional probabilities of events, cause and effect analysis requires graphs or diagrams and a language that distinguishes intervention or manipulation from observation. Cause and effect analysis also requires counterfactual reasoning and causal assumptions in addition to observations and statistical assumptions.}
+      \field{journaltitle}{Econometric Theory}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{4}
+      \field{shorttitle}{{CAUSALITY}}
+      \field{title}{{CAUSALITY}: {MODELS}, {REASONING}, {AND} {INFERENCE}, by Judea Pearl, Cambridge University Press, 2000}
+      \field{volume}{19}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{pages}{675\bibrangedash 685}
+      \range{pages}{11}
+    \endentry
+    \entry{saltelli_sensitivity_2000}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=40222053beb161f856f5eea1c63522f9}{%
+           family={Saltelli},
+           familyi={S\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bb62ccab7499ec096dbc3157e410601a}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={K},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4c8f0583c55903a36ed4bc70a4dea180}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={E.Marian},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{fullhash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{fullhashraw}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{bibnamehash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{authorbibnamehash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{authornamehash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{authorfullhash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{authorfullhashraw}{e572ec839cef82703a9e3535ab3821c0}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{month}{1}
+      \field{title}{Sensitivity Analysis}
+      \field{volume}{134}
+      \field{year}{2000}
+      \field{dateera}{ce}
+    \endentry
+    \entry{arrow_social_2012}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=5d45272a5c29864ab7c14d6d5567315c}{%
+           family={Arrow},
+           familyi={A\bibinitperiod},
+           given={Kenneth\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Yale University Press}%
+      }
+      \strng{namehash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{fullhash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{fullhashraw}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{bibnamehash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{authorbibnamehash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{authornamehash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{authorfullhash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{authorfullhashraw}{5d45272a5c29864ab7c14d6d5567315c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Originally published in 1951, \textit{Social Choice and Individual Values} introduced "Arrow's Impossibility Theorem" and founded the field of social choice theory in economics and political science. This new edition, including a new foreword by Nobel laureate Eric Maskin, reintroduces Arrow's seminal book to a new generation of students and researchers. "Far beyond a classic, this small book unleashed the ongoing explosion of interest in social choice and voting theory. A half-century later, the book remains full of profound insight: its central message, 'Arrow's Theorem,' has changed the way we think."-Donald G. Saari, author of \textit{Decisions and Elections: Explaining the Unexpected}}
+      \field{title}{Social Choice and Individual Values}
+      \field{year}{2012}
+      \field{dateera}{ce}
     \endentry
   \enddatalist
 \endrefsection

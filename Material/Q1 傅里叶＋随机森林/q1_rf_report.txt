@@ -1,0 +1,89 @@
+
+======================================================================
+Q1 随机森林 + SHAP 模型分析报告
+MCM 2026 Problem C - Dancing with the Stars
+======================================================================
+
+1. 数据概况
+   - 总记录数: 2777
+   - 赛季数量: 34
+   - 淘汰事件: 516
+   - 训练集: 2075 (Season 1-27)
+   - 评估集: 702 (Season 28-34)
+
+2. 模型配置
+   - 模型类型: Random Forest Classifier
+   - 树的数量: 200
+   - 最大深度: 10
+   - 特征数量: 12
+   - 类别权重: balanced (处理不平衡)
+
+3. 评估指标
+   - Accuracy:           84.33%
+   - Elimination Recall: 76.32%
+   - Elimination Prec:   51.18%
+   - Elimination F1:     61.27%
+   - ROC-AUC:            0.8875
+
+4. 混淆矩阵
+              Predicted
+              Stay   Elim
+   Actual Stay   505     83
+   Actual Elim    27     87
+
+5. 特征重要性 (Gini Importance)
+    1. weeks_participated            : 0.1768
+    2. remaining_weeks               : 0.1483
+    3. week_percent                  : 0.1201
+    4. cumulative_rank               : 0.1120
+    5. relative_performance          : 0.1039
+    6. elimination_risk              : 0.0789
+    7. week_total_score              : 0.0725
+    8. age_zscore                    : 0.0493
+    9. week_rank                     : 0.0471
+   10. celebrity_age_during_season   : 0.0414
+   11. judge_score_std               : 0.0413
+   12. industry_code                 : 0.0085
+
+6. 特征重要性 (SHAP Mean |Value|)
+    1. weeks_participated            : 0.1034
+    2. remaining_weeks               : 0.0785
+    3. cumulative_rank               : 0.0625
+    4. relative_performance          : 0.0561
+    5. elimination_risk              : 0.0368
+    6. week_percent                  : 0.0353
+    7. week_total_score              : 0.0332
+    8. week_rank                     : 0.0191
+    9. age_zscore                    : 0.0174
+   10. celebrity_age_during_season   : 0.0152
+   11. judge_score_std               : 0.0114
+   12. industry_code                 : 0.0027
+
+7. 观众投票分数估计
+   - 均值: 70.86
+   - 标准差: 29.30
+   - 最小值: 0.68
+   - 最大值: 99.79
+   - 淘汰选手平均分: 25.08
+   - 晋级选手平均分: 81.31
+
+8. TAN模型对比
+   Metric                        TAN           RF         Diff
+   --------------------------------------------------------
+   Accuracy                   82.48%       84.33%       +1.85%
+   Recall                     56.14%       76.32%      +20.18%
+   Precision                  46.72%       51.18%       +4.46%
+   F1                         51.00%       61.27%      +10.27%
+   ROC-AUC                    0.8102       0.8875      +0.0773
+
+9. 模型一致性验证
+   - Spearman相关系数: rho = 0.8075
+   - 预测一致性: 高度一致
+
+10. 结论
+    - 随机森林在所有指标上均优于TAN模型
+    - 两模型预测的观众投票分数高度相关(rho=0.8075)
+    - 特征重要性排序基本一致，验证了特征选择的合理性
+    - 两种不同方法论的模型得出一致结论，增强了结果的可信度
+
+======================================================================

@@ -19,275 +19,273 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{li2002}{article}{}{}
+    \entry{toupiao}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=7ed006f859ebac6ff5c9dd727a07ccd3}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Bingqing},
-           giveni={B\bibinitperiod}}}%
-        {{hash=f24f2e674186a8b8d899e1818540d7bd}{%
-           family={Tian},
-           familyi={T\bibinitperiod},
-           given={Cunzhi},
-           giveni={C\bibinitperiod}}}%
+        {{hash=a6eadfee14cdc9abf2b6017ad0d0bae5}{%
+           family={Enli},
+           familyi={E\bibinitperiod},
+           given={Gunn},
+           giveni={G\bibinitperiod}}}%
+        {{hash=35f03bf33ee76a0750bc68399b3e9370}{%
+           family={Ihlebæk},
+           familyi={I\bibinitperiod},
+           given={Karoline},
+           giveni={K\bibinitperiod}}}%
       }
-      \strng{namehash}{f734563b1056617c887dbb7172d33b8d}
-      \strng{fullhash}{f734563b1056617c887dbb7172d33b8d}
-      \strng{fullhashraw}{f734563b1056617c887dbb7172d33b8d}
-      \strng{bibnamehash}{f734563b1056617c887dbb7172d33b8d}
-      \strng{authorbibnamehash}{f734563b1056617c887dbb7172d33b8d}
-      \strng{authornamehash}{f734563b1056617c887dbb7172d33b8d}
-      \strng{authorfullhash}{f734563b1056617c887dbb7172d33b8d}
-      \strng{authorfullhashraw}{f734563b1056617c887dbb7172d33b8d}
+      \strng{namehash}{58fff4767b580aa9cc3640495fc8ffae}
+      \strng{fullhash}{58fff4767b580aa9cc3640495fc8ffae}
+      \strng{fullhashraw}{58fff4767b580aa9cc3640495fc8ffae}
+      \strng{bibnamehash}{58fff4767b580aa9cc3640495fc8ffae}
+      \strng{authorbibnamehash}{58fff4767b580aa9cc3640495fc8ffae}
+      \strng{authornamehash}{58fff4767b580aa9cc3640495fc8ffae}
+      \strng{authorfullhash}{58fff4767b580aa9cc3640495fc8ffae}
+      \strng{authorfullhashraw}{58fff4767b580aa9cc3640495fc8ffae}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nankai Economic Research}
-      \field{number}{4}
-      \field{title}{Application of {CAPM} in pricing catastrophe insurance products}
-      \field{year}{2002}
-      \field{pages}{41\bibrangedash 103}
-      \range{pages}{63}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{1}
+      \field{journaltitle}{Media, Culture \& Society}
+      \field{month}{9}
+      \field{shortjournal}{Media, Culture \& Society}
+      \field{shorttitle}{'Dancing with the audience'}
+      \field{title}{'Dancing with the audience': Administrating vote-ins in public and commercial broadcasting}
+      \field{volume}{33}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{953\bibrangedash 962}
+      \range{pages}{10}
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\HP\\Zotero\\storage\\6Z5NTNJ5\\Enli和Ihlebæk - 2011 - 'Dancing with the audience' Administrating vote-ins in public and commercial broadcasting.pdf:application/pdf
+      \endverb
     \endentry
-    \entry{jaffee1997}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=20db0fee49c801524008afc4408df5e2}{%
-           family={Jaffee},
-           familyi={J\bibinitperiod},
-           given={Dwight},
-           giveni={D\bibinitperiod}}}%
-        {{hash=46da6d240baf99638456ec3a40cb94c3}{%
-           family={Russell},
-           familyi={R\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{8035aa31e6165f4302477be2b9f59af5}
-      \strng{fullhash}{8035aa31e6165f4302477be2b9f59af5}
-      \strng{fullhashraw}{8035aa31e6165f4302477be2b9f59af5}
-      \strng{bibnamehash}{8035aa31e6165f4302477be2b9f59af5}
-      \strng{authorbibnamehash}{8035aa31e6165f4302477be2b9f59af5}
-      \strng{authornamehash}{8035aa31e6165f4302477be2b9f59af5}
-      \strng{authorfullhash}{8035aa31e6165f4302477be2b9f59af5}
-      \strng{authorfullhashraw}{8035aa31e6165f4302477be2b9f59af5}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Risk and Insurance}
-      \field{number}{2}
-      \field{title}{Catastrophe insurance, capital markets, and uninsurable risks}
-      \field{volume}{64}
-      \field{year}{1997}
-      \field{pages}{205\bibrangedash 230}
-      \range{pages}{26}
-    \endentry
-    \entry{froot1999}{report}{}{}
+    \entry{inverse}{incollection}{}{}
       \name{author}{1}{}{%
-        {{hash=0d306ea69aed0b69615aafa3809cb56b}{%
-           family={Froot},
-           familyi={F\bibinitperiod},
-           given={Kenneth\bibnamedelima A},
-           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=35d819a3602f4b5398a449777cf01b03}{%
+           family={Cavalier},
+           familyi={C\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
       }
-      \list{institution}{1}{%
-        {National Bureau of Economic Research}%
+      \name{editor}{3}{}{%
+        {{hash=3979a9ea726e82cbf144ee11e25aaf0b}{%
+           family={Alquier},
+           familyi={A\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=6812587fa3a77cd9c9065b5497d0873a}{%
+           family={Gautier},
+           familyi={G\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=12b23e6255d36870a56e6c2d3df48d65}{%
+           family={Stoltz},
+           familyi={S\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {Cambridge, MA}%
-      }
-      \strng{namehash}{0d306ea69aed0b69615aafa3809cb56b}
-      \strng{fullhash}{0d306ea69aed0b69615aafa3809cb56b}
-      \strng{fullhashraw}{0d306ea69aed0b69615aafa3809cb56b}
-      \strng{bibnamehash}{0d306ea69aed0b69615aafa3809cb56b}
-      \strng{authorbibnamehash}{0d306ea69aed0b69615aafa3809cb56b}
-      \strng{authornamehash}{0d306ea69aed0b69615aafa3809cb56b}
-      \strng{authorfullhash}{0d306ea69aed0b69615aafa3809cb56b}
-      \strng{authorfullhashraw}{0d306ea69aed0b69615aafa3809cb56b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The financing of catastrophe risk}
-      \field{type}{techreport}
-      \field{year}{1999}
-    \endentry
-    \entry{michel2011}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=c89cd2c0160bf53c8f9a280ec0971a23}{%
-           family={Michel-Kerjan},
-           familyi={M\bibinithyphendelim K\bibinitperiod},
-           given={Erwann},
-           giveni={E\bibinitperiod}}}%
-        {{hash=93ad4b5f967da99a5c1493f023b3f360}{%
-           family={Kunreuther},
-           familyi={K\bibinitperiod},
-           given={Howard},
-           giveni={H\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {American Association for the Advancement of Science}%
-      }
-      \strng{namehash}{5e0d3cb2f3d44e6c212085622904c52a}
-      \strng{fullhash}{5e0d3cb2f3d44e6c212085622904c52a}
-      \strng{fullhashraw}{5e0d3cb2f3d44e6c212085622904c52a}
-      \strng{bibnamehash}{5e0d3cb2f3d44e6c212085622904c52a}
-      \strng{authorbibnamehash}{5e0d3cb2f3d44e6c212085622904c52a}
-      \strng{authornamehash}{5e0d3cb2f3d44e6c212085622904c52a}
-      \strng{authorfullhash}{5e0d3cb2f3d44e6c212085622904c52a}
-      \strng{authorfullhashraw}{5e0d3cb2f3d44e6c212085622904c52a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Science}
-      \field{number}{6041}
-      \field{title}{Redesigning flood insurance}
-      \field{volume}{333}
-      \field{year}{2011}
-      \field{pages}{408\bibrangedash 409}
-      \range{pages}{2}
-    \endentry
-    \entry{aase1992}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=22b0a185adc76de7e119101db6d6c651}{%
-           family={Aase},
-           familyi={A\bibinitperiod},
-           given={Knut\bibnamedelima K},
-           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {Berlin, Heidelberg}%
       }
       \list{publisher}{1}{%
         {Springer}%
       }
-      \strng{namehash}{22b0a185adc76de7e119101db6d6c651}
-      \strng{fullhash}{22b0a185adc76de7e119101db6d6c651}
-      \strng{fullhashraw}{22b0a185adc76de7e119101db6d6c651}
-      \strng{bibnamehash}{22b0a185adc76de7e119101db6d6c651}
-      \strng{authorbibnamehash}{22b0a185adc76de7e119101db6d6c651}
-      \strng{authornamehash}{22b0a185adc76de7e119101db6d6c651}
-      \strng{authorfullhash}{22b0a185adc76de7e119101db6d6c651}
-      \strng{authorfullhashraw}{22b0a185adc76de7e119101db6d6c651}
+      \strng{namehash}{35d819a3602f4b5398a449777cf01b03}
+      \strng{fullhash}{35d819a3602f4b5398a449777cf01b03}
+      \strng{fullhashraw}{35d819a3602f4b5398a449777cf01b03}
+      \strng{bibnamehash}{35d819a3602f4b5398a449777cf01b03}
+      \strng{authorbibnamehash}{35d819a3602f4b5398a449777cf01b03}
+      \strng{authornamehash}{35d819a3602f4b5398a449777cf01b03}
+      \strng{authorfullhash}{35d819a3602f4b5398a449777cf01b03}
+      \strng{authorfullhashraw}{35d819a3602f4b5398a449777cf01b03}
+      \strng{editorbibnamehash}{320108021f22b927f04a01c5649b0ed3}
+      \strng{editornamehash}{320108021f22b927f04a01c5649b0ed3}
+      \strng{editorfullhash}{320108021f22b927f04a01c5649b0ed3}
+      \strng{editorfullhashraw}{320108021f22b927f04a01c5649b0ed3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{There exist many fields where inverse problems appear. Some examples are: astronomy (blurred images of the Hubble satellite), econometrics (instrumental variables), financial mathematics (model calibration of the volatility), medical image processing (X-ray tomography), and quantum physics (quantum homodyne tomography). These are problems where we have indirect observations of an object (a function) that we want to reconstruct, through a linear operator A. Due to its indirect nature, solving an inverse problem is usually rather difficult. For this reason, one needs regularization methods in order to get a stable and accurate reconstruction. We present the framework of statistical inverse problems where the data are corrupted by some stochastic error. This white noise model may be discretized in the spectral domain using Singular Value Decomposition ({SVD}), when the operator A is compact. Several examples of inverse problems where the {SVD} is known are presented (circular deconvolution, heat equation, tomography). We explain some basic issues regarding nonparametric statistics applied to inverse problems. Standard regularization methods and their counterpart as estimation procedures by use of {SVD} are discussed (projection, Landweber, Tikhonov, . . . ). Several classical statistical approaches like minimax risk and optimal rates of convergence, are presented. This notion of optimality leads to some optimal choice of the tuning parameter. However these optimal parameters are unachievable since they depend on the unknown smoothness of the function. This leads to more recent concepts like adaptive estimation and oracle inequalities. Several data-driven selection procedures of the regularization parameter are discussed in details, among these: model selection methods, Stein’s unbiased risk estimation and the recent risk hull method.}
+      \field{booktitle}{Inverse Problems and High-Dimensional Estimation: Stats in the Château Summer School, August 31 - September 4, 2009}
+      \field{langid}{english}
+      \field{title}{Inverse Problems in Statistics}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{3\bibrangedash 96}
+      \range{pages}{94}
+      \keyw{Inverse Problem,Optimal Rate,Projection Estimator,Regularization Method,Singular Value Decomposition}
+    \endentry
+    \entry{beiyesi}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=51204ab1ac6fd3aa8b649ff12ae89bf1}{%
+           family={{McElreath}},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{2}{%
+        {Chapman}%
+        {Hall/{CRC}}%
+      }
+      \strng{namehash}{51204ab1ac6fd3aa8b649ff12ae89bf1}
+      \strng{fullhash}{51204ab1ac6fd3aa8b649ff12ae89bf1}
+      \strng{fullhashraw}{51204ab1ac6fd3aa8b649ff12ae89bf1}
+      \strng{bibnamehash}{51204ab1ac6fd3aa8b649ff12ae89bf1}
+      \strng{authorbibnamehash}{51204ab1ac6fd3aa8b649ff12ae89bf1}
+      \strng{authornamehash}{51204ab1ac6fd3aa8b649ff12ae89bf1}
+      \strng{authorfullhash}{51204ab1ac6fd3aa8b649ff12ae89bf1}
+      \strng{authorfullhashraw}{51204ab1ac6fd3aa8b649ff12ae89bf1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{13}
+      \field{edition}{2}
+      \field{month}{3}
+      \field{shorttitle}{Statistical Rethinking}
+      \field{title}{Statistical Rethinking: A Bayesian Course with Examples in R and {STAN}}
+      \field{year}{2020}
+      \field{dateera}{ce}
+    \endentry
+    \entry{laird_random-effects_1982}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4279cdc0481b4faaaf6bbcd8c96ffa28}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={Nan\bibnamedelima M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b6800fa115c6d5e2f07a263bd7ee8ea0}{%
+           family={Ware},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {[Wiley, International Biometric Society]}%
+      }
+      \strng{namehash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{fullhash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{fullhashraw}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{bibnamehash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{authorbibnamehash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{authornamehash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{authorfullhash}{e72b0d62d560c47e454966d0b93324b6}
+      \strng{authorfullhashraw}{e72b0d62d560c47e454966d0b93324b6}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{The Geneva Papers on Risk and Insurance Theory}
-      \field{title}{Dynamic equilibrium and the structure of premiums in a reinsurance market}
-      \field{volume}{17}
-      \field{year}{1992}
-      \field{pages}{93\bibrangedash 136}
-      \range{pages}{44}
+      \field{abstract}{Models for the analysis of longitudinal data must recognize the relationship between serial observations on the same unit. Multivariate models with general covariance structure are often difficult to apply to highly unbalanced data, whereas two-stage random-effects models can be used easily. In two-stage models, the probability distributions for the response vectors of different individuals belong to a single family, but some random-effects parameters vary across individuals, with a distribution specified at the second stage. A general family of models is discussed, which includes both growth models and repeated-measures models as special cases. A unified approach to fitting these models, based on a combination of empirical Bayes and maximum likelihood estimation of model parameters and using the {EM} algorithm, is discussed. Two examples are taken from a current epidemiological study of the health effects of air pollution.}
+      \field{journaltitle}{Biometrics}
+      \field{number}{4}
+      \field{title}{Random-Effects Models for Longitudinal Data}
+      \field{volume}{38}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{pages}{963\bibrangedash 974}
+      \range{pages}{12}
     \endentry
-    \entry{blanchard1994}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=8ea1d54fee57ba07b648601ddd77664a}{%
-           family={Blanchard},
-           familyi={B\bibinitperiod},
-           given={Olivier},
-           giveni={O\bibinitperiod}}}%
-        {{hash=283ec0c71a4f949044672542ceb681c0}{%
-           family={Lopez-de-Silanes},
-           familyi={L\bibinithyphendelim S\bibinitperiod},
-           given={Florencio},
-           giveni={F\bibinitperiod}}}%
-        {{hash=73d7bf2d3105674f373111fc7356eec3}{%
-           family={Shleifer},
-           familyi={S\bibinitperiod},
-           given={Andrei},
-           giveni={A\bibinitperiod}}}%
+    \entry{neuberg_causality_2003}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=15534ab040ca8972033f568ee9683e0e}{%
+           family={Neuberg},
+           familyi={N\bibinitperiod},
+           given={Leland\bibnamedelima Gerson},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{bf97e256548eb96fea79541c0d8606af}
-      \strng{fullhash}{bf97e256548eb96fea79541c0d8606af}
-      \strng{fullhashraw}{bf97e256548eb96fea79541c0d8606af}
-      \strng{bibnamehash}{bf97e256548eb96fea79541c0d8606af}
-      \strng{authorbibnamehash}{bf97e256548eb96fea79541c0d8606af}
-      \strng{authornamehash}{bf97e256548eb96fea79541c0d8606af}
-      \strng{authorfullhash}{bf97e256548eb96fea79541c0d8606af}
-      \strng{authorfullhashraw}{bf97e256548eb96fea79541c0d8606af}
+      \strng{namehash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{fullhash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{fullhashraw}{15534ab040ca8972033f568ee9683e0e}
+      \strng{bibnamehash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{authorbibnamehash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{authornamehash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{authorfullhash}{15534ab040ca8972033f568ee9683e0e}
+      \strng{authorfullhashraw}{15534ab040ca8972033f568ee9683e0e}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Financial Economics}
-      \field{number}{3}
-      \field{title}{What do firms do with cash windfalls?}
-      \field{volume}{36}
-      \field{year}{1994}
-      \field{pages}{337\bibrangedash 360}
-      \range{pages}{24}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This book seeks to integrate research on cause and effect inference from cognitive science, econometrics, epidemiology, philosophy, and statistics. It puts forward the work of its author, his collaborators, and others over the past two decades as a new account of cause and effect inference that can aid practical researchers in many fields, including econometrics. Pearl adheres to several propositions on cause and effect inference. Though cause and effect relations are fundamentally deterministic (he explicitly excludes quantum mechanical phenomena from his concept of cause and effect), cause and effect analysis involves probability language. Probability language helps to convey uncertainty about cause and effect relations but is insufficient to fully express those relations. In addition to conditional probabilities of events, cause and effect analysis requires graphs or diagrams and a language that distinguishes intervention or manipulation from observation. Cause and effect analysis also requires counterfactual reasoning and causal assumptions in addition to observations and statistical assumptions.}
+      \field{journaltitle}{Econometric Theory}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{4}
+      \field{shorttitle}{{CAUSALITY}}
+      \field{title}{{CAUSALITY}: {MODELS}, {REASONING}, {AND} {INFERENCE}, by Judea Pearl, Cambridge University Press, 2000}
+      \field{volume}{19}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{pages}{675\bibrangedash 685}
+      \range{pages}{11}
     \endentry
-    \entry{guo2024haier}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=ad466bebaed6dd7a197941dcd1cdf73f}{%
-           family={Hao},
-           familyi={H\bibinitperiod},
-           given={Guo},
-           giveni={G\bibinitperiod}}}%
+    \entry{saltelli_sensitivity_2000}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=40222053beb161f856f5eea1c63522f9}{%
+           family={Saltelli},
+           familyi={S\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bb62ccab7499ec096dbc3157e410601a}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={K},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4c8f0583c55903a36ed4bc70a4dea180}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={E.Marian},
+           giveni={E\bibinitperiod}}}%
       }
-      \list{publisher}{2}{%
-        {Nanjing University of Posts}%
-        {Telecommunications}%
-      }
-      \strng{namehash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{fullhash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{fullhashraw}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{bibnamehash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{authorbibnamehash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{authornamehash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{authorfullhash}{ad466bebaed6dd7a197941dcd1cdf73f}
-      \strng{authorfullhashraw}{ad466bebaed6dd7a197941dcd1cdf73f}
+      \strng{namehash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{fullhash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{fullhashraw}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{bibnamehash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{authorbibnamehash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{authornamehash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{authorfullhash}{e572ec839cef82703a9e3535ab3821c0}
+      \strng{authorfullhashraw}{e572ec839cef82703a9e3535ab3821c0}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{With the development of technology and the times, how to promote China to move toward a more advanced digital development path has become a hot topic. To promote the development of the digital economy, the government has introduced a series of documents and policies to guide enterprises to increase investment in digital transformation and improve the application level of digital technologies. Against this background, more and more enterprises are taking digital transformation as the main direction for future development and actively seeking to implement digital strategies. Digital transformation can help enterprises reduce product costs and improve operational efficiency. At the same time, through organizational change, process reengineering, and business growth, enterprises can more efficiently respond to industry competition. This paper focuses on the issue of “financial performance evaluation of manufacturing enterprises under the background of digital transformation,” and selects Haier Smart Home, a leading company in the home appliance industry, to establish a financial performance evaluation system to explore whether digital transformation has a positive impact on the company's financial performance. First, this study uses relevant theoretical knowledge of digital transformation and financial performance to analyze the motivation, process, and impact of Haier Smart Home's digital transformation on its financial performance. Second, the case study selects multiple financial indicators of Haier Smart Home from 2012 to 2022, covering development ability, operational ability, solvency, and profitability, analyzing their development trends, and comparing them with other companies in the industry. Furthermore, the study applies the Analytic Hierarchy Process (AHP) and Grey Relational Analysis to comprehensively evaluate the company’s financial performance, calculating the weights of primary and secondary financial performance indicators, and multiplying them with the fuzzy comprehensive evaluation matrix to obtain the overall financial performance level.}
-      \field{journaltitle}{Engineering Science II Series; Economics and Management Science}
-      \field{number}{XX}
-      \field{title}{A Study on the Financial Performance of Haier Smart Home under the Background of Digital Transformation}
-      \field{volume}{XX}
-      \field{year}{2024}
-      \field{pages}{XX\bibrangedash XX}
-      \range{pages}{1}
-      \keyw{Haier Smart Home,Digital Transformation,Financial Performance}
+      \field{day}{1}
+      \field{month}{1}
+      \field{title}{Sensitivity Analysis}
+      \field{volume}{134}
+      \field{year}{2000}
+      \field{dateera}{ce}
     \endentry
-    \entry{chatgpt2024}{online}{}{}
+    \entry{arrow_social_2012}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=0523b13262b12c215d8009938f5c14f1}{%
-           family={{OpenAI}},
-           familyi={O\bibinitperiod}}}%
+        {{hash=5d45272a5c29864ab7c14d6d5567315c}{%
+           family={Arrow},
+           familyi={A\bibinitperiod},
+           given={Kenneth\bibnamedelima J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
-      \strng{namehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{fullhash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{fullhashraw}{0523b13262b12c215d8009938f5c14f1}
-      \strng{bibnamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authorbibnamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authornamehash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authorfullhash}{0523b13262b12c215d8009938f5c14f1}
-      \strng{authorfullhashraw}{0523b13262b12c215d8009938f5c14f1}
+      \list{publisher}{1}{%
+        {Yale University Press}%
+      }
+      \strng{namehash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{fullhash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{fullhashraw}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{bibnamehash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{authorbibnamehash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{authornamehash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{authorfullhash}{5d45272a5c29864ab7c14d6d5567315c}
+      \strng{authorfullhashraw}{5d45272a5c29864ab7c14d6d5567315c}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{ChatGPT: Optimizing Language Models for Dialogue}
-      \field{urlday}{8}
-      \field{urlmonth}{1}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://openai.com/chatgpt
-      \endverb
-      \verb{url}
-      \verb https://openai.com/chatgpt
-      \endverb
+      \field{abstract}{Originally published in 1951, \textit{Social Choice and Individual Values} introduced "Arrow's Impossibility Theorem" and founded the field of social choice theory in economics and political science. This new edition, including a new foreword by Nobel laureate Eric Maskin, reintroduces Arrow's seminal book to a new generation of students and researchers. "Far beyond a classic, this small book unleashed the ongoing explosion of interest in social choice and voting theory. A half-century later, the book remains full of profound insight: its central message, 'Arrow's Theorem,' has changed the way we think."-Donald G. Saari, author of \textit{Decisions and Elections: Explaining the Unexpected}}
+      \field{title}{Social Choice and Individual Values}
+      \field{year}{2012}
+      \field{dateera}{ce}
     \endentry
   \enddatalist
 \endrefsection

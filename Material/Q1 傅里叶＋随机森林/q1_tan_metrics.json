@@ -1,0 +1,68 @@
+{
+  "model": "Tree Augmented Naive Bayes (TAN)",
+  "accuracy": 0.8248,
+  "precision": 0.4672,
+  "recall": 0.5614,
+  "f1_score": 0.51,
+  "roc_auc": 0.8102,
+  "average_precision": 0.5016,
+  "confusion_matrix": [
+    [
+      515,
+      73
+    ],
+    [
+      50,
+      64
+    ]
+  ],
+  "tree_edges": [
+    [
+      "week_total_score",
+      "week_percent"
+    ],
+    [
+      "week_percent",
+      "remaining_weeks"
+    ],
+    [
+      "remaining_weeks",
+      "weeks_participated"
+    ],
+    [
+      "week_percent",
+      "week_rank"
+    ],
+    [
+      "week_rank",
+      "cumulative_rank"
+    ],
+    [
+      "week_rank",
+      "relative_performance"
+    ],
+    [
+      "relative_performance",
+      "elimination_risk"
+    ],
+    [
+      "remaining_weeks",
+      "judge_score_std"
+    ],
+    [
+      "cumulative_rank",
+      "age_zscore"
+    ],
+    [
+      "age_zscore",
+      "celebrity_age_during_season"
+    ],
+    [
+      "age_zscore",
+      "industry_code"
+    ]
+  ],
+  "n_features": 12,
+  "n_train_samples": 2075,
+  "n_eval_samples": 702
+}
